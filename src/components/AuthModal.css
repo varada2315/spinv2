@@ -1,0 +1,119 @@
+.auth-modal-card {
+  max-width: 440px;
+  padding: 36px 32px;
+}
+
+.auth-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.auth-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  margin-top: 16px;
+  margin-bottom: 4px;
+}
+
+.auth-sub {
+  font-size: 0.85rem;
+  color: #64748B;
+  line-height: 1.4;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.auth-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.auth-input-group label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #F8FAFC;
+  border: 1px solid #CBD5E1;
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  transition: var(--transition);
+}
+
+.input-wrap:focus-within {
+  border-color: var(--color-primary);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(0, 85, 254, 0.1);
+}
+
+.auth-icon {
+  color: #64748B;
+}
+
+.input-wrap input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  outline: none;
+  color: var(--color-navy);
+}
+
+.auth-submit-btn {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #0042CA 100%);
+  color: #FFFFFF;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: var(--transition);
+  margin-top: 8px;
+}
+
+.auth-submit-btn:hover {
+  background: linear-gradient(135deg, #0046D5 0%, #0036A8 100%);
+  transform: translateY(-2px);
+}
+
+.auth-footer-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #64748B;
+  border-top: 1px solid #E2E8F0;
+  padding-top: 16px;
+}
+
+.toggle-mode-btn {
+  color: var(--color-primary);
+  font-weight: 800;
+  background: none;
+  border: none;
+}
+
+.toggle-mode-btn:hover {
+  text-decoration: underline;
+}

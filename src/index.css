@@ -1,0 +1,210 @@
+/* Reset & Spin Global Brand Tokens from spinglobal.in */
+:root {
+  --color-primary: #00BF63;
+  --color-primary-hover: #009E52;
+  --color-primary-light: #E6F9F0;
+  --color-cream: #FFF3C2;
+  --color-cream-accent: #F1FF9F;
+  --color-dark: #071228;
+  --color-dark-card: #0F1D38;
+  --color-text-dark: #000000;
+  --color-text-muted: #64748B;
+  --color-bg-light: #FFFFFF;
+  --color-bg-alt: #F8FAFC;
+  --color-border: #E2E8F0;
+
+  --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg-light);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Typography Utilities */
+.text-green {
+  color: var(--color-primary) !important;
+}
+
+.italic-title {
+  font-style: italic;
+}
+
+.section-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 12px;
+}
+
+.section-heading-center {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.main-section-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  font-size: 1.15rem;
+  color: #475569;
+  font-weight: 500;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Common Card & Button Hover Effects */
+.hover-lift {
+  transition: var(--transition);
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #FFFFFF;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  font-size: 1rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 8px 20px rgba(0, 191, 99, 0.25);
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 191, 99, 0.35);
+}
+
+.btn-dark {
+  background: var(--color-dark);
+  color: #FFFFFF;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  font-size: 1rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition);
+}
+
+.btn-dark:hover {
+  background: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.btn-cream {
+  background: var(--color-cream);
+  color: var(--color-text-dark);
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  font-weight: 800;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: var(--transition);
+}
+
+.btn-cream:hover {
+  background: #FFE885;
+  transform: translateY(-2px);
+}
+
+/* Toast Floating */
+.toast-notification {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--color-dark);
+  color: #FFFFFF;
+  padding: 14px 24px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 1000;
+  border-left: 4px solid var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .main-section-title {
+    font-size: 2rem;
+  }
+  .section-subtitle {
+    font-size: 1rem;
+  }
+}

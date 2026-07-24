@@ -1,0 +1,153 @@
+.popular-escapes-section {
+  padding: 80px 0;
+  background: var(--color-bg-alt);
+}
+
+.escapes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.escape-card {
+  position: relative;
+  height: 320px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--color-border);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+}
+
+.escape-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border-color: var(--color-primary);
+}
+
+.escape-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.escape-card:hover .escape-img {
+  transform: scale(1.1);
+}
+
+/* Subtle top badge on full image */
+.escape-top-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(7, 18, 40, 0.85);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 5;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: opacity 0.3s ease;
+}
+
+.escape-card:hover .escape-top-badge {
+  opacity: 0;
+}
+
+/* Full Hover Overlay */
+.escape-hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(7, 18, 40, 0.3) 0%, rgba(7, 18, 40, 0.92) 100%);
+  padding: 24px;
+  display: flex;
+  align-items: flex-end;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 10;
+}
+
+.escape-card:hover .escape-hover-overlay {
+  opacity: 1;
+}
+
+.hover-content {
+  transform: translateY(12px);
+  transition: transform 0.35s ease;
+  width: 100%;
+}
+
+.escape-card:hover .hover-content {
+  transform: translateY(0);
+}
+
+.hover-tag {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 8px;
+}
+
+.hover-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.hover-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.escapes-cta-row {
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.explore-more-btn {
+  padding: 16px 36px;
+  font-size: 1.02rem;
+}
+
+@media (max-width: 1024px) {
+  .escapes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .escapes-grid {
+    grid-template-columns: 1fr;
+  }
+  .escape-card {
+    height: 260px;
+  }
+}
