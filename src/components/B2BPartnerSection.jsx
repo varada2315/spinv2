@@ -41,7 +41,12 @@ export default function B2BPartnerSection({ onPartnerClick }) {
         {/* Visa Categories Cards */}
         <div className="b2b-categories-grid">
           {categories.map((cat, idx) => (
-            <div key={idx} className="b2b-cat-card">
+            <div 
+              key={idx} 
+              className="b2b-cat-card" 
+              onClick={() => onPartnerClick && onPartnerClick({ category: 'b2b', title: cat.title })}
+              style={{ cursor: 'pointer' }}
+            >
               <div className="cat-icon-circle">
                 <FileCheck size={24} color="#00BF63" />
               </div>
@@ -79,7 +84,7 @@ export default function B2BPartnerSection({ onPartnerClick }) {
         </div>
 
         <div className="b2b-cta-bar">
-          <button className="btn-primary b2b-btn" onClick={() => onPartnerClick('B2B Visa Partnership')}>
+          <button className="btn-primary b2b-btn" onClick={() => onPartnerClick && onPartnerClick({ category: 'b2b', title: 'B2B Visa Partnership' })}>
             <span>Partner with Spin Global</span>
             <ArrowRight size={18} />
           </button>

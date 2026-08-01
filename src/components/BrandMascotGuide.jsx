@@ -8,10 +8,9 @@ export default function BrandMascotGuide({ onOpenInquiry }) {
   const [dismissedBubble, setDismissedBubble] = useState(false);
 
   const mascotTips = [
-    "Hey, what are you planning for international drive?",
-    "What are you planning for today?",
-    "Looking for a quick getaway?",
-    "Need help with your visa?",
+    "Hey! What are you planning for your next trip?",
+    "Looking for an international getaway?",
+    "Need fast visa approval assistance?",
     "Where are you heading next?"
   ];
 
@@ -82,15 +81,16 @@ export default function BrandMascotGuide({ onOpenInquiry }) {
       {/* Floating Mascot Speech Bubble */}
       {!openCard && !dismissedBubble && (
         <div className="mascot-speech-bubble" onClick={() => setOpenCard(true)}>
-          <span>{mascotTips[currentTipIndex]}</span>
+          <p className="speech-text">{mascotTips[currentTipIndex]}</p>
           <button 
             className="speech-close" 
             onClick={(e) => {
               e.stopPropagation();
               setDismissedBubble(true);
             }}
+            aria-label="Dismiss message"
           >
-            ×
+            <X size={12} />
           </button>
         </div>
       )}

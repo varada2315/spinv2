@@ -1,31 +1,72 @@
 import React from 'react';
 import IndiaHolidays from '../components/IndiaHolidays';
+import { ArrowRight, MapPin } from 'lucide-react';
+import '../components/HeroSection.css';
 
 export default function DomesticPage({ onOpenDestination, onOpenInquiry }) {
   return (
     <div className="page-view domestic-page-view">
-      {/* Local Video Background Hero Banner */}
-      <div className="page-hero-banner">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          poster="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1600&q=80"
-          className="page-hero-video-bg"
-        >
-          <source src="/videos/domestic-hero.mp4" type="video/mp4" />
-        </video>
-        <div className="page-hero-overlay" />
-
-        <div className="container page-hero-content">
-          <span className="section-badge">Explore India</span>
-          <h1 className="page-hero-title">Domestic Holidays – Incredible Bharat (8 Regions)</h1>
-          <p className="page-hero-sub">
-            Click on any region to view famous spots slideshow & send a direct WhatsApp enquiry.
-          </p>
+      {/* Full-Screen Home-Style Hero Section for Domestic Page */}
+      <section className="hero-section domestic-hero-section">
+        {/* Background Video Layer */}
+        <div className="hero-video-container">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            poster="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1600&q=80"
+            className="hero-video-bg"
+          >
+            <source src="/videos/domestic-hero.mp4" type="video/mp4" />
+            <source src={encodeURI("/images/domestic page 2 nd video (1).mp4")} type="video/mp4" />
+          </video>
+          <div className="hero-video-overlay" />
         </div>
-      </div>
+
+        <div className="container hero-content-wrapper">
+          <div className="hero-badge">
+            <MapPin size={14} color="#00BF63" />
+            <span>INCREDIBLE BHARAT (8 REGIONS)</span>
+          </div>
+
+          <h1 className="hero-headline">
+            Domestic Holidays – <span className="text-green-highlight">Incredible Bharat</span>
+          </h1>
+
+          <p className="hero-subtext">
+            Handcrafted domestic itineraries across Kashmir, Kerala, Leh Ladakh, Goa, Andaman, Rajasthan & top Indian destinations.
+          </p>
+
+          <div className="hero-cta-group">
+            <button 
+              className="btn-primary hero-main-btn"
+              onClick={() => onOpenInquiry({ category: 'domestic', title: 'Domestic Holiday Package' })}
+            >
+              <span>Plan My Domestic Trip</span>
+              <ArrowRight size={18} />
+            </button>
+          </div>
+
+          {/* Domestic Trust Indicators Bar */}
+          <div className="hero-trust-indicators">
+            <div className="trust-item">
+              <span className="trust-num">8+ Iconic</span>
+              <span className="trust-label">Indian Regions</span>
+            </div>
+            <div className="trust-divider" />
+            <div className="trust-item">
+              <span className="trust-num">100%</span>
+              <span className="trust-label">Customized Itineraries</span>
+            </div>
+            <div className="trust-divider" />
+            <div className="trust-item">
+              <span className="trust-num">24x7</span>
+              <span className="trust-label">On-Trip Assistance</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <IndiaHolidays showExploreMore={false} onSelectIndiaRegion={(slug) => onOpenDestination(slug)} />
     </div>

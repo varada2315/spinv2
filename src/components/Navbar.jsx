@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import SpinLogo from './SpinLogo';
 import { Phone, MessageCircle, Menu, X } from 'lucide-react';
@@ -6,6 +6,16 @@ import './Navbar.css';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -20,10 +30,10 @@ export default function Navbar() {
   const whatsappLink = "https://wa.me/916284661722?text=Hello%20Spin%20Global!%20Let’s%20start%20planning%20my%20trip.%20I’m%20excited%20to%20explore%20the%20best%20travel%20options.";
 
   return (
-    <header className="site-navbar">
+    <header className={`site-navbar ${scrolled ? 'is-scrolled' : 'is-transparent'}`}>
       <div className="container navbar-container">
         {/* Brand Logo */}
-        <Link to="/" className="nav-brand-link">
+        <Link to="/" className="nav-brand-link" onClick={() => window.scrollTo(0, 0)}>
           <SpinLogo />
         </Link>
 

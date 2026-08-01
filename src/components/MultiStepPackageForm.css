@@ -1,0 +1,360 @@
+.multistep-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(7, 18, 40, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 24px;
+  animation: fadeInBackdrop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.multistep-card {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  max-height: 90vh;
+  max-height: 90dvh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #FFFFFF;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 25px 60px -10px rgba(7, 18, 40, 0.35), 0 0 40px rgba(0, 191, 99, 0.15);
+  padding: 36px 32px;
+  animation: scaleUpCard 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.multistep-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #F1F5F9;
+  border: none;
+  color: #64748B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.multistep-close-btn:hover {
+  background: #E2E8F0;
+  color: #0F172A;
+  transform: rotate(90deg);
+}
+
+.multistep-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 191, 99, 0.1);
+  color: #00BF63;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.multistep-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 6px;
+}
+
+.multistep-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: #64748B;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Step Progress Indicator */
+.step-progress-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.step-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #F1F5F9;
+  color: #94A3B8;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.step-dot.active {
+  background: #00BF63;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(0, 191, 99, 0.35);
+}
+
+.step-line {
+  flex: 1;
+  max-width: 60px;
+  height: 3px;
+  background: #E2E8F0;
+  border-radius: 99px;
+  transition: all 0.3s ease;
+}
+
+.step-line.active {
+  background: #00BF63;
+}
+
+.multistep-form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.multi-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.multi-field label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.multi-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.multi-field-icon {
+  position: absolute;
+  left: 14px;
+  color: #00BF63;
+  pointer-events: none;
+}
+
+.multi-input-wrap input,
+.multi-input-wrap select,
+.multi-input-wrap textarea {
+  width: 100%;
+  padding: 12px 14px 12px 44px;
+  background: #F8FAFC;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.92rem;
+  color: #0F172A;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.multi-input-wrap input:focus,
+.multi-input-wrap select:focus,
+.multi-input-wrap textarea:focus {
+  background: #FFFFFF;
+  border-color: #00BF63;
+  box-shadow: 0 0 0 3px rgba(0, 191, 99, 0.15);
+}
+
+.travelers-counter-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.counter-box {
+  background: #F8FAFC;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.counter-label {
+  font-size: 0.78rem;
+  color: #64748B;
+  font-weight: 600;
+}
+
+.counter-box select {
+  border: none;
+  background: transparent;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0F172A;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Budget & Hotel Chips */
+.budget-options-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.budget-chip {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.budget-chip.selected {
+  background: #00BF63;
+  color: #FFFFFF;
+  border-color: #00BF63;
+  box-shadow: 0 4px 12px rgba(0, 191, 99, 0.3);
+}
+
+.trip-type-selector {
+  display: flex;
+  gap: 10px;
+}
+
+.trip-type-chip {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: #F1F5F9;
+  border: 1.5px solid #E2E8F0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.trip-type-chip:hover {
+  background: #E2E8F0;
+}
+
+.trip-type-chip.selected {
+  background: rgba(0, 191, 99, 0.12);
+  border-color: #00BF63;
+  color: #00BF63;
+  box-shadow: 0 4px 12px rgba(0, 191, 99, 0.15);
+}
+
+.hotel-pref-row {
+  display: flex;
+  gap: 10px;
+}
+
+.hotel-chip {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: #F1F5F9;
+  border: 1.5px solid #E2E8F0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hotel-chip.selected {
+  background: rgba(0, 191, 99, 0.1);
+  border-color: #00BF63;
+  color: #00BF63;
+}
+
+.mt-8 {
+  margin-top: 8px;
+}
+
+.multistep-actions {
+  margin-top: 12px;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.step-btn-next,
+.step-btn-submit {
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.step-btn-back {
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: #F1F5F9;
+  color: #475569;
+  border: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.step-btn-back:hover {
+  background: #E2E8F0;
+  color: #0F172A;
+}
+
+@media (max-width: 640px) {
+  .multistep-card {
+    padding: 28px 20px;
+  }
+  .hotel-pref-row {
+    flex-direction: column;
+  }
+}

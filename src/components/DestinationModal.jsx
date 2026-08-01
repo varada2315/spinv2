@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, ChevronLeft, ChevronRight, MessageCircle, MapPin, Calendar, Users, Send, Sparkles } from 'lucide-react';
+import { X, MessageCircle, ArrowRight } from 'lucide-react';
 import './DestinationModal.css';
 
 export default function DestinationModal({ destination, onClose }) {
@@ -7,6 +7,8 @@ export default function DestinationModal({ destination, onClose }) {
 
   const spots = destination.spots || [];
   const [activeSpotIndex, setActiveSpotIndex] = useState(0);
+
+  const [showEnquiryForm, setShowEnquiryForm] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -19,11 +21,29 @@ export default function DestinationModal({ destination, onClose }) {
   // Close on Escape key
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape') {
+        if (showEnquiryForm) {
+          setShowEnquiryForm(false);
+        } else {
+          onClose();
+        }
+      }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [onClose]);
+  }, [onClose, showEnquiryForm]);
+
+  // Automatic 3-Second Loop Timer across all destinations
+  useEffect(() => {
+    if (showEnquiryForm) return;
+    if (spots.length <= 1) return;
+
+    const timer = setInterval(() => {
+      setActiveSpotIndex((prev) => (prev + 1) % spots.length);
+    }, 3000);
+
+    return () => clearInterval(timer);
+  }, [showEnquiryForm, spots.length]);
 
   const currentSpot = spots[activeSpotIndex] || {
     name: destination.name,
@@ -31,26 +51,18 @@ export default function DestinationModal({ destination, onClose }) {
     desc: destination.tagline
   };
 
-  const handlePrevSpot = () => {
-    setActiveSpotIndex((prev) => (prev - 1 + spots.length) % spots.length);
-  };
-
-  const handleNextSpot = () => {
-    setActiveSpotIndex((prev) => (prev + 1) % spots.length);
-  };
-
   const handleWhatsAppSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
 
-    const messageText = `Hello Spin Global! I would like to enquire about a trip to *${destination.name}*.\n\n` +
-      `📍 *Featured Spot Interested:* ${currentSpot.name}\n` +
+    const messageText = `Hello Spin Global! I am interested in booking / planning a trip to *${destination.name}*.\n\n` +
+      `📍 *Currently Showcasing Spot:* ${currentSpot.name}\n` +
       `👤 *Name:* ${formData.name}\n` +
-      `📞 *Phone:* ${formData.phone}\n` +
+      `📞 *Phone / WhatsApp:* ${formData.phone}\n` +
       `📅 *Travel Date:* ${formData.travelDate || 'Flexible'}\n` +
       `👥 *Guests:* ${formData.guests}\n` +
-      `📝 *Notes:* ${formData.notes || 'None'}\n\n` +
-      `Please contact me with custom package details & itinerary options. Thank you!`;
+      `📝 *Special Requests:* ${formData.notes || 'None'}\n\n` +
+      `Please send me custom package details & exclusive itinerary options for ${destination.name}. Thank you!`;
 
     const encodedMessage = encodeURIComponent(messageText);
     const whatsappUrl = `https://wa.me/916284661722?text=${encodedMessage}`;
@@ -59,87 +71,98 @@ export default function DestinationModal({ destination, onClose }) {
 
     setTimeout(() => {
       setSubmitted(false);
-      onClose();
-    }, 2000);
+      setShowEnquiryForm(false);
+    }, 1800);
   };
 
+  const categoryLabel = destination.category ? destination.category.toUpperCase() : 'TRAVEL';
+
   return (
-    <div className="dest-modal-overlay" onClick={onClose}>
-      <div className="dest-modal-container" onClick={(e) => e.stopPropagation()}>
-        {/* Modal Top Close Button */}
-        <button className="dest-modal-close-btn" onClick={onClose} aria-label="Close Modal">
+    <div className="bali-showcase-overlay" onClick={onClose}>
+      <div 
+        className="bali-showcase-container" 
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Top Right Close Button */}
+        <button className="bali-showcase-close-btn" onClick={onClose} aria-label="Close Showcase">
           <X size={22} />
         </button>
 
-        <div className="dest-modal-grid">
-          {/* LEFT COLUMN: Interactive Tourist Spot Slideshow */}
-          <div className="dest-slideshow-col">
-            <div className="slideshow-image-container">
-              <img 
-                src={currentSpot.image} 
-                alt={currentSpot.name} 
-                className="slideshow-spot-img fade-in-key" 
-              />
-              
-              <div className="slideshow-overlay-gradient" />
+        {/* Full Screen Image & Content Layer */}
+        <div className="bali-image-wrapper">
+          <img 
+            key={activeSpotIndex}
+            src={currentSpot.image} 
+            alt={currentSpot.name} 
+            className="bali-slide-img" 
+          />
+          
+          {/* Dark Overlay Filter */}
+          <div className="bali-overlay-gradient" />
 
-              {/* Navigation Arrow Controls */}
-              {spots.length > 1 && (
-                <>
-                  <button className="slideshow-arrow left-arrow" onClick={handlePrevSpot} aria-label="Previous Spot">
-                    <ChevronLeft size={24} />
-                  </button>
-                  <button className="slideshow-arrow right-arrow" onClick={handleNextSpot} aria-label="Next Spot">
-                    <ChevronRight size={24} />
-                  </button>
-                </>
-              )}
-
-              {/* Spot Counter Tag */}
-              <div className="slideshow-counter">
-                <span>Spot {activeSpotIndex + 1} of {spots.length}</span>
-              </div>
-            </div>
-
-            {/* Current Spot Information & Mascot Guide Header */}
-            <div className="spot-info-box">
-              <div className="mascot-modal-header">
-                <img src="/images/spin-mascot.png" alt="Spin Mascot Guide" className="modal-mascot-guide-img" />
-                <div>
-                  <span className="dest-badge">{destination.category} • {destination.name}</span>
-                  <p className="mascot-modal-sub">Spin's Tourist Spot Guide</p>
-                </div>
-              </div>
-
-              <h3 className="spot-slide-title">{currentSpot.name}</h3>
-              <p className="spot-slide-desc">{currentSpot.desc}</p>
-
-              {/* Thumbnail Dot Indicators */}
-              {spots.length > 1 && (
-                <div className="slideshow-dots-row">
-                  {spots.map((spot, idx) => (
-                    <button
-                      key={idx}
-                      className={`slide-dot ${idx === activeSpotIndex ? 'active' : ''}`}
-                      onClick={() => setActiveSpotIndex(idx)}
-                      title={spot.name}
-                    />
-                  ))}
-                </div>
-              )}
-            </div>
+          {/* Left Content Header Box */}
+          <div className="bali-content-box">
+            <span className="bali-dest-badge">
+              {categoryLabel} • {destination.name.toUpperCase()}
+            </span>
+            <h2 className="bali-dest-title">{currentSpot.name}</h2>
+            <p className="bali-dest-desc">{currentSpot.desc}</p>
           </div>
 
-          {/* RIGHT COLUMN: Direct WhatsApp Enquiry Form */}
-          <div className="dest-form-col">
-            <div className="dest-form-header">
+          {/* Floating Primary CTA Button (Bottom Right) */}
+          <button 
+            className="bali-plan-trip-cta"
+            onClick={() => setShowEnquiryForm(true)}
+          >
+            <span>Plan My Trip</span>
+            <ArrowRight size={18} />
+          </button>
+
+          {/* Bottom Progress Indicators Row (Clickable to jump directly to any spot) */}
+          {spots.length > 1 && (
+            <div className="bali-progress-row">
+              {spots.map((spot, idx) => (
+                <div 
+                  key={idx} 
+                  className="bali-progress-track"
+                  onClick={() => setActiveSpotIndex(idx)}
+                  title={`Jump to ${spot.name}`}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <div 
+                    className={`bali-progress-bar ${idx === activeSpotIndex ? 'active' : idx < activeSpotIndex ? 'filled' : ''}`}
+                    style={{
+                      animationDuration: idx === activeSpotIndex && !showEnquiryForm ? '3000ms' : '0s'
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* STEP 3: Centered Enquiry Form Modal (Only opens when Plan My Trip is clicked) */}
+      {showEnquiryForm && (
+        <div className="bali-form-modal-overlay" onClick={() => setShowEnquiryForm(false)}>
+          <div className="bali-form-modal-container" onClick={(e) => e.stopPropagation()}>
+            <button 
+              className="bali-form-close-btn" 
+              onClick={() => setShowEnquiryForm(false)} 
+              aria-label="Close Form"
+            >
+              <X size={20} />
+            </button>
+
+            <div className="bali-form-header">
               <div className="wa-icon-bubble">
                 <MessageCircle size={24} color="#FFFFFF" />
               </div>
               <div>
                 <h3 className="form-modal-title">Enquire About {destination.name}</h3>
                 <p className="form-modal-sub">
-                  Fill in your details below for a customized itinerary sent straight to your WhatsApp.
+                  Fill in your details below for a customized itinerary sent directly to your WhatsApp.
                 </p>
               </div>
             </div>
@@ -185,8 +208,8 @@ export default function DestinationModal({ destination, onClose }) {
                   >
                     <option value="1 Solo Traveler">1 Solo Traveler</option>
                     <option value="2 Guests (Couple)">2 Guests (Couple)</option>
-                    <option value="3-4 Family Guests">3-4 Family</option>
-                    <option value="5+ Group / Corporate">5+ Group</option>
+                    <option value="3-4 Family Guests">3-4 Family Guests</option>
+                    <option value="5+ Group / Corporate">5+ Group / Corporate</option>
                   </select>
                 </div>
               </div>
@@ -195,7 +218,7 @@ export default function DestinationModal({ destination, onClose }) {
                 <label>Special Requests / Notes</label>
                 <textarea
                   rows="2"
-                  placeholder={`Mention specific hotels or questions about ${currentSpot.name}...`}
+                  placeholder={`Mention specific preferences or questions about ${currentSpot.name}...`}
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                 ></textarea>
@@ -208,7 +231,7 @@ export default function DestinationModal({ destination, onClose }) {
             </form>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

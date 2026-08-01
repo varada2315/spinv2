@@ -13,7 +13,9 @@
   --color-bg-alt: #F8FAFC;
   --color-border: #E2E8F0;
 
-  --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+  --font-main: 'Montserrat', sans-serif;
 
   --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.08);
@@ -35,15 +37,49 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  font-family: var(--font-main);
+  font-family: var(--font-body);
   background-color: var(--color-bg-light);
   color: var(--color-text-dark);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+h1 {
+  font-weight: 800;
+}
+
+h2, h3 {
+  font-weight: 700;
+}
+
+h4, h5, h6 {
+  font-weight: 600;
+}
+
+p, span, li, a {
+  font-family: var(--font-body);
+}
+
+label {
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+button, input, select, textarea {
+  font-family: var(--font-body);
 }
 
 a {
@@ -82,36 +118,38 @@ button {
 
 .section-badge {
   display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-primary);
   background: var(--color-primary-light);
   padding: 6px 16px;
   border-radius: var(--radius-pill);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .section-heading-center {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 52px;
 }
 
 .main-section-title {
-  font-size: 2.75rem;
-  font-weight: 800;
+  font-size: clamp(2.2rem, 3.5vw, 2.75rem);
+  font-weight: 700;
   color: var(--color-text-dark);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  margin-bottom: 12px;
+  line-height: 1.3;
+  letter-spacing: normal;
+  margin-bottom: 14px;
 }
 
 .section-subtitle {
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   color: #475569;
-  font-weight: 500;
-  max-width: 720px;
+  font-weight: 400;
+  line-height: 1.65;
+  max-width: 760px;
   margin: 0 auto;
 }
 
@@ -207,4 +245,79 @@ button {
   .section-subtitle {
     font-size: 1rem;
   }
+}
+
+/* ==========================================================================
+   Professional Custom Scrollbars (Firefox & WebKit)
+   ========================================================================== */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #CBD5E1 transparent;
+}
+
+/* WebKit (Chrome, Edge, Safari, Brave) Global Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 999px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00BF63;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Modal Card Ultra-Sleek Inset Scrollbars */
+.multistep-card::-webkit-scrollbar,
+.b2b-modal-card::-webkit-scrollbar,
+.auto-modal-card::-webkit-scrollbar,
+.destination-modal-card::-webkit-scrollbar,
+.search-results-modal::-webkit-scrollbar,
+.hero-search-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.multistep-card::-webkit-scrollbar-track,
+.b2b-modal-card::-webkit-scrollbar-track,
+.auto-modal-card::-webkit-scrollbar-track,
+.destination-modal-card::-webkit-scrollbar-track,
+.search-results-modal::-webkit-scrollbar-track,
+.hero-search-dropdown::-webkit-scrollbar-track {
+  background: rgba(241, 245, 249, 0.6);
+  border-radius: 999px;
+  margin: 16px 4px;
+}
+
+.multistep-card::-webkit-scrollbar-thumb,
+.b2b-modal-card::-webkit-scrollbar-thumb,
+.auto-modal-card::-webkit-scrollbar-thumb,
+.destination-modal-card::-webkit-scrollbar-thumb,
+.search-results-modal::-webkit-scrollbar-thumb,
+.hero-search-dropdown::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.multistep-card::-webkit-scrollbar-thumb:hover,
+.b2b-modal-card::-webkit-scrollbar-thumb:hover,
+.auto-modal-card::-webkit-scrollbar-thumb:hover,
+.destination-modal-card::-webkit-scrollbar-thumb:hover,
+.search-results-modal::-webkit-scrollbar-thumb:hover,
+.hero-search-dropdown::-webkit-scrollbar-thumb:hover {
+  background: #00BF63;
 }

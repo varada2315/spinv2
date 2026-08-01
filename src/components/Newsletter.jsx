@@ -58,10 +58,9 @@ export default function Newsletter({ onSubscribeToast }) {
 
             {/* Social Links */}
             <div className="newsletter-socials">
-              <a href="#" className="social-icon" aria-label="Facebook"><Facebook size={18} /></a>
-              <a href="#" className="social-icon" aria-label="Instagram"><Instagram size={18} /></a>
-              <a href="#" className="social-icon" aria-label="Twitter"><Twitter size={18} /></a>
-              <a href="#" className="social-icon" aria-label="YouTube"><Youtube size={18} /></a>
+              <a href="https://www.facebook.com/share/1DQqQMsfwJ/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook"><Facebook size={18} /></a>
+              <a href="https://www.instagram.com/spinglobal_?igsh=MTFqczFqNDFnODRldA==" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram"><Instagram size={18} /></a>
+              <a href="https://youtube.com/@spinglobal-ind?si=FalPEFhXIH3-RzqJ" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="YouTube"><Youtube size={18} /></a>
             </div>
           </div>
         </div>

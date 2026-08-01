@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { ArrowRight, Plane, Globe, Shield } from 'lucide-react';
+import HeroSearchBar from './HeroSearchBar';
 import './HeroSection.css';
 
-export default function HeroSection() {
+export default function HeroSection({ onOpenInquiry }) {
   const whatsappLink = "https://wa.me/916284661722?text=Hello%20Spin%20Global!%20Let’s%20start%20planning%20my%20trip.%20I’m%20excited%20to%20explore%20the%20best%20travel%20options.";
 
   return (
@@ -29,28 +30,34 @@ export default function HeroSection() {
         </div>
 
         <h1 className="hero-headline">
-          Spin the globe, <span className="text-green-highlight">explore the world</span>
+          Spin the <span className="text-green-highlight">globe</span>,<br />explore the world
         </h1>
 
         <p className="hero-subtext">
-          See Places In New ways — Personalised holiday itineraries, expert visa assistance, and end-to-end travel management.
+          See Places In New Ways
         </p>
 
+        {/* Premium Intelligent Global Search Bar */}
+        <HeroSearchBar onOpenInquiry={onOpenInquiry} />
+
         <div className="hero-cta-group">
-          <a 
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button 
+            type="button"
             className="btn-primary hero-main-btn"
+            onClick={() => onOpenInquiry && onOpenInquiry({ category: 'package', title: 'Plan My Trip' })}
           >
             <span>Plan My Trip</span>
             <ArrowRight size={18} />
-          </a>
+          </button>
 
-          <a href="#visas" className="btn-cream hero-secondary-btn">
+          <button 
+            type="button"
+            className="btn-cream hero-secondary-btn"
+            onClick={() => onOpenInquiry && onOpenInquiry({ category: 'visa', title: 'Visa Assistance' })}
+          >
             <Shield size={18} color="#071228" />
             <span>Visa Assistance</span>
-          </a>
+          </button>
         </div>
 
         {/* Floating Trust Indicators */}
@@ -66,8 +73,13 @@ export default function HeroSection() {
           </div>
           <div className="trust-divider" />
           <div className="trust-item">
-            <span className="trust-num">24x7</span>
+            <span className="trust-num">24×7</span>
             <span className="trust-label">Travel Guidance</span>
+          </div>
+          <div className="trust-divider" />
+          <div className="trust-item">
+            <span className="trust-num">1</span>
+            <span className="trust-label">Dedicated Point of Contact</span>
           </div>
         </div>
       </div>

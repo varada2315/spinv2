@@ -52,25 +52,33 @@
   bottom: 84px;
   left: 0;
   background: #FFFFFF;
-  color: var(--color-dark);
-  font-size: 0.82rem;
-  font-weight: 500;
-  line-height: 1.4;
-  padding: 10px 14px;
-  border-radius: var(--radius-md);
-  box-shadow: 0 8px 24px rgba(7, 18, 40, 0.12);
-  border: 1px solid var(--color-border);
-  width: auto;
-  max-width: 220px;
+  color: #0F172A;
+  padding: 10px 32px 10px 14px;
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(7, 18, 40, 0.16);
+  border: 1px solid #E2E8F0;
+  width: max-content;
+  max-width: 250px;
   cursor: pointer;
-  animation: bubblePop 0.3s ease-out;
+  z-index: 10;
+  animation: bubblePop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.speech-text {
+  margin: 0;
+  color: #0F172A;
+  font-size: 0.84rem;
+  font-weight: 600;
+  line-height: 1.35;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .mascot-speech-bubble::after {
   content: '';
   position: absolute;
   bottom: -7px;
-  left: 24px;
+  left: 28px;
   border-width: 7px 7px 0 7px;
   border-style: solid;
   border-color: #FFFFFF transparent transparent transparent;
@@ -78,13 +86,25 @@
 
 .speech-close {
   position: absolute;
-  top: 2px;
-  right: 6px;
-  background: transparent;
+  top: 8px;
+  right: 8px;
+  background: #F1F5F9;
   border: none;
-  font-size: 1rem;
-  color: #94A3B8;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748B;
   cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.speech-close:hover {
+  background: #E2E8F0;
+  color: #0F172A;
 }
 
 /* Popover Card */

@@ -72,12 +72,15 @@
 }
 
 .dest-hero-title {
-  font-size: 3.5rem;
-  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-style: normal;
   color: #FFFFFF;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin-bottom: 10px;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+  text-shadow: 4px 4px 0 rgba(107, 114, 128, 0.35);
+  font-size: clamp(58px, 5.2vw, 86px);
+  margin-bottom: 20px;
 }
 
 .dest-hero-tagline {
@@ -328,7 +331,13 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 992px) {
+  .dest-hero-title {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
   .spots-grid {
     grid-template-columns: 1fr;
   }
@@ -339,6 +348,7 @@
     padding: 24px;
   }
   .dest-hero-title {
-    font-size: 2.4rem;
+    font-size: 36px;
+    text-shadow: 3px 3px 0 rgba(107, 114, 128, 0.35);
   }
 }

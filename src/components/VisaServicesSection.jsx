@@ -41,8 +41,8 @@ export default function VisaServicesSection({ onVisaClick }) {
           {visaCountries.map((item, idx) => (
             <div 
               key={idx} 
-              className="visa-stamp-card hover-lift" 
-              onClick={() => onVisaClick(item)}
+              className="visa-stamp-card hover-lift"
+              onClick={() => onVisaClick && onVisaClick({ category: 'visa', country: item.country, type: item.type, title: item.country })}
             >
               {/* Authentic Passport Visa Stamp Icon */}
               <div className="passport-visa-stamp">

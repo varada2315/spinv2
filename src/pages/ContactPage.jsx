@@ -1,5 +1,6 @@
 import React from 'react';
-import ContactFooter from '../components/ContactFooter';
+import ContactSection from '../components/ContactSection';
+import './Pages.css';
 
 export default function ContactPage({ onToast }) {
   return (
@@ -27,7 +28,8 @@ export default function ContactPage({ onToast }) {
         </div>
       </div>
 
-      <ContactFooter onToast={onToast} />
+      {/* Primary Contact Cards & WhatsApp Message Form */}
+      <ContactSection onToast={onToast} />
     </div>
   );
 }

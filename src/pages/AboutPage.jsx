@@ -40,19 +40,19 @@ export default function AboutPage() {
 
         <div className="values-grid">
           <div className="value-card">
-            <div className="val-icon-box"><Heart size={24} color="#00BF63" /></div>
+            <div className="val-icon-box"><Heart size={26} /></div>
             <h3>Customer First Approach</h3>
             <p>Every itinerary and visa application is treated with the care and attention it deserves.</p>
           </div>
 
           <div className="value-card">
-            <div className="val-icon-box"><Award size={24} color="#00BF63" /></div>
+            <div className="val-icon-box"><Award size={26} /></div>
             <h3>Expert Guidance</h3>
             <p>Decades of collective travel experience ensuring your paperwork and bookings are flawless.</p>
           </div>
 
           <div className="value-card">
-            <div className="val-icon-box"><Users size={24} color="#00BF63" /></div>
+            <div className="val-icon-box"><Users size={26} /></div>
             <h3>End-To-End Support</h3>
             <p>From your initial phone inquiry to your safe arrival back home, we are by your side.</p>
           </div>

@@ -59,7 +59,7 @@ export default function App() {
         {/* Multi-Page Route Configurations */}
         <main style={{ flex: 1 }}>
           <Routes>
-            <Route path="/" element={<HomePage onOpenDestination={handleOpenDestinationModal} onOpenInquiry={handleOpenInquiry} />} />
+            <Route path="/" element={<HomePage onOpenDestination={handleOpenDestinationModal} onOpenInquiry={handleOpenInquiry} onToast={showToast} />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/international" element={<InternationalPage onOpenDestination={handleOpenDestinationModal} onOpenInquiry={handleOpenInquiry} />} />
             <Route path="/domestic" element={<DomesticPage onOpenDestination={handleOpenDestinationModal} onOpenInquiry={handleOpenInquiry} />} />

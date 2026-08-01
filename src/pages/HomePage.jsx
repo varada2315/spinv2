@@ -3,16 +3,23 @@ import HeroSection from '../components/HeroSection';
 import BannerIntro from '../components/BannerIntro';
 import PopularEscapes from '../components/PopularEscapes';
 import IndiaHolidays from '../components/IndiaHolidays';
+import WhosComing from '../components/WhosComing';
 import WhyChooseSpinGlobal from '../components/WhyChooseSpinGlobal';
+import CustomerReviews from '../components/CustomerReviews';
+import SocialConnect from '../components/SocialConnect';
+import AutoEnquiryModal from '../components/AutoEnquiryModal';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Globe, ShieldCheck, MapPin } from 'lucide-react';
 import './Pages.css';
 
-export default function HomePage({ onOpenDestination, onOpenInquiry }) {
+export default function HomePage({ onOpenDestination, onOpenInquiry, onToast }) {
   return (
     <div className="page-view home-page-view">
+      {/* Automatic Premium Concierge Enquiry Modal (Appears 35s or 45% scroll) */}
+      <AutoEnquiryModal onSubmitted={onToast} />
+
       {/* Hero Banner & Taglines */}
-      <HeroSection />
+      <HeroSection onOpenInquiry={onOpenInquiry} />
       <BannerIntro />
 
       {/* Featured 4 International Destinations + Explore More button */}
@@ -20,6 +27,9 @@ export default function HomePage({ onOpenDestination, onOpenInquiry }) {
 
       {/* Featured 4 Domestic Destinations + Explore More button */}
       <IndiaHolidays limit={4} showExploreMore={true} onSelectIndiaRegion={(slug) => onOpenDestination(slug)} />
+
+      {/* Who's Coming Along — Traveller Type Selector */}
+      <WhosComing onOpenInquiry={onOpenInquiry} />
 
       {/* Featured Travel Services Quick Overview */}
       <section className="home-services-summary container">
@@ -61,6 +71,12 @@ export default function HomePage({ onOpenDestination, onOpenInquiry }) {
 
       {/* Why Choose Us & Customer Care */}
       <WhyChooseSpinGlobal />
+
+      {/* Google 4.9/5 Verified Customer Reviews Auto Slider */}
+      <CustomerReviews />
+
+      {/* Find Us On Social Media Section */}
+      <SocialConnect />
     </div>
   );
 }
