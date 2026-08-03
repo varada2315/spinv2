@@ -34,7 +34,7 @@ export default function InternationalPage({ onOpenDestination, onOpenInquiry }) 
           </h1>
 
           <p className="hero-subtext">
-            Handcrafted international travel packages across Bali, Europe, Dubai, Thailand, Singapore, Japan, Vietnam & top global destinations.
+            Click on any destination to view famous spots slideshow & enquiry form directly in a pop-up.
           </p>
 
           <div className="hero-cta-group">

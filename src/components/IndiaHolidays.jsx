@@ -23,10 +23,10 @@ export default function IndiaHolidays({ onSelectIndiaRegion, limit, showExploreM
         <div className="section-heading-center">
           <span className="section-badge">Domestic Tourism</span>
           <h2 className="main-section-title">
-            Domestic – Explore Bharat
+            Incredible Bharat
           </h2>
           <p className="section-subtitle">
-            Beyond every mountain, every coastline, and every culture lies a side of Bharat you've yet to discover.
+            Handcrafted domestic itineraries across Kashmir, Kerala, Leh Ladakh, Goa, Andaman, Rajasthan & top Indian destinations.
           </p>
         </div>
 

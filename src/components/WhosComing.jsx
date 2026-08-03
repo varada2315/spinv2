@@ -31,6 +31,13 @@ const TRAVEL_TYPES = [
     alt: 'Solo female traveller',
     description: 'Solo explorer journeys',
   },
+  {
+    id: 'senior',
+    label: 'Senior Citizen',
+    image: '/images/travel-senior-cutout.png',
+    alt: 'Senior citizen couple travelling',
+    description: 'Relaxing senior getaways',
+  },
 ];
 
 export default function WhosComing({ onOpenInquiry }) {
@@ -39,11 +46,12 @@ export default function WhosComing({ onOpenInquiry }) {
 
   // Determine visible count based on window width
   const getVisibleCount = () => {
-    if (typeof window === 'undefined') return 4;
+    if (typeof window === 'undefined') return 5;
     if (window.innerWidth <= 480) return 1;
     if (window.innerWidth <= 768) return 2;
     if (window.innerWidth <= 1024) return 3;
-    return 4;
+    if (window.innerWidth <= 1280) return 4;
+    return 5;
   };
 
   const [visibleCount, setVisibleCount] = useState(getVisibleCount);

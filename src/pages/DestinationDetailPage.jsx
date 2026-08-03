@@ -16,10 +16,12 @@ export default function DestinationDetailPage() {
     name: '',
     phone: '',
     travelDate: '',
-    guests: '2 Guests (Couple)',
     selectedSpot: 'All Famous Spots',
     notes: ''
   });
+  const [adults, setAdults] = useState('1');
+  const [children, setChildren] = useState('0');
+  const [infants, setInfants] = useState('0');
 
   const [submitted, setSubmitted] = useState(false);
 
@@ -27,11 +29,13 @@ export default function DestinationDetailPage() {
     e.preventDefault();
     setSubmitted(true);
 
+    const totalTravelers = (parseInt(adults) || 1) + (parseInt(children) || 0) + (parseInt(infants) || 0);
+
     const messageText = `Hello Spin Global! I would like to enquire about a trip to *${destination.name}*.\n\n` +
       `👤 *Name:* ${formData.name}\n` +
       `📞 *Phone:* ${formData.phone}\n` +
       `📅 *Travel Date:* ${formData.travelDate || 'Flexible'}\n` +
-      `👥 *Guests:* ${formData.guests}\n` +
+      `👥 *Travelers:* ${adults} Adult(s), ${children} Child(ren), ${infants} Infant(s) (Total: ${totalTravelers})\n` +
       `📍 *Interested Spots:* ${formData.selectedSpot}\n` +
       `📝 *Special Requests:* ${formData.notes || 'None'}\n\n` +
       `Please contact me with package details & prices. Thank you!`;
@@ -151,18 +155,63 @@ export default function DestinationDetailPage() {
                   />
                 </div>
 
-                <div className="form-group">
-                  <label>Number of Guests</label>
-                  <select
-                    value={formData.guests}
-                    onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
-                  >
-                    <option value="1 Solo Traveler">1 Solo Traveler</option>
-                    <option value="2 Guests (Couple)">2 Guests (Couple)</option>
-                    <option value="3-4 Family Guests">3-4 Family Guests</option>
-                    <option value="5+ Group / Corporate">5+ Group / Corporate</option>
-                  </select>
+              <div className="travelers-selector-group">
+                <div className="travelers-3col-grid">
+                  <div className="traveler-col-item">
+                    <span className="traveler-col-label">ADULTS</span>
+                    <select
+                      value={adults}
+                      onChange={(e) => setAdults(e.target.value)}
+                    >
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10+">10+</option>
+                    </select>
+                  </div>
+
+                  <div className="traveler-col-item">
+                    <span className="traveler-col-label">CHILDREN</span>
+                    <select
+                      value={children}
+                      onChange={(e) => setChildren(e.target.value)}
+                    >
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5+">5+</option>
+                    </select>
+                  </div>
+
+                  <div className="traveler-col-item">
+                    <span className="traveler-col-label">INFANTS</span>
+                    <select
+                      value={infants}
+                      onChange={(e) => setInfants(e.target.value)}
+                    >
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3+">3+</option>
+                    </select>
+                  </div>
                 </div>
+
+                <div className="total-travelers-bar">
+                  <span>Total Travelers:</span>
+                  <span className="total-travelers-num-badge">
+                    {(parseInt(adults) || 1) + (parseInt(children) || 0) + (parseInt(infants) || 0)}
+                  </span>
+                </div>
+              </div>
 
                 <div className="form-group">
                   <label>Interested Tourist Spot</label>

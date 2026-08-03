@@ -88,9 +88,9 @@ export default function ContactFooter({ onToast }) {
             <h4 className="footer-col-title">Services</h4>
             <ul className="footer-list">
               <li><Link to="/international">International Holidays</Link></li>
-              <li><Link to="/domestic">Incredible Bharat (Domestic)</Link></li>
+              <li><Link to="/domestic">Domestic Holidays</Link></li>
               <li><Link to="/visas">Tourist & Business Visas</Link></li>
-              <li><Link to="/b2b">B2B Travel Agency Portal</Link></li>
+              <li><Link to="/b2b">B2B Visa Services</Link></li>
               <li><Link to="/contact">Corporate MICE & Events</Link></li>
             </ul>
           </div>

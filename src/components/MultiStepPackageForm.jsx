@@ -4,13 +4,15 @@ import { submitLeadToCRM } from '../services/leadService';
 import SuccessScreenModal from './SuccessScreenModal';
 import './MultiStepPackageForm.css';
 
-export default function MultiStepPackageForm({ initialDestination = '', onClose, onSubmitted }) {
+export default function MultiStepPackageForm({ initialDestination = '', initialCategory = '', onClose, onSubmitted }) {
   const [step, setStep] = useState(1);
   const [showSuccess, setShowSuccess] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
   // Step 1 State
-  const [tripType, setTripType] = useState('International');
+  const [tripType, setTripType] = useState(
+    initialCategory === 'domestic' ? 'Domestic (Incredible Bharat)' : 'International'
+  );
   const [destination, setDestination] = useState(initialDestination || '');
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');

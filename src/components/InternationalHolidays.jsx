@@ -33,9 +33,9 @@ export default function InternationalHolidays({ onSelectDestination }) {
       <div className="container">
         <div className="section-heading-center">
           <span className="section-badge">Custom Tour Packages</span>
-          <h2 className="main-section-title">International – Find Your Perfect Escape</h2>
+          <h2 className="main-section-title">Find Your Perfect Escape</h2>
           <p className="section-subtitle">
-            Click on any destination to view famous spots slideshow & enquiry form directly in a pop-up.
+            From city lights to tropical islands, discover a journey worth crossing borders for.
           </p>
         </div>
 

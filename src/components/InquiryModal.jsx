@@ -36,9 +36,14 @@ export default function InquiryModal({ selectedItem, onClose, onSubmitted }) {
     );
   }
 
+  const destName = typeof selectedItem === 'object' 
+    ? (selectedItem.destination || selectedItem.title || selectedItem.name || selectedItem.country || '')
+    : (typeof selectedItem === 'string' ? selectedItem : '');
+
   return (
     <MultiStepPackageForm 
-      initialDestination={typeof selectedItem === 'object' && selectedItem.destination ? selectedItem.destination : ''} 
+      initialCategory={category}
+      initialDestination={destName} 
       onClose={onClose} 
       onSubmitted={onSubmitted} 
     />

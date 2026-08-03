@@ -87,7 +87,7 @@
 
 /* ── Card ── */
 .whos-coming-card {
-  flex: 0 0 25%;
+  flex: 0 0 20%;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -34,7 +34,7 @@ export default function HeroSection({ onOpenInquiry }) {
         </h1>
 
         <p className="hero-subtext">
-          See Places In New Ways
+          See Places In Newways
         </p>
 
         {/* Premium Intelligent Global Search Bar */}

@@ -27,15 +27,15 @@ export default function DomesticPage({ onOpenDestination, onOpenInquiry }) {
         <div className="container hero-content-wrapper">
           <div className="hero-badge">
             <MapPin size={14} color="#00BF63" />
-            <span>INCREDIBLE BHARAT (8 REGIONS)</span>
+            <span>INCREDIBLE BHARAT</span>
           </div>
 
           <h1 className="hero-headline">
-            Domestic Holidays – <span className="text-green-highlight">Incredible Bharat</span>
+            Domestic <span className="text-green-highlight">Holidays</span>
           </h1>
 
           <p className="hero-subtext">
-            Handcrafted domestic itineraries across Kashmir, Kerala, Leh Ladakh, Goa, Andaman, Rajasthan & top Indian destinations.
+            Beyond every mountain, every coastline, and every culture lies a side of Bharat you've yet to discover.
           </p>
 
           <div className="hero-cta-group">

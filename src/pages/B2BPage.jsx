@@ -28,7 +28,7 @@ export default function B2BPage({ onOpenInquiry }) {
         <div className="container hero-content-wrapper">
           <div className="hero-badge">
             <Briefcase size={14} color="#00BF63" />
-            <span>TRAVEL AGENCY PORTAL</span>
+            <span>Visa Assistance</span>
           </div>
 
           <h1 className="hero-headline">
