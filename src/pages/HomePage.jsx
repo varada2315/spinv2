@@ -3,6 +3,7 @@ import HeroSection from '../components/HeroSection';
 import BannerIntro from '../components/BannerIntro';
 import PopularEscapes from '../components/PopularEscapes';
 import IndiaHolidays from '../components/IndiaHolidays';
+import TrendingPlaces from '../components/TrendingPlaces';
 import WhosComing from '../components/WhosComing';
 import WhyChooseSpinGlobal from '../components/WhyChooseSpinGlobal';
 import CustomerReviews from '../components/CustomerReviews';
@@ -19,7 +20,7 @@ export default function HomePage({ onOpenDestination, onOpenInquiry, onToast }) 
       <AutoEnquiryModal onSubmitted={onToast} />
 
       {/* Hero Banner & Taglines */}
-      <HeroSection onOpenInquiry={onOpenInquiry} />
+      <HeroSection onOpenInquiry={onOpenInquiry} onOpenDestination={onOpenDestination} />
       <BannerIntro />
 
       {/* Featured 4 International Destinations + Explore More button */}
@@ -27,6 +28,9 @@ export default function HomePage({ onOpenDestination, onOpenInquiry, onToast }) 
 
       {/* Featured 4 Domestic Destinations + Explore More button */}
       <IndiaHolidays limit={4} showExploreMore={true} onSelectIndiaRegion={(slug) => onOpenDestination(slug)} />
+
+      {/* Premium Infinite Marquee Showcase: Trending Places */}
+      <TrendingPlaces onSelectDestination={(slug) => onOpenDestination(slug)} />
 
       {/* Who's Coming Along — Traveller Type Selector */}
       <WhosComing onOpenInquiry={onOpenInquiry} />

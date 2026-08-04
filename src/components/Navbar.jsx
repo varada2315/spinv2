@@ -4,7 +4,7 @@ import SpinLogo from './SpinLogo';
 import { Phone, MessageCircle, Menu, X } from 'lucide-react';
 import './Navbar.css';
 
-export default function Navbar() {
+export default function Navbar({ onOpenInquiry }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -26,8 +26,6 @@ export default function Navbar() {
     { name: 'B2B', path: '/b2b' },
     { name: 'Contact us', path: '/contact' },
   ];
-
-  const whatsappLink = "https://wa.me/916284661722?text=Hello%20Spin%20Global!%20Let’s%20start%20planning%20my%20trip.%20I’m%20excited%20to%20explore%20the%20best%20travel%20options.";
 
   return (
     <header className={`site-navbar ${scrolled ? 'is-scrolled' : 'is-transparent'}`}>
@@ -57,16 +55,15 @@ export default function Navbar() {
 
         {/* Right CTA Actions */}
         <div className="navbar-actions">
-          <a 
-            href={whatsappLink} 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <button 
+            type="button"
             className="whatsapp-nav-btn"
-            title="Chat with Spin Global on WhatsApp"
+            onClick={() => onOpenInquiry && onOpenInquiry({ category: 'package' })}
+            title="Start planning your dream trip"
           >
             <MessageCircle size={18} />
-            <span>Plan My Trip</span>
-          </a>
+            <span>Start Planning</span>
+          </button>
 
           <button 
             className="mobile-toggle-btn"
@@ -93,18 +90,16 @@ export default function Navbar() {
               </NavLink>
             ))}
             <div className="mobile-contact-box">
-              <div className="phone-item">
-                <Phone size={16} color="#00BF63" />
-                <span>+91 62846-61722</span>
-              </div>
-              <a 
-                href={whatsappLink} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <button 
+                type="button"
                 className="mobile-wa-btn"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenInquiry && onOpenInquiry({ category: 'package' });
+                }}
               >
-                <MessageCircle size={18} /> Plan My Trip via WhatsApp
-              </a>
+                <MessageCircle size={18} /> Start Planning
+              </button>
             </div>
           </nav>
         </div>

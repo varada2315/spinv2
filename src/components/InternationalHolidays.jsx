@@ -35,15 +35,15 @@ export default function InternationalHolidays({ onSelectDestination }) {
           <span className="section-badge">Custom Tour Packages</span>
           <h2 className="main-section-title">Find Your Perfect Escape</h2>
           <p className="section-subtitle">
-            From city lights to tropical islands, discover a journey worth crossing borders for.
+            Handcrafted international travel packages across Bali, Europe, Dubai, Thailand, Singapore, Japan, Vietnam & top global destinations.
           </p>
         </div>
 
         <div className="holidays-grid">
           {holidays.map((item, idx) => (
-            <div 
-              key={idx} 
-              className="holiday-card hover-lift" 
+            <div
+              key={idx}
+              className="holiday-card hover-lift"
               onClick={() => onSelectDestination && onSelectDestination(item.slug)}
             >
               <img src={item.image} alt={item.title} className="holiday-img" />

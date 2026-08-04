@@ -54,18 +54,18 @@ export default function App() {
       <ScrollToTop />
       <div className="app-wrapper">
         {/* Top Header Navigation Bar */}
-        <Navbar />
+        <Navbar onOpenInquiry={handleOpenInquiry} />
 
         {/* Multi-Page Route Configurations */}
         <main style={{ flex: 1 }}>
           <Routes>
             <Route path="/" element={<HomePage onOpenDestination={handleOpenDestinationModal} onOpenInquiry={handleOpenInquiry} onToast={showToast} />} />
-            <Route path="/about" element={<AboutPage />} />
+            <Route path="/about" element={<AboutPage onOpenInquiry={handleOpenInquiry} />} />
             <Route path="/international" element={<InternationalPage onOpenDestination={handleOpenDestinationModal} onOpenInquiry={handleOpenInquiry} />} />
             <Route path="/domestic" element={<DomesticPage onOpenDestination={handleOpenDestinationModal} onOpenInquiry={handleOpenInquiry} />} />
             <Route path="/visas" element={<VisasPage onOpenInquiry={handleOpenInquiry} />} />
             <Route path="/b2b" element={<B2BPage onOpenInquiry={handleOpenInquiry} />} />
-            <Route path="/contact" element={<ContactPage onToast={showToast} />} />
+            <Route path="/contact" element={<ContactPage onOpenInquiry={handleOpenInquiry} onToast={showToast} />} />
           </Routes>
         </main>
 

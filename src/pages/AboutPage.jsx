@@ -1,33 +1,74 @@
 import React from 'react';
 import AboutSection from '../components/AboutSection';
-import { Heart, Award, Users } from 'lucide-react';
+import { Heart, Award, Users, Info, ArrowRight } from 'lucide-react';
+import '../components/HeroSection.css';
 import './Pages.css';
 
-export default function AboutPage() {
+export default function AboutPage({ onOpenInquiry }) {
   return (
     <div className="page-view about-page-view">
-      {/* Local Video Background Hero Banner */}
-      <div className="page-hero-banner">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          poster="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80"
-          className="page-hero-video-bg"
-        >
-          <source src="/videos/about-hero.mp4" type="video/mp4" />
-        </video>
-        <div className="page-hero-overlay" />
+      {/* Full-Screen Home-Style Hero Section for About Page */}
+      <section className="hero-section about-hero-section">
+        {/* Background Video Layer */}
+        <div className="hero-video-container">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            webkit-playsinline="true"
+            poster="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80"
+            className="hero-video-bg"
+          >
+            <source src="/videos/about-hero.mp4" type="video/mp4" />
+            <source src={encodeURI("/images/about us page video.mp4")} type="video/mp4" />
+          </video>
+          <div className="hero-video-overlay" />
+        </div>
 
-        <div className="container page-hero-content">
-          <span className="section-badge">Who We Are</span>
-          <h1 className="page-hero-title">About Spin Global</h1>
-          <p className="page-hero-sub">
+        <div className="container hero-content-wrapper">
+          <div className="hero-badge">
+            <Info size={14} color="#00BF63" />
+            <span>WHO WE ARE</span>
+          </div>
+
+          <h1 className="hero-headline">
+            About <span className="text-green-highlight">Spin Global</span>
+          </h1>
+
+          <p className="hero-subtext">
             Simplifying travel with personalised holidays, expert visa assistance, and tailored corporate travel solutions.
           </p>
+
+          <div className="hero-cta-group">
+            <button 
+              className="btn-primary hero-main-btn"
+              onClick={() => onOpenInquiry && onOpenInquiry({ category: 'package', title: 'Plan My Trip' })}
+            >
+              <span>Get In Touch</span>
+              <ArrowRight size={18} />
+            </button>
+          </div>
+
+          {/* About Trust Indicators Bar */}
+          <div className="hero-trust-indicators">
+            <div className="trust-item">
+              <span className="trust-num">100%</span>
+              <span className="trust-label">Dedicated Support</span>
+            </div>
+            <div className="trust-divider" />
+            <div className="trust-item">
+              <span className="trust-num">20+</span>
+              <span className="trust-label">Visa Destinations</span>
+            </div>
+            <div className="trust-divider" />
+            <div className="trust-item">
+              <span className="trust-num">24x7</span>
+              <span className="trust-label">Travel Guidance</span>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
       <AboutSection />
 

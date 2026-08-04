@@ -1,47 +1,64 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search, MapPin, Globe, Shield, ArrowRight, Sparkles, Building2, FileText, ChevronRight, PhoneCall, MessageCircle, Send } from 'lucide-react';
+import CustomPackageModal from './CustomPackageModal';
 import './HeroSearchBar.css';
 
 const SEARCH_INDEX = [
   // PAGES
-  { id: 1, title: 'About Spin Global', category: 'Page', link: '/about', icon: Building2, tags: ['about', 'company', 'story', 'team', 'incredible bharat', 'who we are'] },
+  { id: 1, title: 'About Spin Global', category: 'Page', link: '/about', icon: Building2, tags: ['about', 'company', 'story', 'team', 'who we are'] },
   { id: 2, title: 'International Holidays & Tours', category: 'Page', link: '/international', icon: Globe, tags: ['international', 'overseas', 'holidays', 'tours', 'packages', 'vacation', 'abroad'] },
   { id: 3, title: 'Incredible Bharat - Domestic Packages', category: 'Page', link: '/domestic', icon: MapPin, tags: ['domestic', 'india', 'bharat', 'trips', 'indian holidays', 'destinations'] },
-  { id: 4, title: 'Tourist & Business Visas Assistance', category: 'Page', link: '/visas', icon: Shield, tags: ['visa', 'visas', 'visa support', 'stamp', 'passport', 'immigration', 'visitor visa', 'tourist visa', 'business visa'] },
+  { id: 4, title: 'Tourist & Business Visas Assistance', category: 'Page', link: '/visas', icon: Shield, tags: ['visa', 'visas', 'passport', 'immigration', 'visitor visa', 'tourist visa', 'business visa'] },
   { id: 5, title: 'B2B Travel Agency Partner Portal', category: 'Page', link: '/b2b', icon: FileText, tags: ['b2b', 'corporate', 'partner', 'agency', 'wholesale', 'travel agent', 'b2b portal'] },
   { id: 6, title: 'Contact Us & Office Details', category: 'Page', link: '/contact', icon: MapPin, tags: ['contact', 'office', 'phone', 'whatsapp', 'address', 'ludhiana', 'email'] },
 
-  // DESTINATIONS (INTERNATIONAL)
-  { id: 7, title: 'Bali, Indonesia', category: 'International Destination', link: '/international', icon: Globe, tags: ['bali', 'indonesia', 'ubud', 'tanah lot', 'nusa penida', 'beach', 'temple'] },
-  { id: 8, title: 'Dubai & Abu Dhabi, UAE', category: 'International Destination', link: '/international', icon: Globe, tags: ['dubai', 'uae', 'abu dhabi', 'burj khalifa', 'desert safari', 'emirates'] },
-  { id: 9, title: 'Vietnam (Ha Long Bay & Da Nang)', category: 'International Destination', link: '/international', icon: Globe, tags: ['vietnam', 'ha long bay', 'da nang', 'hanoi', 'golden bridge'] },
-  { id: 10, title: 'Thailand (Phuket & Bangkok)', category: 'International Destination', link: '/international', icon: Globe, tags: ['thailand', 'phuket', 'bangkok', 'krabi', 'phi phi', 'islands'] },
-  { id: 11, title: 'Maldives Luxury Overwater Villas', category: 'International Destination', link: '/international', icon: Globe, tags: ['maldives', 'overwater villa', 'honeymoon', 'island', 'beach', 'resort'] },
-  { id: 12, title: 'Switzerland & Swiss Alps', category: 'International Destination', link: '/international', icon: Globe, tags: ['switzerland', 'swiss', 'alps', 'zurich', 'interlaken', 'europe', 'snow'] },
-  { id: 13, title: 'Europe Tour (Paris, Rome, Amsterdam)', category: 'International Destination', link: '/international', icon: Globe, tags: ['europe', 'paris', 'france', 'rome', 'italy', 'amsterdam', 'london'] },
-  { id: 14, title: 'Japan (Tokyo & Kyoto)', category: 'International Destination', link: '/international', icon: Globe, tags: ['japan', 'tokyo', 'kyoto', 'fuji', 'cherry blossom', 'asia'] },
-  { id: 15, title: 'Singapore & Malaysia', category: 'International Destination', link: '/international', icon: Globe, tags: ['singapore', 'malaysia', 'kuala lumpur', 'sentosa', 'genting'] },
-  { id: 16, title: 'Turkey (Istanbul & Cappadocia)', category: 'International Destination', link: '/international', icon: Globe, tags: ['turkey', 'cappadocia', 'istanbul', 'balloon', 'hagiasophia'] },
+  // INTERNATIONAL DESTINATIONS (ALL SHOWCASE DESTINATIONS)
+  { id: 7, title: 'Bali, Indonesia', category: 'International Destination', slug: 'bali', icon: Globe, tags: ['bali', 'indonesia', 'ubud', 'tanah lot', 'nusa penida', 'beach', 'temple'] },
+  { id: 8, title: 'Dubai & Abu Dhabi, UAE', category: 'International Destination', slug: 'uae', icon: Globe, tags: ['dubai', 'uae', 'abu dhabi', 'burj khalifa', 'desert safari', 'emirates'] },
+  { id: 9, title: 'Vietnam (Ha Long Bay & Da Nang)', category: 'International Destination', slug: 'vietnam', icon: Globe, tags: ['vietnam', 'ha long bay', 'da nang', 'hanoi', 'golden bridge'] },
+  { id: 10, title: 'Thailand (Phuket & Bangkok)', category: 'International Destination', slug: 'thailand', icon: Globe, tags: ['thailand', 'phuket', 'bangkok', 'krabi', 'phi phi', 'islands'] },
+  { id: 11, title: 'Singapore', category: 'International Destination', slug: 'singapore', icon: Globe, tags: ['singapore', 'marina bay', 'sentosa', 'gardens by the bay'] },
+  { id: 12, title: 'Malaysia (Kuala Lumpur & Genting)', category: 'International Destination', slug: 'malaysia', icon: Globe, tags: ['malaysia', 'kuala lumpur', 'genting', 'batu caves', 'petronas'] },
+  { id: 13, title: 'Japan (Tokyo & Kyoto)', category: 'International Destination', slug: 'japan', icon: Globe, tags: ['japan', 'tokyo', 'kyoto', 'fuji', 'cherry blossom', 'asia'] },
+  { id: 14, title: 'Schengen Europe (Switzerland, France, Italy)', category: 'International Destination', slug: 'schengen', icon: Globe, tags: ['schengen', 'switzerland', 'swiss', 'alps', 'zurich', 'interlaken', 'europe', 'paris', 'france', 'rome', 'italy', 'amsterdam'] },
+  { id: 15, title: 'Sri Lanka (Colombo & Kandy)', category: 'International Destination', slug: 'sri-lanka', icon: Globe, tags: ['sri lanka', 'colombo', 'kandy', 'sigiriya', 'ramayana', 'nuwara eliya'] },
+  { id: 16, title: 'Philippines (El Nido & Boracay)', category: 'International Destination', slug: 'philippines', icon: Globe, tags: ['philippines', 'el nido', 'boracay', 'manila', 'palawan', 'lagoons'] },
+  { id: 17, title: 'Georgia (Tbilisi & Kazbegi)', category: 'International Destination', slug: 'georgia', icon: Globe, tags: ['georgia', 'tbilisi', 'kazbegi', 'caucasus', 'gergeti'] },
+  { id: 18, title: 'Kazakhstan (Almaty & Charyn Canyon)', category: 'International Destination', slug: 'kazakhstan', icon: Globe, tags: ['kazakhstan', 'almaty', 'charyn canyon', 'big almaty lake'] },
+  { id: 19, title: 'Maldives Luxury Overwater Villas', category: 'International Destination', slug: 'maldives', icon: Globe, tags: ['maldives', 'overwater villa', 'honeymoon', 'island', 'beach', 'resort'] },
+  { id: 20, title: 'Saudi Arabia (Riyadh & AlUla)', category: 'International Destination', slug: 'saudi-arabia', icon: Globe, tags: ['saudi arabia', 'saudi', 'riyadh', 'alula', 'jeddah'] },
+  { id: 21, title: 'Turkey (Istanbul & Cappadocia)', category: 'International Destination', slug: 'turkey', icon: Globe, tags: ['turkey', 'cappadocia', 'istanbul', 'balloon', 'hagiasophia'] },
+  { id: 22, title: 'Russia (Moscow & St. Petersburg)', category: 'International Destination', slug: 'russia', icon: Globe, tags: ['russia', 'moscow', 'st petersburg', 'red square', 'hermitage'] },
+  { id: 23, title: 'South Korea (Seoul & Jeju Island)', category: 'International Destination', slug: 'south-korea', icon: Globe, tags: ['south korea', 'korea', 'seoul', 'jeju', 'nami island'] },
+  { id: 24, title: 'Kenya Safari (Masai Mara & Amboseli)', category: 'International Destination', slug: 'kenya', icon: Globe, tags: ['kenya', 'safari', 'masai mara', 'wildlife', 'amboseli'] },
+  { id: 25, title: 'Egypt (Pyramids & Nile Cruises)', category: 'International Destination', slug: 'egypt', icon: Globe, tags: ['egypt', 'pyramids', 'nile', 'cairo', 'luxor', 'sphinx'] },
+  { id: 26, title: 'Mauritius Island & Beach Resorts', category: 'International Destination', slug: 'mauritius', icon: Globe, tags: ['mauritius', 'chamarel', 'beach', 'resort', 'ile aux cerfs'] },
+  { id: 27, title: 'Nepal (Kathmandu & Pokhara)', category: 'International Destination', slug: 'nepal', icon: Globe, tags: ['nepal', 'kathmandu', 'pokhara', 'everest', 'annapurna'] },
+  { id: 28, title: 'Bhutan (Paro & Thimphu)', category: 'International Destination', slug: 'bhutan', icon: Globe, tags: ['bhutan', 'paro', 'thimphu', 'tigers nest', 'punakha'] },
 
-  // DESTINATIONS (DOMESTIC INDIA)
-  { id: 17, title: 'Kashmir Valley & Gulmarg', category: 'Domestic Destination', link: '/domestic', icon: MapPin, tags: ['kashmir', 'srinagar', 'gulmarg', 'snow', 'dal lake', 'pahalgam'] },
-  { id: 18, title: 'Leh Ladakh Adventure', category: 'Domestic Destination', link: '/domestic', icon: MapPin, tags: ['ladakh', 'leh', 'pangong', 'khardungla', 'bikes', 'adventure'] },
-  { id: 19, title: 'Rajasthan Royal Palaces', category: 'Domestic Destination', link: '/domestic', icon: MapPin, tags: ['rajasthan', 'jaipur', 'udaipur', 'jaisalmer', 'palace', 'fort'] },
-  { id: 20, title: 'Kerala Backwaters & Munnar', category: 'Domestic Destination', link: '/domestic', icon: MapPin, tags: ['kerala', 'munnar', 'alleppey', 'houseboat', 'backwaters', 'gods own country'] },
-  { id: 21, title: 'Goa Beaches & Cruises', category: 'Domestic Destination', link: '/domestic', icon: MapPin, tags: ['goa', 'beach', 'party', 'water sports', 'cruise', 'south goa'] },
-  { id: 22, title: 'Himachal (Manali & Shimla)', category: 'Domestic Destination', link: '/domestic', icon: MapPin, tags: ['himachal', 'manali', 'shimla', 'solang', 'snow', 'rohtang'] },
+  // DOMESTIC INDIA DESTINATIONS
+  { id: 29, title: 'Kashmir Valley & Gulmarg', category: 'Domestic Destination', slug: 'kashmir', icon: MapPin, tags: ['kashmir', 'srinagar', 'gulmarg', 'snow', 'dal lake', 'pahalgam'] },
+  { id: 30, title: 'Andaman & Nicobar Islands', category: 'Domestic Destination', slug: 'andaman', icon: MapPin, tags: ['andaman', 'nicobar', 'havelock', 'radhanagar', 'cellular jail'] },
+  { id: 31, title: 'Leh Ladakh Adventure', category: 'Domestic Destination', slug: 'leh-ladakh', icon: MapPin, tags: ['ladakh', 'leh', 'pangong', 'khardungla', 'bikes', 'adventure'] },
+  { id: 32, title: 'Rajasthan Royal Palaces', category: 'Domestic Destination', slug: 'rajasthan', icon: MapPin, tags: ['rajasthan', 'jaipur', 'udaipur', 'jaisalmer', 'palace', 'fort'] },
+  { id: 33, title: 'Goa Beaches & Cruises', category: 'Domestic Destination', slug: 'goa', icon: MapPin, tags: ['goa', 'beach', 'party', 'water sports', 'cruise', 'south goa'] },
+  { id: 34, title: 'Meghalaya (Shillong & Cherrapunji)', category: 'Domestic Destination', slug: 'meghalaya', icon: MapPin, tags: ['meghalaya', 'shillong', 'cherrapunji', 'dawki', 'living root bridge'] },
+  { id: 35, title: 'Sikkim (Gangtok & Pelling)', category: 'Domestic Destination', slug: 'sikkim', icon: MapPin, tags: ['sikkim', 'gangtok', 'pelling', 'tsomgo lake', 'nathula'] },
+  { id: 36, title: 'Kerala Backwaters & Munnar', category: 'Domestic Destination', slug: 'kerala', icon: MapPin, tags: ['kerala', 'munnar', 'alleppey', 'houseboat', 'backwaters', 'gods own country'] },
 
   // SERVICES
-  { id: 23, title: 'Fast Visa Support & Processing', category: 'Service', link: '/visas', icon: Shield, tags: ['visa assistance', 'visa process', 'schengen visa', 'us visa', 'uk visa', 'dubai visa'] },
-  { id: 24, title: 'Tailor-Made Holiday Packages', category: 'Service', link: '/international', icon: Sparkles, tags: ['holiday packages', 'custom tour', 'itinerary', 'tailor made'] },
-  { id: 25, title: 'Corporate Travel & B2B Solutions', category: 'Service', link: '/b2b', icon: Building2, tags: ['corporate travel', 'b2b', 'mice', 'conferences', 'events'] }
+  { id: 37, title: 'Fast Visa Support & Processing', category: 'Service', link: '/visas', icon: Shield, tags: ['visa assistance', 'visa process', 'schengen visa', 'visa application'] },
+  { id: 38, title: 'Tailor-Made Holiday Packages', category: 'Service', link: '/international', icon: Sparkles, tags: ['holiday packages', 'custom tour', 'itinerary', 'tailor made'] },
+  { id: 39, title: 'Corporate Travel & B2B Solutions', category: 'Service', link: '/b2b', icon: Building2, tags: ['corporate travel', 'b2b', 'mice', 'conferences', 'events'] }
 ];
 
-export default function HeroSearchBar({ onOpenInquiry }) {
+export default function HeroSearchBar({ onOpenInquiry, onOpenDestination }) {
   const [query, setQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [showCustomModal, setShowCustomModal] = useState(false);
+  const [customModalDest, setCustomModalDest] = useState('');
 
   const navigate = useNavigate();
   const searchWrapperRef = useRef(null);
@@ -66,21 +83,30 @@ export default function HeroSearchBar({ onOpenInquiry }) {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleOpenCustomConnect = () => {
+  const handleOpenCustomConnect = (customDestText) => {
     setIsOpen(false);
-    if (onOpenInquiry) {
-      onOpenInquiry({ destination: query, title: `Custom Package for ${query}` });
-    }
+    const target = customDestText || query.trim() || 'Custom Destination';
+    setCustomModalDest(target);
+    setShowCustomModal(true);
   };
 
   const handleExecuteSearch = (targetItem) => {
-    if (targetItem) {
-      setIsOpen(false);
+    setIsOpen(false);
+    if (targetItem && targetItem.slug) {
+      // Direct showcase destination -> open 6-picture slideshow DestinationModal!
+      if (onOpenDestination) {
+        onOpenDestination(targetItem.slug);
+      } else {
+        navigate('/international');
+      }
+    } else if (targetItem && targetItem.category === 'Page') {
       navigate(targetItem.link);
-    } else if (query.trim()) {
-      handleOpenCustomConnect();
+    } else if (targetItem && targetItem.category === 'Service') {
+      navigate(targetItem.link);
     } else {
-      setIsOpen(true);
+      // Custom / unlisted destination (e.g. Himachal, Manali, Shimla, Switzerland, Paris, etc.) -> open CustomPackageModal!
+      const targetDest = targetItem ? targetItem.title : (query.trim() || 'Custom Destination');
+      handleOpenCustomConnect(targetDest);
     }
   };
 
@@ -240,6 +266,13 @@ export default function HeroSearchBar({ onOpenInquiry }) {
             </div>
           )}
         </div>
+      )}
+
+      {showCustomModal && (
+        <CustomPackageModal
+          destination={customModalDest}
+          onClose={() => setShowCustomModal(false)}
+        />
       )}
     </div>
   );

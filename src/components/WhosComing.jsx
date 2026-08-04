@@ -41,17 +41,15 @@ const TRAVEL_TYPES = [
 ];
 
 export default function WhosComing({ onOpenInquiry }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
   const trackRef = useRef(null);
 
-  // Determine visible count based on window width
+  // Determine visible count based on window width (3 cards max per page)
   const getVisibleCount = () => {
-    if (typeof window === 'undefined') return 5;
-    if (window.innerWidth <= 480) return 1;
-    if (window.innerWidth <= 768) return 2;
-    if (window.innerWidth <= 1024) return 3;
-    if (window.innerWidth <= 1280) return 4;
-    return 5;
+    if (typeof window === 'undefined') return 3;
+    if (window.innerWidth <= 640) return 1;
+    if (window.innerWidth <= 960) return 2;
+    return 3;
   };
 
   const [visibleCount, setVisibleCount] = useState(getVisibleCount);
@@ -62,17 +60,24 @@ export default function WhosComing({ onOpenInquiry }) {
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
-  const maxIndex = Math.max(0, TRAVEL_TYPES.length - visibleCount);
+  const totalPages = Math.ceil(TRAVEL_TYPES.length / visibleCount);
+
+  // Reset to first page if page index exceeds totalPages on resize
+  useEffect(() => {
+    if (currentPage >= totalPages) {
+      setCurrentPage(Math.max(0, totalPages - 1));
+    }
+  }, [totalPages, currentPage]);
 
   const prev = useCallback(() => {
-    setCurrentIndex((i) => Math.max(0, i - 1));
+    setCurrentPage((p) => Math.max(0, p - 1));
   }, []);
 
   const next = useCallback(() => {
-    setCurrentIndex((i) => Math.min(maxIndex, i + 1));
-  }, [maxIndex]);
+    setCurrentPage((p) => Math.min(totalPages - 1, p + 1));
+  }, [totalPages]);
 
-  const translateX = -(currentIndex * (100 / visibleCount));
+  const translateX = -(currentPage * 100);
 
   const handleCardClick = (type) => {
     if (onOpenInquiry) {
@@ -99,9 +104,9 @@ export default function WhosComing({ onOpenInquiry }) {
         <button
           className="whos-coming-nav prev"
           onClick={prev}
-          aria-label="Previous"
-          disabled={currentIndex === 0}
-          style={{ opacity: currentIndex === 0 ? 0.4 : 1 }}
+          aria-label="Previous Page"
+          disabled={currentPage === 0}
+          style={{ opacity: currentPage === 0 ? 0.4 : 1 }}
         >
           <ChevronLeft size={22} />
         </button>
@@ -144,25 +149,25 @@ export default function WhosComing({ onOpenInquiry }) {
         <button
           className="whos-coming-nav next"
           onClick={next}
-          aria-label="Next"
-          disabled={currentIndex === maxIndex}
-          style={{ opacity: currentIndex === maxIndex ? 0.4 : 1 }}
+          aria-label="Next Page"
+          disabled={currentPage >= totalPages - 1}
+          style={{ opacity: currentPage >= totalPages - 1 ? 0.4 : 1 }}
         >
           <ChevronRight size={22} />
         </button>
       </div>
 
-      {/* Dots */}
-      {maxIndex > 0 && (
+      {/* Dots (Exact count matching pages) */}
+      {totalPages > 1 && (
         <div className="whos-coming-dots" role="tablist" aria-label="Slide position">
-          {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+          {Array.from({ length: totalPages }).map((_, i) => (
             <button
               key={i}
-              className={`whos-coming-dot${currentIndex === i ? ' active' : ''}`}
-              onClick={() => setCurrentIndex(i)}
-              aria-label={`Go to slide ${i + 1}`}
+              className={`whos-coming-dot${currentPage === i ? ' active' : ''}`}
+              onClick={() => setCurrentPage(i)}
+              aria-label={`Go to page ${i + 1}`}
               role="tab"
-              aria-selected={currentIndex === i}
+              aria-selected={currentPage === i}
             />
           ))}
         </div>

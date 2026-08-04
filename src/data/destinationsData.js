@@ -119,7 +119,7 @@ export const destinationsData = {
     category: 'International',
     heroImage: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=1200&q=80',
     tagline: 'Eiffel Tower, Swiss Alps & Venetian Canals',
-    description: 'Traverse 27 European countries seamlessly from romantic Paris landmarks to Alpine mountain peaks.',
+    description: 'Traverse 29 European countries seamlessly from romantic Paris landmarks to Alpine mountain peaks.',
     spots: [
       { name: 'Eiffel Tower, Paris', image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80', desc: 'Iron lattice tower on the Champ de Mars in Paris, shimmering with evening lights.' },
       { name: 'Swiss Alps (Interlaken / Jungfrau)', image: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=600&q=80', desc: 'Top of Europe Jungfraujoch cogwheel train rides and glacier panoramas.' },

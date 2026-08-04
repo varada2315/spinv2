@@ -3,7 +3,7 @@ import { ArrowRight, Plane, Globe, Shield } from 'lucide-react';
 import HeroSearchBar from './HeroSearchBar';
 import './HeroSection.css';
 
-export default function HeroSection({ onOpenInquiry }) {
+export default function HeroSection({ onOpenInquiry, onOpenDestination }) {
   const whatsappLink = "https://wa.me/916284661722?text=Hello%20Spin%20Global!%20Let’s%20start%20planning%20my%20trip.%20I’m%20excited%20to%20explore%20the%20best%20travel%20options.";
 
   return (
@@ -15,6 +15,7 @@ export default function HeroSection({ onOpenInquiry }) {
           loop 
           muted 
           playsInline 
+          webkit-playsinline="true"
           poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80"
           className="hero-video-bg"
         >
@@ -34,17 +35,17 @@ export default function HeroSection({ onOpenInquiry }) {
         </h1>
 
         <p className="hero-subtext">
-          See Places In Newways
+          See Places In <span className="text-green-highlight">New</span>ways
         </p>
 
         {/* Premium Intelligent Global Search Bar */}
-        <HeroSearchBar onOpenInquiry={onOpenInquiry} />
+        <HeroSearchBar onOpenInquiry={onOpenInquiry} onOpenDestination={onOpenDestination} />
 
         <div className="hero-cta-group">
           <button 
             type="button"
             className="btn-primary hero-main-btn"
-            onClick={() => onOpenInquiry && onOpenInquiry({ category: 'package', title: 'Plan My Trip' })}
+            onClick={() => onOpenInquiry && onOpenInquiry({ category: 'package' })}
           >
             <span>Plan My Trip</span>
             <ArrowRight size={18} />

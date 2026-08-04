@@ -60,7 +60,11 @@
 }
 
 .home-services-summary {
-  padding: 80px 24px;
+  padding: 60px 24px 100px 24px;
+}
+
+.home-services-summary .section-heading-center {
+  margin-bottom: 56px;
 }
 
 .home-services-grid {

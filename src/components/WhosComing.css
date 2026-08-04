@@ -4,6 +4,7 @@
 .whos-coming-section {
   background: #0A3D2B; /* Solid dark green matching the requested color and image background */
   padding: 72px 0 0 0;
+  margin-bottom: 48px;
   overflow: hidden;
   position: relative;
 }
@@ -36,21 +37,24 @@
 .whos-coming-slider-wrapper {
   position: relative;
   z-index: 2;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
 /* ── Nav Arrows ── */
 .whos-coming-nav {
   position: absolute;
-  top: 50%;
-  transform: translateY(-90%);
+  top: 45%;
+  transform: translateY(-50%);
   z-index: 10;
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
   color: #fff;
   display: flex;
   align-items: center;
@@ -62,7 +66,7 @@
 .whos-coming-nav:hover {
   background: var(--color-primary);
   border-color: var(--color-primary);
-  transform: translateY(-90%) scale(1.1);
+  transform: translateY(-50%) scale(1.1);
 }
 
 .whos-coming-nav:disabled {
@@ -70,8 +74,8 @@
   pointer-events: none;
 }
 
-.whos-coming-nav.prev { left: 14px; }
-.whos-coming-nav.next { right: 14px; }
+.whos-coming-nav.prev { left: -10px; }
+.whos-coming-nav.next { right: -10px; }
 
 /* ── Track ── */
 .whos-coming-track-outer {
@@ -87,14 +91,14 @@
 
 /* ── Card ── */
 .whos-coming-card {
-  flex: 0 0 20%;
+  flex: 0 0 33.3333%;
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
   position: relative;
-  /* NO background, NO border, NO padding box */
   background: transparent;
+  padding: 0 24px;
   transition: transform 0.3s ease;
 }
 
@@ -192,20 +196,16 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 1024px) {
-  .whos-coming-card { flex: 0 0 33.333%; }
-}
-
-@media (max-width: 768px) {
-  .whos-coming-section { padding: 52px 0 0 0; }
-  .whos-coming-card { flex: 0 0 50%; }
-  .whos-coming-img { height: 280px; max-width: 220px; }
+@media (max-width: 960px) {
+  .whos-coming-card { flex: 0 0 50%; padding: 0 14px; }
+  .whos-coming-slider-wrapper { padding: 0 30px; }
   .whos-coming-nav.prev { left: 4px; }
   .whos-coming-nav.next { right: 4px; }
 }
 
-@media (max-width: 480px) {
-  .whos-coming-card { flex: 0 0 80%; }
-  .whos-coming-img { height: 240px; max-width: 200px; }
+@media (max-width: 640px) {
+  .whos-coming-section { padding: 52px 0 0 0; }
+  .whos-coming-card { flex: 0 0 100%; padding: 0 10px; }
+  .whos-coming-img { height: 280px; max-width: 240px; }
   .whos-coming-header h2 { font-size: 1.6rem; }
 }

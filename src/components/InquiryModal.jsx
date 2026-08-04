@@ -36,9 +36,14 @@ export default function InquiryModal({ selectedItem, onClose, onSubmitted }) {
     );
   }
 
-  const destName = typeof selectedItem === 'object' 
-    ? (selectedItem.destination || selectedItem.title || selectedItem.name || selectedItem.country || '')
+  // Filter out generic action titles like "Plan My Trip", "International Holiday Package", etc.
+  const rawDest = typeof selectedItem === 'object' 
+    ? (selectedItem.destination || '') 
     : (typeof selectedItem === 'string' ? selectedItem : '');
+
+  const genericTerms = ['plan my trip', 'international holiday package', 'domestic holiday package', 'package', 'general inquiry', 'custom package'];
+  const isGeneric = genericTerms.some(term => rawDest.toLowerCase().includes(term));
+  const destName = isGeneric ? '' : rawDest;
 
   return (
     <MultiStepPackageForm 

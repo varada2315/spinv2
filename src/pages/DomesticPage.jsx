@@ -15,6 +15,7 @@ export default function DomesticPage({ onOpenDestination, onOpenInquiry }) {
             loop 
             muted 
             playsInline 
+            webkit-playsinline="true"
             poster="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1600&q=80"
             className="hero-video-bg"
           >
@@ -41,7 +42,7 @@ export default function DomesticPage({ onOpenDestination, onOpenInquiry }) {
           <div className="hero-cta-group">
             <button 
               className="btn-primary hero-main-btn"
-              onClick={() => onOpenInquiry({ category: 'domestic', title: 'Domestic Holiday Package' })}
+              onClick={() => onOpenInquiry({ category: 'domestic' })}
             >
               <span>Plan My Domestic Trip</span>
               <ArrowRight size={18} />

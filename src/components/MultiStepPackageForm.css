@@ -186,7 +186,7 @@
 
 .travelers-counter-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 12px;
 }
 
@@ -353,6 +353,10 @@
 @media (max-width: 640px) {
   .multistep-card {
     padding: 28px 20px;
+  }
+  .travelers-counter-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
   .hotel-pref-row {
     flex-direction: column;

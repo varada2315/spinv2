@@ -99,7 +99,7 @@ export default function ContactFooter({ onToast }) {
         {/* Copyright Bar */}
         <div className="footer-bottom-bar">
           <span>© {new Date().getFullYear()} <strong>Spin Global</strong>. All Rights Reserved.</span>
-          <span className="built-with">Designed for travelers worldwide</span>
+          <span className="built-with">Built by Growitate</span>
         </div>
       </div>
     </footer>

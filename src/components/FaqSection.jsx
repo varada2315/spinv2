@@ -150,6 +150,7 @@ export default function FaqSection({
   const faqList = customFaqs || OFFICIAL_SPIN_FAQS;
   const [activeCategory, setActiveCategory] = useState(initialCategory);
   const [searchQuery, setSearchQuery] = useState('');
+  const [showAll, setShowAll] = useState(false);
   const [openFaqId, setOpenFaqId] = useState(faqList[0]?.id || 1);
 
   const whatsappLink = "https://wa.me/916284661722?text=Hello%20Spin%20Global!%20I%20have%20a%20question%20about%20travel%20packages%20or%20visas.";
@@ -163,6 +164,8 @@ export default function FaqSection({
                           faq.answer.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
+
+  const visibleFaqs = (showAll || searchQuery || activeCategory !== 'All') ? filteredFaqs : filteredFaqs.slice(0, 3);
 
   const toggleFaq = (id) => {
     setOpenFaqId(openFaqId === id ? null : id);
@@ -211,8 +214,8 @@ export default function FaqSection({
 
         {/* Accordion FAQ items */}
         <div className="faq-list-container">
-          {filteredFaqs.length > 0 ? (
-            filteredFaqs.map((faq) => {
+          {visibleFaqs.length > 0 ? (
+            visibleFaqs.map((faq) => {
               const isOpen = openFaqId === faq.id;
               return (
                 <div
@@ -248,6 +251,20 @@ export default function FaqSection({
             </div>
           )}
         </div>
+
+        {/* View All / Show Less Questions Toggle Button */}
+        {!searchQuery && activeCategory === 'All' && filteredFaqs.length > 3 && (
+          <div className="faq-toggle-wrapper">
+            <button 
+              className="btn-faq-view-all" 
+              onClick={() => setShowAll(!showAll)}
+              aria-label={showAll ? "Show fewer questions" : "View all questions"}
+            >
+              <span>{showAll ? 'Show Less Questions' : 'View All Questions'}</span>
+              <ChevronDown size={18} className={`toggle-chevron ${showAll ? 'rotate' : ''}`} />
+            </button>
+          </div>
+        )}
 
         {/* Direct Support Banner */}
         <div className="faq-support-banner">

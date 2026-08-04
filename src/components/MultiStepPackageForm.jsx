@@ -11,7 +11,7 @@ export default function MultiStepPackageForm({ initialDestination = '', initialC
 
   // Step 1 State
   const [tripType, setTripType] = useState(
-    initialCategory === 'domestic' ? 'Domestic (Incredible Bharat)' : 'International'
+    initialCategory === 'domestic' ? 'Domestic Trip' : 'International Trip'
   );
   const [destination, setDestination] = useState(initialDestination || '');
   const [name, setName] = useState('');
@@ -23,6 +23,7 @@ export default function MultiStepPackageForm({ initialDestination = '', initialC
   const [departureCity, setDepartureCity] = useState('');
   const [adults, setAdults] = useState('2');
   const [children, setChildren] = useState('0');
+  const [infants, setInfants] = useState('0');
   const [childrenAges, setChildrenAges] = useState('');
 
   // Step 3 State
@@ -61,6 +62,7 @@ export default function MultiStepPackageForm({ initialDestination = '', initialC
       travelers: {
         adults,
         children,
+        infants,
         childrenAges: children > 0 ? childrenAges : 'N/A'
       },
       budgetRange: finalBudget,
@@ -114,8 +116,8 @@ export default function MultiStepPackageForm({ initialDestination = '', initialC
                   <div className="trip-type-selector">
                     <button
                       type="button"
-                      className={`trip-type-chip ${tripType === 'International' ? 'selected' : ''}`}
-                      onClick={() => setTripType('International')}
+                      className={`trip-type-chip ${tripType.includes('International') ? 'selected' : ''}`}
+                      onClick={() => setTripType('International Trip')}
                     >
                       <Globe size={16} />
                       <span>International Trip</span>
@@ -123,11 +125,11 @@ export default function MultiStepPackageForm({ initialDestination = '', initialC
 
                     <button
                       type="button"
-                      className={`trip-type-chip ${tripType === 'Domestic' ? 'selected' : ''}`}
-                      onClick={() => setTripType('Domestic')}
+                      className={`trip-type-chip ${tripType.includes('Domestic') ? 'selected' : ''}`}
+                      onClick={() => setTripType('Domestic Trip')}
                     >
                       <MapPin size={16} />
-                      <span>Domestic (Incredible Bharat)</span>
+                      <span>Domestic Trip</span>
                     </button>
                   </div>
                 </div>
@@ -139,7 +141,7 @@ export default function MultiStepPackageForm({ initialDestination = '', initialC
                     <input
                       type="text"
                       placeholder={
-                        tripType === 'International'
+                        tripType.includes('International')
                           ? 'e.g. Bali, Dubai, Vietnam, Maldives, Europe, Japan'
                           : 'e.g. Kashmir, Leh Ladakh, Kerala, Goa, Rajasthan'
                       }
@@ -256,6 +258,16 @@ export default function MultiStepPackageForm({ initialDestination = '', initialC
                         <option value="1">1 Child</option>
                         <option value="2">2 Children</option>
                         <option value="3+">3+ Children</option>
+                      </select>
+                    </div>
+
+                    <div className="counter-box">
+                      <span className="counter-label">Infants (below 2)</span>
+                      <select value={infants} onChange={(e) => setInfants(e.target.value)}>
+                        <option value="0">0 Infants</option>
+                        <option value="1">1 Infant</option>
+                        <option value="2">2 Infants</option>
+                        <option value="3+">3+ Infants</option>
                       </select>
                     </div>
                   </div>

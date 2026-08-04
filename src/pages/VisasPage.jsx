@@ -16,6 +16,7 @@ export default function VisasPage({ onOpenInquiry }) {
             loop 
             muted 
             playsInline 
+            webkit-playsinline="true"
             poster="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1600&q=80"
             className="hero-video-bg"
           >
@@ -36,7 +37,7 @@ export default function VisasPage({ onOpenInquiry }) {
           </h1>
 
           <p className="hero-subtext">
-            Collect stamps, not stress — Expert guidance for Tourist, Business, Work & Transit visas across 20+ top international destinations.
+            Collect stamps, not stress — Expert guidance for Tourist, Business and Visitor visa across 20+ top international destinations.
           </p>
 
           <div className="hero-cta-group">

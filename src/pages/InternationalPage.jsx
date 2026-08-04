@@ -10,11 +10,12 @@ export default function InternationalPage({ onOpenDestination, onOpenInquiry }) 
       <section className="hero-section international-hero-section">
         {/* Background Video Layer */}
         <div className="hero-video-container">
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            webkit-playsinline="true"
             poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80"
             className="hero-video-bg"
           >
@@ -34,13 +35,13 @@ export default function InternationalPage({ onOpenDestination, onOpenInquiry }) 
           </h1>
 
           <p className="hero-subtext">
-            Click on any destination to view famous spots slideshow & enquiry form directly in a pop-up.
+            From city lights to tropical islands, discover a journey worth crossing borders for.
           </p>
 
           <div className="hero-cta-group">
-            <button 
+            <button
               className="btn-primary hero-main-btn"
-              onClick={() => onOpenInquiry({ category: 'international', title: 'International Holiday Package' })}
+              onClick={() => onOpenInquiry({ category: 'international' })}
             >
               <span>Plan My International Trip</span>
               <ArrowRight size={18} />

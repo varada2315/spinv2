@@ -1,0 +1,185 @@
+/* ============================================================
+   Trending Places — Infinite Marquee Gallery Section
+   ============================================================ */
+.trending-places-section {
+  padding: 80px 0;
+  background: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.trending-places-section .container {
+  margin-bottom: 40px;
+}
+
+/* ── Full Width Marquee Wrapper ── */
+.trending-marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 12px 0 24px 0;
+}
+
+/* Pause Scrolling on Hover */
+.trending-marquee-wrapper:hover .trending-marquee-track {
+  animation-play-state: paused;
+}
+
+.trending-marquee-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: marqueeScroll 75s linear infinite;
+  will-change: transform;
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ── Destination Card ── */
+.trending-card {
+  position: relative;
+  flex: 0 0 280px;
+  height: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(7, 18, 40, 0.08);
+  border: 1.5px solid rgba(226, 232, 240, 0.8);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  user-select: none;
+}
+
+.trending-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: #00BF63;
+  box-shadow: 0 20px 45px rgba(0, 191, 99, 0.22);
+}
+
+.trending-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.trending-card:hover .trending-card-img {
+  transform: scale(1.09);
+}
+
+.trending-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(7, 18, 40, 0.15) 0%,
+    rgba(7, 18, 40, 0.35) 45%,
+    rgba(7, 18, 40, 0.92) 100%
+  );
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+/* Top Category Pill Badge */
+.trending-card-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(7, 18, 40, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Bottom Card Content */
+.trending-card-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.trending-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.trending-card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.25;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.trending-card-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.trending-card:hover .trending-card-arrow {
+  background: #00BF63;
+  color: #FFFFFF;
+  transform: rotate(45deg) scale(1.1);
+}
+
+.trending-card-tagline {
+  font-size: 0.8rem;
+  color: #CBD5E1;
+  font-weight: 500;
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Responsive Adjustments ── */
+@media (max-width: 768px) {
+  .trending-places-section {
+    padding: 60px 0;
+  }
+  .trending-card {
+    flex: 0 0 240px;
+    height: 340px;
+  }
+  .trending-card-title {
+    font-size: 1.1rem;
+  }
+  .trending-marquee-track {
+    animation-duration: 55s;
+  }
+}

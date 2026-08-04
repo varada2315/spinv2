@@ -143,11 +143,24 @@
   }
 }
 
+@media (max-width: 768px) {
+  .escape-top-badge {
+    opacity: 1 !important;
+  }
+  .escape-hover-overlay {
+    opacity: 1 !important;
+    background: linear-gradient(180deg, rgba(7, 18, 40, 0.15) 0%, rgba(7, 18, 40, 0.88) 100%);
+  }
+  .hover-content {
+    transform: translateY(0) !important;
+  }
+}
+
 @media (max-width: 576px) {
   .escapes-grid {
     grid-template-columns: 1fr;
   }
   .escape-card {
-    height: 260px;
+    height: 280px;
   }
 }
