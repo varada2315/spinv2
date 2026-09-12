@@ -21,6 +21,7 @@ export default function ContactPage({ onOpenInquiry, onToast }) {
             className="hero-video-bg"
           >
             <source src="/videos/contact-hero.mp4" type="video/mp4" />
+            <source src={encodeURI("/images/contact us page.mp4")} type="video/mp4" />
           </video>
           <div className="hero-video-overlay" />
         </div>
@@ -42,9 +43,9 @@ export default function ContactPage({ onOpenInquiry, onToast }) {
           <div className="hero-cta-group">
             <button 
               className="btn-primary hero-main-btn"
-              onClick={() => onOpenInquiry && onOpenInquiry({ category: 'custom', title: 'General Contact Inquiry' })}
+              onClick={() => onOpenInquiry && onOpenInquiry({ category: 'package', title: 'General Inquiry' })}
             >
-              <span>Send An Inquiry</span>
+              <span>Send Enquiry</span>
               <ArrowRight size={18} />
             </button>
           </div>

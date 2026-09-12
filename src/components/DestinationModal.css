@@ -434,22 +434,35 @@
 }
 
 .bali-slide-img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  animation: fadeSlideIn 700ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: scale(1.035);
+  transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1), transform 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: 1;
+  display: block;
+  will-change: opacity, transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
-@keyframes fadeSlideIn {
-  from {
-    opacity: 0.2;
-    transform: scale(1.03);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+.bali-slide-img.slide-active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.bali-slide-img.slide-hidden {
+  opacity: 0;
+  transform: scale(1.035);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .bali-overlay-gradient {
@@ -457,55 +470,77 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(7, 18, 40, 0.3) 0%,
-    rgba(7, 18, 40, 0.55) 50%,
-    rgba(7, 18, 40, 0.92) 100%
+    rgba(7, 18, 40, 0.25) 0%,
+    rgba(7, 18, 40, 0.45) 45%,
+    rgba(7, 18, 40, 0.88) 100%
   );
-  z-index: 2;
+  z-index: 3;
+  pointer-events: none;
 }
 
-/* Left Content Box */
+.bali-image-wrapper.domestic-view .bali-overlay-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(7, 18, 40, 0.25) 0%,
+    rgba(7, 18, 40, 0.45) 45%,
+    rgba(7, 18, 40, 0.88) 100%
+  );
+}
+
+/* Left Content Box - Clean Text Directly on Image (No Glass Box) */
 .bali-content-box {
   position: absolute;
-  bottom: 56px;
-  left: 48px;
+  bottom: 44px;
+  left: 44px;
   z-index: 15;
-  max-width: 620px;
+  max-width: 440px;
   text-align: left;
   color: #FFFFFF;
+  animation: contentFade 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes contentFade {
+  from {
+    opacity: 0.3;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .bali-dest-badge {
   display: inline-block;
-  font-size: 0.76rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   color: #00BF63;
-  background: rgba(0, 191, 99, 0.15);
-  border: 1px solid rgba(0, 191, 99, 0.3);
-  padding: 6px 14px;
+  background: rgba(0, 191, 99, 0.18);
+  border: 1px solid rgba(0, 191, 99, 0.35);
+  padding: 4px 12px;
   border-radius: 999px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   text-transform: uppercase;
 }
 
 .bali-dest-title {
   font-family: 'Poppins', sans-serif;
-  font-weight: 900;
-  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 750;
+  font-size: clamp(1.25rem, 1.9vw, 1.65rem);
   color: #FFFFFF;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin-bottom: 12px;
-  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 6px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.75);
 }
 
 .bali-dest-desc {
-  font-size: 1.05rem;
-  color: #E2E8F0;
-  line-height: 1.6;
-  font-weight: 500;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  font-size: 0.92rem;
+  color: #F1F5F9;
+  line-height: 1.5;
+  font-weight: 450;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 /* Floating "Plan My Trip" CTA Button (Bottom Right) */
@@ -576,7 +611,7 @@
 }
 
 .bali-progress-bar.active {
-  animation: progressFill 3000ms linear forwards;
+  animation: progressFill 2500ms linear forwards;
 }
 
 @keyframes progressFill {
@@ -671,16 +706,18 @@
     border-radius: 20px;
   }
   .bali-content-box {
-    bottom: 96px;
-    left: 20px;
-    right: 20px;
-    max-width: 100%;
+    bottom: 84px;
+    left: 16px;
+    right: 16px;
+    max-width: calc(100% - 32px);
   }
   .bali-dest-title {
-    font-size: 1.8rem;
+    font-size: 1.15rem;
+    margin-bottom: 4px;
   }
   .bali-dest-desc {
-    font-size: 0.92rem;
+    font-size: 0.8rem;
+    line-height: 1.35;
   }
   .bali-plan-trip-cta {
     bottom: 32px;

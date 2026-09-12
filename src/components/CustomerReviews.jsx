@@ -48,11 +48,11 @@ const REVIEWS_DATA = [
 export default function CustomerReviews() {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Auto Slider Timer (5s interval)
+  // Auto Slider Timer (2.5s interval)
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % REVIEWS_DATA.length);
-    }, 5000);
+    }, 2500);
     return () => clearInterval(timer);
   }, []);
 

@@ -1,9 +1,16 @@
 import React from 'react';
 import IndiaHolidays from '../components/IndiaHolidays';
-import { ArrowRight, MapPin } from 'lucide-react';
+import { ArrowRight, MapPin, Compass } from 'lucide-react';
 import '../components/HeroSection.css';
+import './Pages.css';
 
 export default function DomesticPage({ onOpenDestination, onOpenInquiry }) {
+  const handleCustomPackageClick = () => {
+    if (onOpenInquiry) {
+      onOpenInquiry({ category: 'domestic', destination: '', title: 'Custom Domestic Package' });
+    }
+  };
+
   return (
     <div className="page-view domestic-page-view">
       {/* Full-Screen Home-Style Hero Section for Domestic Page */}
@@ -16,7 +23,7 @@ export default function DomesticPage({ onOpenDestination, onOpenInquiry }) {
             muted 
             playsInline 
             webkit-playsinline="true"
-            poster="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1600&q=80"
+            poster={encodeURI('/images/Kashmir.jpg.jpeg')}
             className="hero-video-bg"
           >
             <source src="/videos/domestic-hero.mp4" type="video/mp4" />
@@ -42,7 +49,7 @@ export default function DomesticPage({ onOpenDestination, onOpenInquiry }) {
           <div className="hero-cta-group">
             <button 
               className="btn-primary hero-main-btn"
-              onClick={() => onOpenInquiry({ category: 'domestic' })}
+              onClick={() => onOpenInquiry && onOpenInquiry({ category: 'domestic' })}
             >
               <span>Plan My Domestic Trip</span>
               <ArrowRight size={18} />
@@ -69,7 +76,37 @@ export default function DomesticPage({ onOpenDestination, onOpenInquiry }) {
         </div>
       </section>
 
+      {/* Destinations Grid */}
       <IndiaHolidays showExploreMore={false} onSelectIndiaRegion={(slug) => onOpenDestination(slug)} />
+
+      {/* Beyond These Destinations - Custom Package Box */}
+      <section className="beyond-destinations-section">
+        <div className="container">
+          <div className="beyond-destinations-box">
+            <div className="beyond-destinations-content">
+              <span className="beyond-badge">
+                <Compass size={13} color="#00BF63" />
+                <span>Custom Itineraries</span>
+              </span>
+              <h2 className="beyond-title">Beyond These Destinations</h2>
+              <p className="beyond-subtitle">
+                Pan-India travel, tailored to you. Tell us where you dream of going.
+              </p>
+            </div>
+
+            <div className="beyond-actions">
+              <button 
+                className="beyond-cta-btn hover-lift"
+                onClick={handleCustomPackageClick}
+                aria-label="Get Your Custom Package"
+              >
+                <span>Get Your Custom Package</span>
+                <ArrowRight size={18} />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

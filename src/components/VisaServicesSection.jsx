@@ -5,7 +5,7 @@ import './VisaServicesSection.css';
 export default function VisaServicesSection({ onVisaClick }) {
   const visaCountries = [
     { country: 'USA', flagCode: 'us', type: 'B1/B2 Tourist & Business' },
-    { country: 'Canada', flagCode: 'ca', type: 'Visitor & Express Visa' },
+    { country: 'Canada', flagCode: 'ca', type: 'Tourist & Visitor Visa' },
     { country: 'UK', flagCode: 'gb', type: 'Standard Visitor Visa' },
     { country: 'Schengen', flagCode: 'eu', type: '29 European Nations' },
     { country: 'Australia', flagCode: 'au', type: 'Subclass 600 Visitor' },
@@ -14,16 +14,20 @@ export default function VisaServicesSection({ onVisaClick }) {
     { country: 'South Korea', flagCode: 'kr', type: 'C-3-9 Tourist Visa' },
     { country: 'China', flagCode: 'cn', type: 'L Tourist & M Business' },
     { country: 'Hong Kong', flagCode: 'hk', type: 'PAR & Visitor Permit' },
-    { country: 'Russia', flagCode: 'ru', type: 'E-Visa ' },
+    { country: 'Russia', flagCode: 'ru', type: 'Tourist & Business E-Visa' },
     { country: 'Thailand', flagCode: 'th', type: 'Tourist Visa & e-VOA' },
     { country: 'Philippines', flagCode: 'ph', type: '9A Visitor Visa' },
-    { country: 'Vietnam', flagCode: 'vn', type: '30/90 Days E-Visa' },
+    { country: 'Vietnam', flagCode: 'vn', type: 'E-Visa' },
     { country: 'Azerbaijan', flagCode: 'az', type: 'ASAN Official E-Visa' },
-    { country: 'Saudi Arabia', flagCode: 'sa', type: ' EVisa' },
+    { country: 'Georgia', flagCode: 'ge', type: 'Short-Stay Tourist E-Visa' },
     { country: 'Turkey', flagCode: 'tr', type: 'E-Visa Assistance' },
     { country: 'South Africa', flagCode: 'za', type: 'Visitor Visa (Section 11)' },
-    { country: 'UAE', flagCode: 'ae', type: '30 & 60 Days Tourist' },
-    { country: 'Indonesia', flagCode: 'id', type: 'e-VOA & B211A Visa' }
+    { country: 'Egypt', flagCode: 'eg', type: 'Tourist E-Visa' },
+    { country: 'Indonesia', flagCode: 'id', type: 'e-VOA & B211A Visa' },
+    { country: 'Brazil', flagCode: 'br', type: 'Visitor Visa & E-Visa' },
+    { country: 'Sri Lanka', flagCode: 'lk', type: 'ETA Tourist Visa' },
+    { country: 'Malaysia', flagCode: 'my', type: 'Tourist E-Visa' },
+    { country: 'Kenya', flagCode: 'ke', type: 'eTA Tourist Permit' }
   ];
 
   return (
@@ -59,7 +63,6 @@ export default function VisaServicesSection({ onVisaClick }) {
 
               <div className="visa-card-info">
                 <h3 className="country-name">{item.country}</h3>
-                <span className="visa-type">{item.type}</span>
               </div>
 
               <div className="visa-check-icon">

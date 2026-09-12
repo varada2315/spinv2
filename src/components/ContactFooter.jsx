@@ -89,16 +89,17 @@ export default function ContactFooter({ onToast }) {
             <ul className="footer-list">
               <li><Link to="/international">International Holidays</Link></li>
               <li><Link to="/domestic">Domestic Holidays</Link></li>
-              <li><Link to="/visas">Tourist & Business Visas</Link></li>
+              <li><Link to="/visas">Tourist, Visitor & Business Visas</Link></li>
               <li><Link to="/b2b">B2B Visa Services</Link></li>
               <li><Link to="/contact">Corporate MICE & Events</Link></li>
             </ul>
           </div>
         </div>
 
-        {/* Copyright Bar */}
+        {/* Copyright & Credits Bar */}
         <div className="footer-bottom-bar">
           <span>© {new Date().getFullYear()} <strong>Spin Global</strong>. All Rights Reserved.</span>
+          <span className="footer-credits">Image credits: Wikipedia & Pexels</span>
           <span className="built-with">Built by Growitate</span>
         </div>
       </div>

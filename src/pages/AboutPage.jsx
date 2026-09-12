@@ -4,7 +4,15 @@ import { Heart, Award, Users, Info, ArrowRight } from 'lucide-react';
 import '../components/HeroSection.css';
 import './Pages.css';
 
-export default function AboutPage({ onOpenInquiry }) {
+export default function AboutPage({ onOpenInquiry, onOpenLeadCapture }) {
+  const handleGetInTouch = () => {
+    if (onOpenLeadCapture) {
+      onOpenLeadCapture();
+    } else {
+      window.dispatchEvent(new CustomEvent('openLeadCapturePopup'));
+    }
+  };
+
   return (
     <div className="page-view about-page-view">
       {/* Full-Screen Home-Style Hero Section for About Page */}
@@ -43,7 +51,7 @@ export default function AboutPage({ onOpenInquiry }) {
           <div className="hero-cta-group">
             <button 
               className="btn-primary hero-main-btn"
-              onClick={() => onOpenInquiry && onOpenInquiry({ category: 'package', title: 'Plan My Trip' })}
+              onClick={handleGetInTouch}
             >
               <span>Get In Touch</span>
               <ArrowRight size={18} />

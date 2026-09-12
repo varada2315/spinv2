@@ -94,12 +94,170 @@
 }
 
 .about-cta-row {
+  position: relative;
   margin-top: 8px;
+  display: inline-block;
 }
 
-.about-wa-btn {
-  padding: 16px 36px;
-  font-size: 1.05rem;
+.about-explore-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  font-size: 1.02rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill, 9999px);
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 191, 99, 0.28);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+}
+
+.about-explore-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 191, 99, 0.38);
+}
+
+.explore-chevron {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.explore-chevron.rotate {
+  transform: rotate(180deg);
+}
+
+.about-explore-popover {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  width: 360px;
+  max-width: calc(100vw - 32px);
+  background: #FFFFFF;
+  border-radius: 18px;
+  box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.22), 0 0 0 1px rgba(0, 0, 0, 0.06);
+  padding: 16px;
+  z-index: 100;
+  animation: popoverFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  border: 1px solid rgba(0, 191, 99, 0.25);
+}
+
+@keyframes popoverFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.explore-popover-header {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.popover-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #00BF63;
+  text-transform: uppercase;
+  display: block;
+}
+
+.popover-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1E293B;
+  margin: 2px 0 0 0;
+}
+
+.explore-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.explore-option-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+  user-select: none;
+}
+
+.explore-option-card:hover {
+  background: #ECFDF5;
+  border-color: #A7F3D0;
+  transform: translateX(4px);
+  box-shadow: 0 4px 14px rgba(0, 191, 99, 0.12);
+}
+
+.option-icon-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: background 0.2s;
+}
+
+.explore-option-card:hover .option-icon-wrap {
+  background: #00BF63;
+}
+
+.explore-option-card:hover .option-icon-wrap svg {
+  stroke: #FFFFFF !important;
+}
+
+.option-text-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.option-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #0F172A;
+  transition: color 0.2s;
+}
+
+.explore-option-card:hover .option-title {
+  color: #008746;
+}
+
+.option-desc {
+  font-size: 0.74rem;
+  color: #64748B;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 1px;
+}
+
+.option-arrow {
+  color: #94A3B8;
+  transition: transform 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+.explore-option-card:hover .option-arrow {
+  color: #00BF63;
+  transform: translateX(3px);
 }
 
 .about-image-column {

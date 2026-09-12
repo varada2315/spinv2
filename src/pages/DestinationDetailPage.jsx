@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+                            import React, { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { destinationsData } from '../data/destinationsData';
 import { MapPin, Calendar, Users, Send, MessageCircle, ArrowLeft, CheckCircle2, Compass, Sparkles } from 'lucide-react';
@@ -55,7 +55,14 @@ export default function DestinationDetailPage() {
     <div className="destination-detail-page">
       {/* 1. Destination Hero Banner */}
       <div className="dest-detail-hero">
-        <img src={destination.heroImage} alt={destination.name} className="dest-hero-bg" />
+        <img 
+          src={destination.heroImage} 
+          alt={destination.name} 
+          className="dest-hero-bg" 
+          style={destination.heroObjectPosition ? { objectPosition: destination.heroObjectPosition } : undefined}
+          loading="eager" 
+          decoding="async" 
+        />
         <div className="dest-hero-overlay" />
         <div className="container dest-hero-container">
           <Link to={backLink} className="back-link-btn">
@@ -90,18 +97,30 @@ export default function DestinationDetailPage() {
           </div>
 
           <div className="spots-grid">
-            {destination.spots && destination.spots.map((spot, idx) => (
-              <div key={idx} className="spot-card hover-lift">
-                <div className="spot-image-wrapper">
-                  <img src={spot.image} alt={spot.name} className="spot-img" />
-                  <span className="spot-number-tag">#{idx + 1}</span>
+            {destination.spots && destination.spots.map((spot, idx) => {
+              const hasText = spot.name || spot.desc;
+              return (
+                <div key={idx} className={`spot-card hover-lift ${!hasText ? 'pure-image-card' : ''}`}>
+                  <div className="spot-image-wrapper">
+                    <img 
+                      src={spot.image} 
+                      alt={spot.name || `${destination.name} attraction ${idx + 1}`} 
+                      className="spot-img" 
+                      style={spot.objectPosition ? { objectPosition: spot.objectPosition } : undefined}
+                      loading="lazy" 
+                      decoding="async" 
+                    />
+                    <span className="spot-number-tag">#{idx + 1}</span>
+                  </div>
+                  {hasText && (
+                    <div className="spot-content-box">
+                      {spot.name && <h3 className="spot-name">{spot.name}</h3>}
+                      {spot.desc && <p className="spot-desc">{spot.desc}</p>}
+                    </div>
+                  )}
                 </div>
-                <div className="spot-content-box">
-                  <h3 className="spot-name">{spot.name}</h3>
-                  <p className="spot-desc">{spot.desc}</p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
@@ -221,7 +240,9 @@ export default function DestinationDetailPage() {
                   >
                     <option value="All Famous Spots">All Famous Spots Package</option>
                     {destination.spots && destination.spots.map((spot, sIdx) => (
-                      <option key={sIdx} value={spot.name}>{spot.name}</option>
+                      <option key={sIdx} value={spot.name || `Spot #${sIdx + 1}`}>
+                        {spot.name || `Attraction #${sIdx + 1}`}
+                      </option>
                     ))}
                   </select>
                 </div>

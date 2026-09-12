@@ -27,7 +27,7 @@ export default function HeroSection({ onOpenInquiry, onOpenDestination }) {
       <div className="container hero-content-wrapper">
         <div className="hero-badge">
           <Globe size={14} color="#00BF63" />
-          <span>Visa • Tours • Corporate Travel</span>
+          <span>Travel • Visa • Made Simple</span>
         </div>
 
         <h1 className="hero-headline">

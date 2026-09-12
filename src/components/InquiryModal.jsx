@@ -27,9 +27,26 @@ export default function InquiryModal({ selectedItem, onClose, onSubmitted }) {
   }
 
   if (isVisa) {
+    const rawCountry = typeof selectedItem === 'object'
+      ? (selectedItem.country || selectedItem.destination || selectedItem.title || '')
+      : (typeof selectedItem === 'string' ? selectedItem : '');
+    let cleanCountry = rawCountry
+      .replace(/visa/gi, '')
+      .replace(/application/gi, '')
+      .replace(/assistance/gi, '')
+      .replace(/concierge/gi, '')
+      .replace(/services/gi, '')
+      .replace(/apply for now/gi, '')
+      .replace(/apply/gi, '')
+      .trim();
+
+    if (['assistance', 'services', 'concierge', 'application', 'apply for now', 'apply'].includes(cleanCountry.toLowerCase())) {
+      cleanCountry = '';
+    }
+
     return (
       <VisaApplicationForm 
-        initialCountry={typeof selectedItem === 'object' && selectedItem.country ? selectedItem.country : ''} 
+        initialCountry={cleanCountry} 
         onClose={onClose} 
         onSubmitted={onSubmitted} 
       />
@@ -41,7 +58,7 @@ export default function InquiryModal({ selectedItem, onClose, onSubmitted }) {
     ? (selectedItem.destination || '') 
     : (typeof selectedItem === 'string' ? selectedItem : '');
 
-  const genericTerms = ['plan my trip', 'international holiday package', 'domestic holiday package', 'package', 'general inquiry', 'custom package'];
+  const genericTerms = ['plan my trip', 'international holiday package', 'domestic holiday package', 'package', 'general inquiry', 'custom package', 'get in touch', "let's connect", 'lets connect'];
   const isGeneric = genericTerms.some(term => rawDest.toLowerCase().includes(term));
   const destName = isGeneric ? '' : rawDest;
 

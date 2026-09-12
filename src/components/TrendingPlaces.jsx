@@ -8,112 +8,163 @@ const TRENDING_PLACES = [
     slug: 'bali',
     name: 'Bali, Indonesia',
     category: 'International',
-    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80',
-    tagline: 'Tropical Beaches & Ubud Terraces'
+    image: encodeURI('/images/Bali Ulun Danu Temple.jpg?v=5'),
+    objectPosition: 'center center',
+    tagline: 'Ulun Danu Temple & Ubud Terraces'
   },
   {
     id: 'kashmir',
     slug: 'kashmir',
     name: 'Kashmir Valley',
     category: 'Domestic',
-    image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80',
-    tagline: 'Shikara Rides & Gulmarg Snow'
+    image: encodeURI('/images/Kashmir.jpg.jpeg'),
+    tagline: 'Dal Lake Shikaras & Snowy Peaks'
   },
   {
     id: 'dubai',
     slug: 'uae',
     name: 'Dubai, UAE',
     category: 'International',
-    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80',
-    tagline: 'Burj Khalifa & Desert Safari'
+    image: encodeURI('/images/Dubai Skyline Burj Khalifa.jpg'),
+    tagline: 'Burj Khalifa & Futuristic Skyline'
   },
   {
     id: 'goa',
     slug: 'goa',
     name: 'Goa Beaches',
     category: 'Domestic',
-    image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=80',
-    tagline: 'Sunsets, Cruises & Nightlife'
+    image: encodeURI('/images/Goa (2).avif'),
+    tagline: 'Golden Sands & Sunset Coastline'
   },
   {
     id: 'thailand',
     slug: 'thailand',
-    name: 'Phuket, Thailand',
+    name: 'Phi Phi Islands, Thailand',
     category: 'International',
-    image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=800&q=80',
-    tagline: 'Phi Phi Islands & Turquoise Seas'
+    image: encodeURI('/images/Thailand Phi Phi Islands.jpg'),
+    tagline: 'Turquoise Lagoons & Longtail Boats'
   },
   {
     id: 'kerala',
     slug: 'kerala',
     name: 'Kerala Backwaters',
     category: 'Domestic',
-    image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80',
-    tagline: 'Alleppey Houseboats & Tea Estates'
+    image: encodeURI('/images/kerala 2.jpg.jpeg'),
+    tagline: 'Alleppey Houseboats & Lotus Lagoons'
   },
   {
     id: 'singapore',
     slug: 'singapore',
     name: 'Singapore City',
     category: 'International',
-    image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=800&q=80',
-    tagline: 'Gardens by the Bay & Skyline'
+    image: encodeURI('/images/Singapore Marina Bay Sands.jpg'),
+    objectPosition: 'center center',
+    tagline: 'Marina Bay Sands & SkyPark'
   },
   {
     id: 'ladakh',
     slug: 'leh-ladakh',
     name: 'Leh Ladakh',
     category: 'Domestic',
-    image: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=800&q=80',
-    tagline: 'Pangong Lake & Mountain Passes'
+    image: encodeURI('/images/leh ladakh.jpg.jpeg'),
+    tagline: 'Thiksey Monastery & Ancient Stupas'
   },
   {
     id: 'japan',
     slug: 'japan',
     name: 'Kyoto, Japan',
     category: 'International',
-    image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80',
-    tagline: 'Mount Fuji & Cherry Blossoms'
+    image: encodeURI('/images/Fushimi Inari Shrine , Kyoto , Japan.jpg'),
+    tagline: 'Fushimi Inari & Red Torii Gates'
   },
   {
     id: 'rajasthan',
     slug: 'rajasthan',
-    name: 'Rajasthan Palaces',
+    name: 'Jaipur, Rajasthan',
     category: 'Domestic',
-    image: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=800&q=80',
-    tagline: 'Royal Forts & Desert Safaris'
+    image: encodeURI('/images/Rajasthan.jpg.jpeg'),
+    tagline: 'Hawa Mahal & Pink City Heritage'
   },
   {
     id: 'vietnam',
     slug: 'vietnam',
-    name: 'Ha Long Bay, Vietnam',
+    name: 'Ba Na Hills, Vietnam',
     category: 'International',
-    image: 'https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=800&q=80',
-    tagline: 'Golden Bridge & Emerald Waters'
+    image: encodeURI('/images/Ba Na Hills Golden Bridge , Vietnam.jpg'),
+    tagline: 'Golden Bridge & Giant Stone Hands'
   },
   {
     id: 'andaman',
     slug: 'andaman',
     name: 'Andaman Islands',
     category: 'Domestic',
-    image: 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?auto=format&fit=crop&w=800&q=80',
-    tagline: 'Radhanagar Coral Reefs'
+    image: encodeURI('/images/Andaman.jpg.jpeg'),
+    tagline: 'Pristine Lagoons & Coral Reefs'
   },
   {
     id: 'europe',
     slug: 'schengen',
-    name: 'Swiss Alps, Europe',
+    name: 'Paris, France',
     category: 'International',
-    image: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=800&q=80',
-    tagline: 'Paris Eiffel & Scenic Rail Trips'
+    image: encodeURI('/images 2/Eiffel Tower , paris , france.jpg.jpeg'),
+    tagline: 'Eiffel Tower & Seine River Cruises'
   },
   {
     id: 'meghalaya',
     slug: 'meghalaya',
     name: 'Meghalaya',
     category: 'Domestic',
-    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
-    tagline: 'Living Root Bridges & Dawki River'
+    image: encodeURI('/images/meghalaya.jpg.jpeg'),
+    tagline: 'Nohkalikai Falls & Cloud Canyons'
+  },
+  {
+    id: 'sikkim',
+    slug: 'sikkim',
+    name: 'Sikkim',
+    category: 'Domestic',
+    image: encodeURI('/images/sikkim.jpg.jpeg'),
+    tagline: 'Rumtek Monastery & Himalayan Valleys'
+  },
+  {
+    id: 'maldives',
+    slug: 'maldives',
+    name: 'Maldives',
+    category: 'International',
+    image: encodeURI('/images/Luxury Overwater Villas & Sunset , Maldives.jpg'),
+    tagline: 'Luxury Overwater Villas & Lagoons'
+  },
+  {
+    id: 'malaysia',
+    slug: 'malaysia',
+    name: 'Kuala Lumpur, Malaysia',
+    category: 'International',
+    image: encodeURI('/images/Petronas Twin Towers , Kuala Lumpur , Malaysia.jpg'),
+    tagline: 'Petronas Twin Towers & Skyline'
+  },
+  {
+    id: 'egypt',
+    slug: 'egypt',
+    name: 'Giza, Egypt',
+    category: 'International',
+    image: encodeURI('/images/Pyramids of Giza , Egypt.jpg'),
+    tagline: 'Great Pyramids of Giza & Desert'
+  },
+  {
+    id: 'georgia',
+    slug: 'georgia',
+    name: 'Tbilisi, Georgia',
+    category: 'International',
+    image: encodeURI('/images 2/Holy Trinity Cathedral , georgia.jpg.jpeg'),
+    objectPosition: 'center top',
+    tagline: 'Holy Trinity Cathedral & Old Town'
+  },
+  {
+    id: 'turkey',
+    slug: 'turkey',
+    name: 'Istanbul, Turkey',
+    category: 'International',
+    image: encodeURI('/images/Hagia Sophia , Istanbul , Turkey.jpg'),
+    tagline: 'Hagia Sophia & Grand Bazaars'
   }
 ];
 
@@ -153,7 +204,14 @@ export default function TrendingPlaces({ onSelectDestination }) {
               role="button"
               tabIndex={0}
             >
-              <img src={item.image} alt={item.name} className="trending-card-img" />
+              <img 
+                src={item.image} 
+                alt={item.name} 
+                className="trending-card-img" 
+                style={item.objectPosition ? { objectPosition: item.objectPosition } : undefined}
+                loading="lazy"
+                decoding="async"
+              />
               <div className="trending-card-overlay" />
 
               {/* Category Pill Badge */}

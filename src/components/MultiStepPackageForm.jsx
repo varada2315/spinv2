@@ -244,7 +244,7 @@ export default function MultiStepPackageForm({ initialDestination = '', initialC
                       <span className="counter-label">Adults (12+ yrs)</span>
                       <select value={adults} onChange={(e) => setAdults(e.target.value)}>
                         <option value="1">1 Adult</option>
-                        <option value="2">2 Adults (Couple)</option>
+                        <option value="2">2 Adults</option>
                         <option value="3">3 Adults</option>
                         <option value="4">4 Adults</option>
                         <option value="5+">5+ Group</option>

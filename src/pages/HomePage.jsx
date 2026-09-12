@@ -8,7 +8,6 @@ import WhosComing from '../components/WhosComing';
 import WhyChooseSpinGlobal from '../components/WhyChooseSpinGlobal';
 import CustomerReviews from '../components/CustomerReviews';
 import SocialConnect from '../components/SocialConnect';
-import AutoEnquiryModal from '../components/AutoEnquiryModal';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Globe, ShieldCheck, MapPin } from 'lucide-react';
 import './Pages.css';
@@ -16,9 +15,6 @@ import './Pages.css';
 export default function HomePage({ onOpenDestination, onOpenInquiry, onToast }) {
   return (
     <div className="page-view home-page-view">
-      {/* Automatic Premium Concierge Enquiry Modal (Appears 35s or 45% scroll) */}
-      <AutoEnquiryModal onSubmitted={onToast} />
-
       {/* Hero Banner & Taglines */}
       <HeroSection onOpenInquiry={onOpenInquiry} onOpenDestination={onOpenDestination} />
       <BannerIntro />

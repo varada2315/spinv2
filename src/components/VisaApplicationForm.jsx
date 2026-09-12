@@ -1,28 +1,66 @@
 import React, { useState } from 'react';
-import { X, Send, Globe, ShieldCheck, User, Phone, Mail, Calendar, Users, FileQuestion, Sparkles } from 'lucide-react';
+import { X, Send, Globe, ShieldCheck, User, Phone, Mail, Calendar, Users, ChevronDown, Sparkles } from 'lucide-react';
 import { submitLeadToCRM } from '../services/leadService';
 import SuccessScreenModal from './SuccessScreenModal';
 import './MultiStepPackageForm.css';
+
+const VISA_COUNTRIES = [
+  'USA',
+  'UK',
+  'Canada',
+  'Schengen (Europe)',
+  'Australia',
+  'New Zealand',
+  'Dubai / UAE',
+  'Singapore',
+  'Thailand',
+  'Japan',
+  'South Korea',
+  'China',
+  'Hong Kong',
+  'Russia',
+  'Georgia',
+  'Azerbaijan',
+  'Turkey',
+  'Vietnam',
+  'Egypt',
+  'South Africa',
+  'Indonesia / Bali',
+  'Brazil',
+  'Sri Lanka',
+  'Malaysia',
+  'Kenya',
+  'Other Country'
+];
+
+const VISA_TYPES = [
+  'Tourist Visa',
+  'Business Visa',
+  'Visitor Visa'
+];
 
 export default function VisaApplicationForm({ initialCountry = '', onClose, onSubmitted }) {
   const [showSuccess, setShowSuccess] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
   const [country, setCountry] = useState(initialCountry || '');
-  const [visaType, setVisaType] = useState('Tourist');
+  const [customCountry, setCustomCountry] = useState('');
+  const [visaType, setVisaType] = useState('Tourist Visa');
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [travelDates, setTravelDates] = useState('');
-  const [applicants, setApplicants] = useState('1 Applicant');
+  const [applicants, setApplicants] = useState('1');
   const [appliedBefore, setAppliedBefore] = useState('No');
+
+  const finalCountry = country === 'Other Country' ? customCountry : (country || initialCountry || 'General Visa Assistance');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
 
     const leadData = {
-      country,
+      country: finalCountry,
       visaType,
       name,
       phone,
@@ -38,7 +76,7 @@ export default function VisaApplicationForm({ initialCountry = '', onClose, onSu
     setShowSuccess(true);
 
     if (onSubmitted) {
-      onSubmitted(`Thank you ${name}! Visa application inquiry for ${country} received.`);
+      onSubmitted(`Thank you ${name}! Visa application inquiry for ${finalCountry} received.`);
     }
   };
 
@@ -66,14 +104,35 @@ export default function VisaApplicationForm({ initialCountry = '', onClose, onSu
                   <label>1. Country *</label>
                   <div className="multi-input-wrap">
                     <Globe size={18} className="multi-field-icon" />
-                    <input
-                      type="text"
-                      placeholder="e.g. Schengen, USA, UK, Dubai"
+                    <select
                       value={country}
                       onChange={(e) => setCountry(e.target.value)}
+                      className="select-input"
                       required
-                    />
+                    >
+                      <option value="">Select Destination Country...</option>
+                      {initialCountry && !VISA_COUNTRIES.includes(initialCountry) && (
+                        <option value={initialCountry}>{initialCountry}</option>
+                      )}
+                      {VISA_COUNTRIES.map((c, idx) => (
+                        <option key={idx} value={c}>{c}</option>
+                      ))}
+                    </select>
+                    <ChevronDown size={18} className="multi-field-select-arrow" />
                   </div>
+                  {country === 'Other Country' && (
+                    <div className="multi-input-wrap" style={{ marginTop: '8px' }}>
+                      <Globe size={18} className="multi-field-icon" />
+                      <input
+                        type="text"
+                        placeholder="Enter Country Name"
+                        value={customCountry}
+                        onChange={(e) => setCustomCountry(e.target.value)}
+                        required
+                        autoFocus
+                      />
+                    </div>
+                  )}
                 </div>
 
                 <div className="multi-field">
@@ -86,10 +145,11 @@ export default function VisaApplicationForm({ initialCountry = '', onClose, onSu
                       className="select-input"
                       required
                     >
-                      <option value="Tourist">Tourist Visa</option>
-                      <option value="Business">Business Visa</option>
-                      <option value="Visitor">Visitor Visa</option>
+                      {VISA_TYPES.map((t, idx) => (
+                        <option key={idx} value={t}>{t}</option>
+                      ))}
                     </select>
+                    <ChevronDown size={18} className="multi-field-select-arrow" />
                   </div>
                 </div>
               </div>
@@ -156,12 +216,20 @@ export default function VisaApplicationForm({ initialCountry = '', onClose, onSu
                   <label>7. Number of Applicants *</label>
                   <div className="multi-input-wrap">
                     <Users size={18} className="multi-field-icon" />
-                    <select value={applicants} onChange={(e) => setApplicants(e.target.value)}>
-                      <option value="1 Applicant">1 Applicant</option>
-                      <option value="2 Applicants (Couple)">2 Applicants</option>
-                      <option value="3-5 Family Applicants">3-5 Family Members</option>
-                      <option value="6+ Group Applicants">6+ Group Applicants</option>
+                    <select value={applicants} onChange={(e) => setApplicants(e.target.value)} className="select-input">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="10+">10+</option>
                     </select>
+                    <ChevronDown size={18} className="multi-field-select-arrow" />
                   </div>
                 </div>
               </div>

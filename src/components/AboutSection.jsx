@@ -1,9 +1,54 @@
-import React from 'react';
-import { Heart, Compass, ShieldCheck, UserCheck, MessageSquare, CheckCircle2 } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Heart, Compass, ShieldCheck, UserCheck, MessageSquare, Globe, MapPin, Briefcase, ArrowRight, ChevronDown } from 'lucide-react';
 import './AboutSection.css';
 
 export default function AboutSection() {
-  const whatsappLink = "https://wa.me/916284661722?text=Hello%20Spin%20Global!%20Let’s%20start%20planning%20my%20trip.%20I’m%20excited%20to%20explore%20the%20best%20travel%20options.";
+  const [showExploreMenu, setShowExploreMenu] = useState(false);
+  const menuRef = useRef(null);
+  const navigate = useNavigate();
+
+  const exploreOptions = [
+    {
+      title: 'International Services',
+      desc: '24+ Worldwide Destinations & Custom Tour Packages',
+      path: '/international',
+      icon: Globe
+    },
+    {
+      title: 'Domestic Services',
+      desc: 'Incredible Bharat Itineraries & Himalayan Getaways',
+      path: '/domestic',
+      icon: MapPin
+    },
+    {
+      title: 'Visa Services',
+      desc: 'Fast, Hassle-Free Tourist & Business Visa Assistance',
+      path: '/visas',
+      icon: ShieldCheck
+    },
+    {
+      title: 'B2B Services',
+      desc: 'Travel Agency & Corporate Partnership Portal',
+      path: '/b2b',
+      icon: Briefcase
+    }
+  ];
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setShowExploreMenu(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const handleSelectOption = (path) => {
+    setShowExploreMenu(false);
+    navigate(path);
+  };
 
   const aboutPillars = [
     {
@@ -66,15 +111,52 @@ export default function AboutSection() {
               ))}
             </div>
 
-            <div className="about-cta-row">
-              <a 
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary about-wa-btn"
+            {/* Interactive "Let's explore together" Button with Popover Options */}
+            <div className="about-cta-row" ref={menuRef}>
+              <button 
+                type="button"
+                className={`btn-primary about-explore-btn hover-lift ${showExploreMenu ? 'active' : ''}`}
+                onClick={() => setShowExploreMenu(!showExploreMenu)}
+                aria-haspopup="true"
+                aria-expanded={showExploreMenu}
               >
                 <span>Let's explore together</span>
-              </a>
+                <ChevronDown size={18} className={`explore-chevron ${showExploreMenu ? 'rotate' : ''}`} />
+              </button>
+
+              {showExploreMenu && (
+                <div className="about-explore-popover">
+                  <div className="explore-popover-header">
+                    <span className="popover-badge">EXPLORE OUR SERVICES</span>
+                    <p className="popover-title">Select a service to explore:</p>
+                  </div>
+                  <div className="explore-options-list">
+                    {exploreOptions.map((opt, idx) => {
+                      const Icon = opt.icon;
+                      return (
+                        <div 
+                          key={idx} 
+                          className="explore-option-card"
+                          onClick={() => handleSelectOption(opt.path)}
+                          role="button"
+                          tabIndex={0}
+                        >
+                          <div className="option-icon-wrap">
+                            <Icon size={18} color="#00BF63" />
+                          </div>
+                          <div className="option-text-wrap">
+                            <span className="option-title">{opt.title}</span>
+                            <span className="option-desc">{opt.desc}</span>
+                          </div>
+                          <div className="option-arrow">
+                            <ArrowRight size={16} />
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 

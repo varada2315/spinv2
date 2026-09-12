@@ -69,6 +69,35 @@ export default function InternationalPage({ onOpenDestination, onOpenInquiry }) 
       </section>
 
       <InternationalHolidays onSelectDestination={(slug) => onOpenDestination(slug)} />
+
+      {/* Dreaming of somewhere else - Custom Package Rectangle Box */}
+      <section className="beyond-destinations-section">
+        <div className="container">
+          <div className="beyond-destinations-box">
+            <div className="beyond-destinations-content">
+              <span className="beyond-badge">
+                <Globe size={13} color="#00BF63" />
+                <span>Custom Global Itineraries</span>
+              </span>
+              <h2 className="beyond-title">Dreaming of somewhere else?</h2>
+              <p className="beyond-subtitle">
+                Any country, Any budget — we'll build a trip made just for you.
+              </p>
+            </div>
+
+            <div className="beyond-actions">
+              <button 
+                className="beyond-cta-btn hover-lift"
+                onClick={() => onOpenInquiry && onOpenInquiry({ category: 'international', destination: '', title: 'Custom Package' })}
+                aria-label="Get Your Custom Package"
+              >
+                <span>Get Your Custom Package</span>
+                <ArrowRight size={18} />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

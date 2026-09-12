@@ -4,8 +4,9 @@ import { submitLeadToCRM } from '../services/leadService';
 import SuccessScreenModal from './SuccessScreenModal';
 import './AutoEnquiryModal.css';
 
-export default function AutoEnquiryModal({ onSubmitted }) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function AutoEnquiryModal({ onSubmitted, isOpenControlled = false, onCloseControlled }) {
+  const [isOpenInternal, setIsOpenInternal] = useState(false);
+  const isOpen = isOpenControlled || isOpenInternal;
   const [showSuccess, setShowSuccess] = useState(false);
 
   // Form State
@@ -16,55 +17,59 @@ export default function AutoEnquiryModal({ onSubmitted }) {
   const [message, setMessage] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
-  // Trigger Logic: 35s timer OR 40-50% scroll depth, ONCE per browser session
+  // Trigger Logic: 35s initial timer / 40% scroll depth + recurring every 10 minutes (600,000ms)
   useEffect(() => {
-    const hasSeenPopup = sessionStorage.getItem('hasSeenLeadPopup');
-    if (hasSeenPopup === 'true') return;
-
-    let timer = null;
+    let initialTimer = null;
+    let intervalTimer = null;
 
     const triggerModal = () => {
-      if (sessionStorage.getItem('hasSeenLeadPopup') !== 'true') {
-        sessionStorage.setItem('hasSeenLeadPopup', 'true');
-        setIsOpen(true);
-        window.removeEventListener('scroll', handleScroll);
-        if (timer) clearTimeout(timer);
-      }
+      setIsOpenInternal(true);
     };
 
-    // 1. Timer Trigger: 35 seconds after load
-    timer = setTimeout(() => {
+    // 1. Initial timer: 35 seconds after load
+    initialTimer = setTimeout(() => {
       triggerModal();
     }, 35000);
 
-    // 2. Scroll Trigger: 40% page scroll depth
+    // 2. Scroll trigger: 40% page scroll depth for initial engagement
+    let hasScrolled = false;
     const handleScroll = () => {
+      if (hasScrolled) return;
       const scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
       const scrollHeight = (document.documentElement.scrollHeight || document.body.scrollHeight) - window.innerHeight;
       const scrollDepth = scrollHeight > 0 ? scrollTop / scrollHeight : 0;
 
       if (scrollDepth >= 0.40) {
+        hasScrolled = true;
         triggerModal();
+        window.removeEventListener('scroll', handleScroll);
       }
     };
 
+    // 3. Recurring Interval: Reappears every 10 minutes (600,000 ms)
+    intervalTimer = setInterval(() => {
+      triggerModal();
+    }, 10 * 60 * 1000);
+
     // Custom Event Listener (Allows manual trigger for testing or navigation buttons)
     const handleCustomTrigger = () => {
-      setIsOpen(true);
+      setIsOpenInternal(true);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('openLeadCapturePopup', handleCustomTrigger);
 
     return () => {
-      if (timer) clearTimeout(timer);
+      if (initialTimer) clearTimeout(initialTimer);
+      if (intervalTimer) clearInterval(intervalTimer);
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('openLeadCapturePopup', handleCustomTrigger);
     };
   }, []);
 
   const handleClose = () => {
-    setIsOpen(false);
+    setIsOpenInternal(false);
+    if (onCloseControlled) onCloseControlled();
   };
 
   const handleSubmit = async (e) => {
@@ -82,7 +87,8 @@ export default function AutoEnquiryModal({ onSubmitted }) {
     await submitLeadToCRM(leadData, 'Homepage Lead Capture Popup');
 
     setSubmitting(false);
-    setIsOpen(false);
+    setIsOpenInternal(false);
+    if (onCloseControlled) onCloseControlled();
     setShowSuccess(true);
 
     if (onSubmitted) {

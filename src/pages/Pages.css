@@ -248,3 +248,159 @@
   opacity: 0.75;
   filter: brightness(0.95);
 }
+
+/* Beyond These Destinations Box Section (Domestic Page) */
+.beyond-destinations-section {
+  padding: 0 0 90px 0;
+  background: #FFFFFF;
+}
+
+.beyond-destinations-box {
+  background: linear-gradient(135deg, #071228 0%, #0F224A 55%, #091C3E 100%);
+  border: 1px solid rgba(0, 191, 99, 0.35);
+  border-radius: 24px;
+  padding: 48px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 45px -10px rgba(7, 18, 40, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.beyond-destinations-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -15%;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(0, 191, 99, 0.22) 0%, rgba(0, 191, 99, 0) 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.beyond-destinations-box::after {
+  content: '';
+  position: absolute;
+  bottom: -40%;
+  left: 10%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(0, 85, 254, 0.15) 0%, rgba(0, 85, 254, 0) 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.beyond-destinations-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.beyond-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 191, 99, 0.15);
+  border: 1px solid rgba(0, 191, 99, 0.35);
+  color: #00BF63;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.beyond-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.25;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.beyond-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  color: #CBD5E1;
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0;
+}
+
+.beyond-actions {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.beyond-cta-btn {
+  background: #00BF63;
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 16px 32px;
+  font-size: 1.02rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 191, 99, 0.35);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.beyond-cta-btn:hover {
+  background: #00A855;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 32px rgba(0, 191, 99, 0.45);
+}
+
+.beyond-cta-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+@media (max-width: 900px) {
+  .beyond-destinations-box {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 36px 32px;
+    gap: 24px;
+  }
+
+  .beyond-actions {
+    width: 100%;
+  }
+
+  .beyond-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .beyond-destinations-section {
+    padding-bottom: 60px;
+  }
+
+  .beyond-destinations-box {
+    padding: 28px 20px;
+    border-radius: 18px;
+  }
+
+  .beyond-title {
+    font-size: 1.45rem;
+  }
+
+  .beyond-subtitle {
+    font-size: 0.92rem;
+  }
+}

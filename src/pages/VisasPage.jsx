@@ -29,7 +29,7 @@ export default function VisasPage({ onOpenInquiry }) {
         <div className="container hero-content-wrapper">
           <div className="hero-badge">
             <ShieldCheck size={14} color="#00BF63" />
-            <span>GLOBAL VISA ASSISTANCE</span>
+            <span>VISA ASSISTANCE</span>
           </div>
 
           <h1 className="hero-headline">

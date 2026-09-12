@@ -36,32 +36,50 @@ export default function DestinationModal({ destination, onClose }) {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [onClose, showEnquiryForm]);
 
-  // Automatic 3-Second Loop Timer across all destinations
+  // Preload all spot images immediately for instantaneous, smooth transitions
+  useEffect(() => {
+    if (!spots || spots.length === 0) return;
+    spots.forEach((spot) => {
+      if (spot && spot.image) {
+        const img = new Image();
+        img.src = spot.image;
+      }
+    });
+  }, [spots]);
+
+  // Automatic 2.5-Second Loop Timer across all destinations (Domestic, International, Home)
   useEffect(() => {
     if (showEnquiryForm) return;
     if (spots.length <= 1) return;
 
     const timer = setInterval(() => {
       setActiveSpotIndex((prev) => (prev + 1) % spots.length);
-    }, 3000);
+    }, 2500);
 
     return () => clearInterval(timer);
   }, [showEnquiryForm, spots.length]);
 
-  const currentSpot = spots[activeSpotIndex] || {
-    name: destination.name,
-    image: destination.heroImage,
-    desc: destination.tagline
-  };
+  const displaySpots = spots && spots.length > 0
+    ? spots
+    : [{
+        name: destination.name,
+        image: destination.heroImage,
+        desc: destination.description || destination.tagline,
+        objectPosition: destination.heroObjectPosition
+      }];
+
+  const currentSpot = displaySpots[activeSpotIndex] || displaySpots[0];
 
   const handleWhatsAppSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
 
-    const totalTravelers = (parseInt(adults) || 1) + (parseInt(children) || 0) + (parseInt(infants) || 0);
+    const spotLabel = destination.category === 'Domestic'
+      ? `${destination.name} (Photo ${activeSpotIndex + 1})`
+      : (currentSpot.name || `Spot #${activeSpotIndex + 1}`);
 
     const messageText = `Hello Spin Global! I am interested in booking / planning a trip to *${destination.name}*.\n\n` +
-      `📍 *Currently Showcasing Spot:* ${currentSpot.name}\n` +
+      `📍 *Currently Showcasing Spot:* ${spotLabel}\n` +
       `👤 *Name:* ${formData.name}\n` +
       `📞 *Phone / WhatsApp:* ${formData.phone}\n` +
       `📅 *Travel Date:* ${formData.travelDate || 'Flexible'}\n` +
@@ -94,25 +112,49 @@ export default function DestinationModal({ destination, onClose }) {
         </button>
 
         {/* Full Screen Image & Content Layer */}
-        <div className="bali-image-wrapper">
-          <img 
-            key={activeSpotIndex}
-            src={currentSpot.image} 
-            alt={currentSpot.name} 
-            className="bali-slide-img" 
-          />
+        <div className={`bali-image-wrapper ${destination.category === 'Domestic' ? 'domestic-view' : ''}`}>
+          {displaySpots.map((spot, idx) => {
+            const isActive = idx === activeSpotIndex;
+            const objPos = spot.objectPosition || destination.heroObjectPosition || undefined;
+            return (
+              <img 
+                key={idx}
+                src={spot.image} 
+                alt={spot.name || destination.name} 
+                className={`bali-slide-img ${isActive ? 'slide-active' : 'slide-hidden'}`} 
+                style={objPos ? { objectPosition: objPos } : undefined}
+                loading={idx === 0 ? 'eager' : 'lazy'}
+                decoding="async"
+              />
+            );
+          })}
           
           {/* Dark Overlay Filter */}
           <div className="bali-overlay-gradient" />
 
-          {/* Left Content Header Box */}
-          <div className="bali-content-box">
-            <span className="bali-dest-badge">
-              {categoryLabel} • {destination.name.toUpperCase()}
-            </span>
-            <h2 className="bali-dest-title">{currentSpot.name}</h2>
-            <p className="bali-dest-desc">{currentSpot.desc}</p>
-          </div>
+          {/* Left Content Header Box - For All Destinations */}
+          {destination.category === 'Domestic' ? (
+            <div className="bali-content-box">
+              <span className="bali-dest-badge">
+                DOMESTIC • {destination.name.toUpperCase()}
+              </span>
+              <h2 className="bali-dest-title">{destination.name}</h2>
+              <p className="bali-dest-desc">
+                {destination.description || destination.tagline}
+              </p>
+            </div>
+          ) : (
+            currentSpot && currentSpot.name && (
+              <div className="bali-content-box" key={activeSpotIndex}>
+                <span className="bali-dest-badge">
+                  {categoryLabel} • {destination.name.toUpperCase()}
+                </span>
+                <h2 className="bali-dest-title">{currentSpot.name}</h2>
+                <p className="bali-dest-desc">{currentSpot.desc}</p>
+              </div>
+            )
+          )}
+
 
           {/* Floating Primary CTA Button (Bottom Right) */}
           <button 
@@ -138,7 +180,7 @@ export default function DestinationModal({ destination, onClose }) {
                   <div 
                     className={`bali-progress-bar ${idx === activeSpotIndex ? 'active' : idx < activeSpotIndex ? 'filled' : ''}`}
                     style={{
-                      animationDuration: idx === activeSpotIndex && !showEnquiryForm ? '3000ms' : '0s'
+                      animationDuration: idx === activeSpotIndex && !showEnquiryForm ? '2500ms' : '0s'
                     }}
                   />
                 </div>

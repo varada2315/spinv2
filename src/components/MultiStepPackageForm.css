@@ -176,6 +176,26 @@
   transition: all 0.25s ease;
 }
 
+.multi-input-wrap select {
+  padding-right: 40px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.multi-field-select-arrow {
+  position: absolute;
+  right: 14px;
+  color: #64748B;
+  pointer-events: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.multi-input-wrap:focus-within .multi-field-select-arrow {
+  color: #00BF63;
+}
+
 .multi-input-wrap input:focus,
 .multi-input-wrap select:focus,
 .multi-input-wrap textarea:focus {

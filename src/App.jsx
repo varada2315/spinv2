@@ -16,13 +16,19 @@ import DestinationModal from './components/DestinationModal';
 import InquiryModal from './components/InquiryModal';
 import WhatsAppFloat from './components/WhatsAppFloat';
 import BrandMascotGuide from './components/BrandMascotGuide';
+import AutoEnquiryModal from './components/AutoEnquiryModal';
 import { destinationsData } from './data/destinationsData';
 import { CheckCircle2 } from 'lucide-react';
 
 export default function App() {
   const [selectedInquiryItem, setSelectedInquiryItem] = useState(null);
   const [activeDestinationModal, setActiveDestinationModal] = useState(null);
+  const [isLeadCaptureOpen, setIsLeadCaptureOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState(null);
+
+  const handleOpenLeadCapture = () => {
+    setIsLeadCaptureOpen(true);
+  };
 
   const showToast = (msg) => {
     setToastMessage(msg);
@@ -34,18 +40,17 @@ export default function App() {
   };
 
   const handleOpenDestinationModal = (slugOrObject) => {
-    if (typeof slugOrObject === 'string') {
-      const matched = destinationsData[slugOrObject.toLowerCase()];
-      if (matched) {
-        setActiveDestinationModal(matched);
-      } else {
-        setActiveDestinationModal(destinationsData['bali']);
-      }
-    } else if (slugOrObject && slugOrObject.slug) {
-      const matched = destinationsData[slugOrObject.slug.toLowerCase()];
-      setActiveDestinationModal(matched || destinationsData['bali']);
+    if (!slugOrObject) return;
+    const slug = typeof slugOrObject === 'string' ? slugOrObject : (slugOrObject.slug || slugOrObject.id || '');
+    if (!slug) return;
+
+    const key = slug.toLowerCase().trim();
+    const matched = destinationsData[key];
+    if (matched) {
+      setActiveDestinationModal(matched);
     } else {
-      setActiveDestinationModal(destinationsData['bali']);
+      // Do NOT default to Bali! Open custom inquiry for unlisted destination
+      handleOpenInquiry({ category: 'package', destination: slug, title: `Custom Trip to ${slug}` });
     }
   };
 
@@ -60,7 +65,7 @@ export default function App() {
         <main style={{ flex: 1 }}>
           <Routes>
             <Route path="/" element={<HomePage onOpenDestination={handleOpenDestinationModal} onOpenInquiry={handleOpenInquiry} onToast={showToast} />} />
-            <Route path="/about" element={<AboutPage onOpenInquiry={handleOpenInquiry} />} />
+            <Route path="/about" element={<AboutPage onOpenInquiry={handleOpenInquiry} onOpenLeadCapture={handleOpenLeadCapture} />} />
             <Route path="/international" element={<InternationalPage onOpenDestination={handleOpenDestinationModal} onOpenInquiry={handleOpenInquiry} />} />
             <Route path="/domestic" element={<DomesticPage onOpenDestination={handleOpenDestinationModal} onOpenInquiry={handleOpenInquiry} />} />
             <Route path="/visas" element={<VisasPage onOpenInquiry={handleOpenInquiry} />} />
@@ -94,6 +99,13 @@ export default function App() {
             onSubmitted={(msg) => showToast(msg)}
           />
         )}
+
+        {/* Automatic & Direct Lead Capture "Get In Touch" Popup Modal */}
+        <AutoEnquiryModal 
+          isOpenControlled={isLeadCaptureOpen}
+          onCloseControlled={() => setIsLeadCaptureOpen(false)}
+          onSubmitted={showToast} 
+        />
 
         {/* Global Floating Toast Notification */}
         {toastMessage && (

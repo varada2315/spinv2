@@ -5,14 +5,14 @@ import './PopularEscapes.css';
 
 export default function PopularEscapes({ onSelectDestination, limit, showExploreMore = true }) {
   const escapes = [
-    { slug: 'bali', title: 'Indonesia (Bali)', image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80', tag: 'Tanah Lot & Ubud' },
+    { slug: 'bali', title: 'Indonesia (Bali)', image: encodeURI('/images/Bali Ulun Danu Temple.jpg?v=5'), tag: 'Tanah Lot & Ubud', objectPosition: 'center center' },
     { slug: 'uae', title: 'UAE (Dubai)', image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80', tag: 'Burj Khalifa & Safari' },
-    { slug: 'vietnam', title: 'Vietnam', image: 'https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=600&q=80', tag: 'Ha Long Bay Cruise' },
+    { slug: 'vietnam', title: 'Vietnam', image: encodeURI('/images/Ba Na Hills Golden Bridge , Vietnam.jpg'), tag: 'Ba Na Hills & Golden Bridge' },
     { slug: 'thailand', title: 'Thailand', image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=600&q=80', tag: 'Phi Phi Islands' },
-    { slug: 'singapore', title: 'Singapore', image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=600&q=80', tag: 'Gardens by the Bay' },
-    { slug: 'japan', title: 'Japan', image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80', tag: 'Mount Fuji & Kyoto' },
-    { slug: 'schengen', title: 'Schengen (Europe)', image: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=600&q=80', tag: 'Eiffel Tower & Swiss Alps' },
-    { slug: 'turkey', title: 'Turkey', image: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=600&q=80', tag: 'Cappadocia Balloons' }
+    { slug: 'singapore', title: 'Singapore', image: encodeURI('/images/Singapore Marina Bay Sands.jpg'), tag: 'Gardens by the Bay' },
+    { slug: 'japan', title: 'Japan', image: encodeURI('/images/Fushimi Inari Shrine , Kyoto , Japan.jpg'), tag: 'Torii Gates & Bamboo Grove' },
+    { slug: 'schengen', title: 'Schengen (Europe)', image: encodeURI('/images 2/Eiffel Tower , paris , france.jpg.jpeg'), tag: 'Eiffel Tower & Swiss Alps' },
+    { slug: 'turkey', title: 'Turkey', image: encodeURI('/images/Cappadocia Hot Air Balloons , Turkey.jpg'), tag: 'Cappadocia Hot Air Balloons' }
   ];
 
   const displayedEscapes = limit ? escapes.slice(0, limit) : escapes;
@@ -21,10 +21,10 @@ export default function PopularEscapes({ onSelectDestination, limit, showExplore
     <section className="popular-escapes-section">
       <div className="container">
         <div className="section-heading-center">
-          <span className="section-badge">Popular Getaways</span>
+          <span className="section-badge">International Gateways</span>
           <h2 className="main-section-title">Find Your Perfect Escape</h2>
           <p className="section-subtitle">
-            Hover over any country to explore famous tourist spots & instant WhatsApp inquiry.
+            From city lights to tropical islands, discover a journey worth crossing borders for.
           </p>
         </div>
 
@@ -35,7 +35,14 @@ export default function PopularEscapes({ onSelectDestination, limit, showExplore
               className="escape-card"
               onClick={() => onSelectDestination && onSelectDestination(item.slug)}
             >
-              <img src={item.image} alt={item.title} className="escape-img" />
+              <img 
+                src={item.image} 
+                alt={item.title} 
+                className="escape-img" 
+                style={item.objectPosition ? { objectPosition: item.objectPosition } : undefined}
+                loading="lazy" 
+                decoding="async" 
+              />
               
               {/* Subtle top badge on full image */}
               <div className="escape-top-badge">

@@ -5,352 +5,387 @@ export const destinationsData = {
     id: 'bali',
     name: 'Indonesia (Bali)',
     category: 'International',
-    heroImage: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=80',
+    heroImage: encodeURI('/images/Bali Ulun Danu Temple.jpg?v=5'),
+    heroObjectPosition: 'center center',
     tagline: 'Island of Gods with Sacred Temples, Terraces & Beach Clubs',
     description: 'Explore Bali’s iconic sea temples, lush green rice terraces, active volcanic treks, and world-famous beach clubs.',
     spots: [
-      { name: 'Tanah Lot Temple', image: 'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=600&q=80', desc: 'Ancient Hindu offshore rock shrine with spectacular sunset views.' },
-      { name: 'Ubud Rice Terraces (Tegallalang)', image: 'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=600&q=80', desc: 'Famous emerald terraced valley with jungle swings and traditional irrigation.' },
-      { name: 'Uluwatu Temple & Kecak Fire Dance', image: 'https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=600&q=80', desc: 'Cliffside sea temple hosting hypnotic traditional Kecak dance performances at dusk.' },
-      { name: 'Nusa Penida (Kelingking Beach)', image: 'https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?auto=format&fit=crop&w=600&q=80', desc: 'Iconic T-Rex shaped cliff overlooking secluded white sand beach & azure water.' },
-      { name: 'Mount Batur Sunrise Trek', image: 'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=600&q=80', desc: 'Early morning hike up an active volcano to watch sunrise over Lake Batur.' },
-      { name: 'Seminyak / Kuta Beach Clubs', image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80', desc: 'Vibrant beachfront lounges, infinity pools, and world-class oceanfront dining.' }
+      { name: 'Bali Swing', image: encodeURI('/images/Bali swing , bali.jpg'), desc: 'Thrilling jungle swing soaring high over emerald palm trees, rice terraces, and river valleys.' },
+      { name: 'Tanah Lot Temple', image: encodeURI('/images/Tanah Lot temple , bali.jpg'), desc: 'Ancient Hindu offshore rock shrine with spectacular waves and ocean sunset views.' },
+      { name: 'Nusa Penida (Kelingking Beach)', image: encodeURI('/images/Nusa Penida , bali.jpg.jpeg'), desc: 'Iconic T-Rex shaped cliff overlooking secluded white sand beach and turquoise ocean water.' },
+      { name: 'Handara Gate', image: encodeURI('/images/Handara Gate , bali.jpg.jpeg'), desc: 'Traditional Hindu split gate framed against lush green Bedugul mountains and mist.' },
+      { name: 'Gili Island (Beach Horse Riding)', image: encodeURI('/images/Gili island , Bali , horse riding near beach.jpg.jpeg'), desc: 'Unforgettable sunset horse riding experience along pristine white sand beaches and crystal waters.' },
+      { name: 'Finns Beach Club', image: encodeURI('/images/Finns Beach Club , Bali.jpg.jpeg'), desc: 'World-renowned oceanfront bamboo beach club in Canggu featuring infinity pools, daybeds, and DJ sunsets.' }
     ]
   },
   'uae': {
     id: 'uae',
     name: 'UAE (Dubai & Abu Dhabi)',
     category: 'International',
-    heroImage: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80',
+    heroImage: encodeURI('/images/Dubai Skyline Burj Khalifa.jpg'),
     tagline: 'Futuristic Skyscrapers, Luxury Desert Safaris & Grand Mosques',
     description: 'Experience record-breaking architectural marvels, golden sand dunes, luxury shopping, and family theme parks.',
     spots: [
-      { name: 'Burj Khalifa', image: 'https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=600&q=80', desc: 'World tallest building with breathtaking observation decks.' },
-      { name: 'Dubai Desert Safari', image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80', desc: 'Thrilling dune bashing, camel riding, quad biking, and Bedouin BBQ dinner.' },
-      { name: 'Palm Jumeirah & Atlantis', image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80', desc: 'Man-made palm island featuring luxury resorts and Aquaventure Waterpark.' },
-      { name: 'Sheikh Zayed Grand Mosque (Abu Dhabi)', image: 'https://images.unsplash.com/photo-1548625361-185d2ebc17e6?auto=format&fit=crop&w=600&q=80', desc: 'Architectural masterpiece crafted with white marble, gold, and Swarovski crystals.' },
-      { name: 'Dubai Marina & Global Village', image: 'https://images.unsplash.com/photo-1526495124232-a04e1849168c?auto=format&fit=crop&w=600&q=80', desc: 'Luxury yacht marina skyline and multicultural shopping & entertainment park.' },
-      { name: 'Ferrari World / Yas Island', image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=600&q=80', desc: 'World’s fastest roller coaster at Formula Rossa on Yas Island Abu Dhabi.' }
+      { name: 'Palm Jumeirah', image: encodeURI('/images 2/Palm Jumeirah , Dubai.jpg.jpeg'), desc: 'World-famous man-made palm island featuring luxury oceanfront resorts, beach clubs, and Aquaventure Waterpark.' },
+      { name: 'Burj Khalifa', image: encodeURI('/images 2/Burj Khalifa Dubai.jpg.jpeg'), desc: 'World’s tallest building featuring high-speed observation elevators and 360-degree panoramic skyline views.' },
+      { name: 'Desert Safari', image: encodeURI('/images/desert safari , dubai.jpg'), desc: 'Thrilling Arabian desert adventure with dune bashing, quad biking, camel rides, and traditional Bedouin BBQ dinner.' },
+      { name: 'Museum of the Future', image: encodeURI('/images/The Museum of the Future , dubai.jpg.jpeg'), desc: 'Architectural and technological marvel showcasing futuristic innovation, Arabic calligraphy, and immersive exhibits.' },
+      { name: 'Miracle Garden', image: encodeURI('/images/Miracle garden , dubai.jpg'), desc: 'World’s largest natural flower garden displaying 150 million blooming flowers crafted into spectacular floral sculptures.' },
+      { name: 'Ferrari World', image: encodeURI('/images/Ferrari World , dubai.jpg'), desc: 'Iconic red-roofed thrill theme park on Yas Island featuring Formula Rossa, the world’s fastest roller coaster.' }
     ]
   },
   'vietnam': {
     id: 'vietnam',
     name: 'Vietnam',
     category: 'International',
-    heroImage: 'https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=80',
-    tagline: 'Emerald Bays, Lantern-Lit Ancient Towns & Golden Bridges',
-    description: 'Immerse in dramatic karst bay cruises, French colonial architecture, ancient heritage towns, and mountain rice terraces.',
+    heroImage: encodeURI('/images/Ba Na Hills Golden Bridge , Vietnam.jpg'),
+    tagline: 'Ba Na Hills Golden Bridge, Ha Long Bay & Lantern Towns',
+    description: 'Immerse in dramatic karst bay cruises, giant mountain bridge hands, French colonial architecture, ancient heritage towns, and mountain rice terraces.',
     spots: [
-      { name: 'Ha Long Bay Cruise', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80', desc: 'Overnight luxury cruise past thousands of towering limestone islets and sea caves.' },
-      { name: 'Hoi An Ancient Town (Lantern Festival)', image: 'https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=600&q=80', desc: 'UNESCO town illuminated by thousands of colorful silk lanterns along the river.' },
-      { name: 'Ba Na Hills Golden Bridge', image: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=600&q=80', desc: 'Giant stone hands holding a golden pedestrian bridge 1,400 meters above sea level.' },
-      { name: 'Cu Chi Tunnels', image: 'https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=600&q=80', desc: 'Historic underground military network used during the Vietnam War.' },
-      { name: 'Sapa Rice Terraces', image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80', desc: 'Lush green cascading mountain terraces and ethnic hill-tribe villages.' },
-      { name: 'Phu Quoc', image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80', desc: 'Tropical island paradise with white sandy beaches, resorts, and cable car rides.' }
+      { name: 'Ba Na Hills & Golden Bridge', image: encodeURI('/images/Ba Na Hills Golden Bridge , Vietnam.jpg'), desc: 'Giant stone hands holding a golden pedestrian bridge 1,400 meters above sea level in Da Nang.' },
+      { name: 'Ha Long Bay', image: '/images/679ec5e6-ed39-409d-8783-0fdb0b0c0bd7.jpg', desc: 'UNESCO World Heritage bay featuring thousands of towering limestone karsts and emerald cruise waters.' },
+      { name: 'Hoi An Ancient Town', image: '/images/36da974a-4f73-4b96-aff4-6bff28aa7c00.jpg', desc: 'UNESCO World Heritage town illuminated by thousands of colorful silk lanterns along the Thu Bon River.' },
+      { name: 'Kiss Bridge, Phu Quoc', image: '/images/e51ee7de-7564-44a5-8114-15eaab8cc278.jpg', desc: 'Iconic architectural masterpiece in Sunset Town, Phu Quoc featuring two bridges coming together with a romantic gap.' },
+      { name: 'Rice Terraces, Sapa', image: '/images/704e7fbc-7ff7-449a-9405-49e5b83b52be.jpg', desc: 'Lush green cascading mountain terraces and ethnic hill-tribe villages in Sapa.' },
+      { name: 'Grand World, Phu Quoc', image: '/images/be829009-4c81-4cb2-b35f-5143edf96278.jpg', desc: 'The city that never sleeps featuring Venice-style canals, bamboo legend structures, and nightly water laser shows.' }
     ]
   },
   'thailand': {
     id: 'thailand',
     name: 'Thailand',
     category: 'International',
-    heroImage: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1200&q=80',
+    heroImage: encodeURI('/images/Thailand Phi Phi Islands.jpg'),
     tagline: 'Land of Smiles with Turquoise Islands, Temples & Elephant Sanctuaries',
     description: 'Discover crystal clear island lagoons, ornate royal temples, vibrant night markets, and ethical elephant sanctuaries.',
     spots: [
-      { name: 'Phi Phi Islands', image: 'https://images.unsplash.com/photo-1537956965359-7573183d1f57?auto=format&fit=crop&w=600&q=80', desc: 'Famous Maya Bay limestone cliffs, snorkeling reefs, and speedboat excursions.' },
-      { name: 'Grand Palace, Bangkok', image: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=600&q=80', desc: 'Ornate former royal residence housing the revered Emerald Buddha.' },
-      { name: 'Phuket Beaches', image: 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?auto=format&fit=crop&w=600&q=80', desc: 'Patong, Kata & Karon beaches with watersports, beach clubs, and nightlife.' },
-      { name: 'Chiang Mai Elephant Sanctuary', image: 'https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=600&q=80', desc: 'Ethical sanctuary experience feeding and bathing rescued Asian elephants.' },
-      { name: 'Wat Arun Temple', image: 'https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=600&q=80', desc: 'Temple of Dawn on the Chao Phraya River decorated with porcelain mosaic tiles.' },
-      { name: 'Krabi Railay Beach', image: 'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=600&q=80', desc: 'Secluded peninsula accessible only by boat, famous for rock climbing and lagoons.' }
+      { name: 'Walking Street, Bangkok', image: encodeURI('/images/walking street , Bangkok , Thailand.jpg.jpeg'), desc: 'Vibrant neon-lit entertainment hub with bustling night markets, street food stalls, and nightlife.' },
+      { name: 'Railay Beach, Krabi', image: encodeURI('/images/Railay Beach , Krabi.jpg'), desc: 'Secluded peninsula surrounded by towering limestone cliffs, turquoise lagoon waters, and rock climbing routes.' },
+      { name: 'Chiang Mai', image: encodeURI('/images/Chiang Mai , Thailand.jpg'), desc: 'Cultural northern mountain capital famous for ethical elephant sanctuaries, night bazaars, and ancient temples.' },
+      { name: 'Wat Arun (Temple of Dawn)', image: encodeURI('/images/Wat Arun (Temple of Dawn) , Thailand.jpg'), desc: 'Iconic riverside temple on the Chao Phraya River decorated with intricate porcelain mosaics and central spire.' },
+      { name: 'Phi Phi Island', image: encodeURI('/images/Phi Phi Isalnd , Thailand.jpg'), desc: 'Famous Maya Bay limestone cliffs, emerald lagoons, snorkeling reefs, and speedboat excursions.' },
+      { name: 'Wat Rong Khun (White Temple)', image: encodeURI('/images/Wat Rong Khun , Thailand.jpg.jpeg'), desc: 'Striking all-white contemporary temple artwork in Chiang Rai covered in glass mirrors.' }
     ]
   },
   'singapore': {
     id: 'singapore',
     name: 'Singapore',
     category: 'International',
-    heroImage: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=80',
+    heroImage: encodeURI('/images/Singapore Marina Bay Sands.jpg'),
+    heroObjectPosition: 'center center',
     tagline: 'Garden City of the Future with Supertrees & SkyParks',
     description: 'Experience futuristic urban nature, world-class theme parks, rooftop infinity pools, and diverse culinary night markets.',
     spots: [
-      { name: 'Gardens by the Bay (Supertree Grove)', image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=600&q=80', desc: 'Avatar-like giant Supertrees featuring night light & sound shows and Flower Dome.' },
-      { name: 'Marina Bay Sands SkyPark', image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=600&q=80', desc: 'Iconic 57th floor observation deck and world’s largest rooftop infinity pool.' },
-      { name: 'Universal Studios Sentosa', image: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80', desc: 'Southeast Asia’s top movie theme park with Transformer & Jurassic Park rides.' },
-      { name: 'Singapore Zoo & Night Safari', image: 'https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=600&q=80', desc: 'Open-concept wildlife park and nocturnal animal safari tour.' },
-      { name: 'Merlion Park', image: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?auto=format&fit=crop&w=600&q=80', desc: 'Iconic half-lion, half-fish statue spouting water into Marina Bay.' },
-      { name: 'Sentosa Island Beaches', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80', desc: 'Siloso & Tanjong beaches with cable car rides and beachfront dining.' }
+      { name: 'Marina Bay Sands', image: encodeURI('/images/Marina Bay Sands , singapore.jpg.jpeg'), desc: 'Iconic architectural triple-tower hotel with 57th-floor rooftop SkyPark, observation deck, and infinity pool.' },
+      { name: 'Gardens by the Bay', image: encodeURI('/images/Gardens by the bay , singapore.jpg'), desc: 'Futuristic urban nature park featuring illuminated Supertree structures and world’s largest glass greenhouses.' },
+      { name: 'Merlion Park', image: encodeURI('/images/Merlion  park , singapore.jpg.jpeg'), desc: 'National icon half-lion half-fish statue spouting water with scenic panoramic views of Marina Bay.' },
+      { name: 'Sentosa Island', image: encodeURI('/images/sentosa island , singapore.jpg.jpeg'), desc: 'Premier island resort destination featuring Universal Studios, golden beaches, cable cars, and luxury resorts.', objectPosition: 'center 68%' },
+      { name: 'Jewel Changi Airport', image: encodeURI('/images/Jewel Changi Airport , singapore.jpg.jpeg'), desc: 'World-famous dome complex housing the 40-meter Rain Vortex, the world’s tallest indoor waterfall surrounded by lush canopy park.' },
+      { name: 'Singapore Flyer', image: encodeURI('/images/singapore Flyer.jpg.jpeg'), desc: 'Giant 165-meter tall observation wheel offering breathtaking 360-degree views across Marina Bay and neighboring islands.' }
     ]
   },
   'malaysia': {
     id: 'malaysia',
     name: 'Malaysia',
     category: 'International',
-    heroImage: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1200&q=80',
-    tagline: 'Twin Towers, Rainforests & Langkawi Sky Bridges',
-    description: 'Explore futuristic architectural landmarks, colorful rainbow cave steps, island sky bridges, and cool tea plantations.',
+    heroImage: encodeURI('/images/Petronas Twin Towers , Kuala Lumpur , Malaysia.jpg'),
+    tagline: 'Petronas Twin Towers, Batu Caves, Langkawi & Genting Highlands',
+    description: 'Explore futuristic twin towers, sacred rainbow cave temples, thrilling theme parks, and spectacular rainforest sky bridges.',
     spots: [
-      { name: 'Petronas Twin Towers', image: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=600&q=80', desc: 'World’s tallest twin towers with double-deck Skybridge and observation floor.' },
-      { name: 'Langkawi Sky Bridge', image: 'https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=600&q=80', desc: 'Curved pedestrian cable bridge suspended 660 meters above Machincang mountain.' },
-      { name: 'Batu Caves', image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80', desc: '272 colorful stairs leading up to limestone cave temples guarded by Lord Murugan.' },
-      { name: 'Genting Highlands', image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80', desc: 'Hill station resort featuring cable cars, indoor theme parks, and casino.' },
-      { name: 'Penang Street Art & George Town', image: 'https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=600&q=80', desc: 'UNESCO heritage city renowned for interactive street murals and street food.' },
-      { name: 'Cameron Highlands Tea Gardens', image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80', desc: 'Cool mountain climate with rolling Boh tea plantations and strawberry farms.' }
+      { name: 'Genting Highlands', image: encodeURI('/images/Genting Highlands , Malaysia.jpg'), desc: 'Exciting mountain hill resort featuring Awana SkyWay cable cars, indoor & outdoor theme parks, and cool mountain breezes.' },
+      { name: 'Sunway Lagoon Theme Park', image: encodeURI('/images/Sunway Lagoon Theme Park , Malaysia.jpg'), desc: 'Multi-park entertainment wonderland featuring the world’s largest surf beach, twisting water rides, and theme park thrills.' },
+      { name: 'Kek Lok Si Temple, Penang', image: encodeURI('/images/Kek Lok Si Temple , Penang , Malaysia.jpg'), desc: 'Majestic hillside Buddhist temple complex in Penang featuring the seven-tier Pagoda of Ten Thousand Buddhas and towering Guanyin statue.' },
+      { name: 'Langkawi Sky Bridge', image: encodeURI('/images/Langkawi Sky Bridge , Malaysia.jpg'), desc: 'World-famous 125-meter curved pedestrian cable-stayed bridge suspended high above Mount Mat Cincang rainforest and Andaman Sea.' },
+      { name: 'Petronas Twin Towers, Kuala Lumpur', image: encodeURI('/images/Petronas Twin Towers , Kuala Lumpur , Malaysia.jpg'), desc: 'The iconic 88-story landmark rising 452 meters into the sky with high-tech double-decker skybridge.' },
+      { name: 'Batu Caves', image: encodeURI('/images/Batu Caves , Malaysia.jpg'), desc: 'Monumental 140-foot golden Lord Murugan statue and 272 vibrant rainbow steps leading into sacred limestone cavern temples.' }
     ]
   },
   'japan': {
     id: 'japan',
     name: 'Japan',
     category: 'International',
-    heroImage: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80',
-    tagline: 'Mount Fuji, Shrine Torii Gates & Cherry Blossoms',
-    description: 'Step into a land where ancient shinto shrines meet bullet trains, neon cityscapes, and serene bamboo groves.',
+    heroImage: encodeURI('/images/Fushimi Inari Shrine , Kyoto , Japan.jpg'),
+    tagline: 'Mount Fuji, Fushimi Inari Torii Gates & Arashiyama Bamboo',
+    description: 'Step into a land where iconic snow-capped Mount Fuji meets vermilion shrine gates, serene bamboo groves, samurai castles, and Disneyland magic.',
     spots: [
-      { name: 'Mount Fuji', image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80', desc: 'Japan’s iconic snow-capped volcano, best viewed from Lake Kawaguchiko.' },
-      { name: 'Kyoto Fushimi Inari Shrine', image: 'https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?auto=format&fit=crop&w=600&q=80', desc: 'Path of 10,000 vermilion Torii gates winding up Mount Inari in Kyoto.' },
-      { name: 'Tokyo Shibuya Crossing & Skytree', image: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80', desc: 'World’s busiest pedestrian scramble crossing and tallest broadcast tower.' },
-      { name: 'Osaka Castle', image: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=600&q=80', desc: 'Historic 16th-century samurai fortress surrounded by moats and cherry orchards.' },
-      { name: 'Arashiyama Bamboo Grove', image: 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=600&q=80', desc: 'Enchanting soaring green bamboo forest paths in western Kyoto.' },
-      { name: 'Cherry Blossom Parks (seasonal)', image: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=600&q=80', desc: 'Pink Sakura blossom blooms in Shinjuku Gyoen and Ueno Park.' }
+      { name: 'Fushimi Inari Shrine, Kyoto', image: encodeURI('/images/Fushimi Inari Shrine , Kyoto , Japan.jpg'), desc: 'Iconic Shinto shrine featuring thousands of vivid vermilion Senbon Torii gates winding up sacred Mount Inari.' },
+      { name: 'Arashiyama Bamboo Grove, Kyoto', image: encodeURI('/images/Arashiyama Bamboo Grove , Kyoto , Japan.jpg'), desc: 'Mesmerizing walking path enveloped by towering green bamboo stalks swaying gracefully in the Kyoto breeze.' },
+      { name: 'Osaka Castle', image: encodeURI('/images/Osaka Castle , Japan.jpg'), desc: 'Majestic 16th-century samurai fortress keep surrounded by massive defensive stone walls, moats, and lush park gardens.' },
+      { name: 'Tokyo Disneyland', image: encodeURI('/images/Tokyo Disneyland , Japan.jpg'), desc: 'Magical world-class fairy tale kingdom featuring the iconic Cinderella Castle, themed lands, parades, and attractions.' },
+      { name: 'Chidorigafuchi Moat & Cherry Blossoms, Tokyo', image: encodeURI('/images/Chidorigafuchi Moat & Cherry Blossoms , Tokyo , Japan.jpg'), desc: 'Scenic Imperial Palace waterway lined with hundreds of blooming pink Sakura trees with rowers floating beneath blossom canopies.' },
+      { name: 'Mount Fuji & Lake Kawaguchiko', image: encodeURI('/images/Mount Fuji & Lake Kawaguchiko , Japan.jpg'), desc: 'Iconic snow-capped sacred volcano rising symmetrically over the tranquil waters of Lake Kawaguchiko framed by cherry blossoms.' }
     ]
   },
   'schengen': {
     id: 'schengen',
     name: 'Schengen (Europe)',
     category: 'International',
-    heroImage: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=1200&q=80',
-    tagline: 'Eiffel Tower, Swiss Alps & Venetian Canals',
-    description: 'Traverse 29 European countries seamlessly from romantic Paris landmarks to Alpine mountain peaks.',
+    heroImage: encodeURI('/images 2/Eiffel Tower , paris , france.jpg.jpeg'),
+    tagline: 'Eiffel Tower, Swiss Castles, Rome & European Wonders',
+    description: 'Traverse 29 European countries seamlessly from romantic Paris landmarks to Alpine lakes, Roman wonders, and Mediterranean coasts.',
     spots: [
-      { name: 'Eiffel Tower, Paris', image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80', desc: 'Iron lattice tower on the Champ de Mars in Paris, shimmering with evening lights.' },
-      { name: 'Swiss Alps (Interlaken / Jungfrau)', image: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=600&q=80', desc: 'Top of Europe Jungfraujoch cogwheel train rides and glacier panoramas.' },
-      { name: 'Venice Canals', image: 'https://images.unsplash.com/photo-1514896856000-91cb6de818e0?auto=format&fit=crop&w=600&q=80', desc: 'Gondola rides through romantic waterways past Doge Palace & Rialto Bridge.' },
-      { name: 'Santorini, Greece', image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=600&q=80', desc: 'White whitewashed cliffside villages with blue domed churches facing the caldera.' },
-      { name: 'Neuschwanstein Castle, Germany', image: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80', desc: 'Fairy-tale 19th-century palace perched atop Bavarian Alps mountains.' },
-      { name: 'Amsterdam Canals', image: 'https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?auto=format&fit=crop&w=600&q=80', desc: 'Historic 17th-century canal belt, gabled merchant houses, and bike tours.' }
+      { name: 'Eiffel Tower, Paris (France)', image: encodeURI('/images 2/Eiffel Tower , paris , france.jpg.jpeg'), desc: 'Iconic wrought-iron lattice tower in Paris, France offering breathtaking city panoramas and romantic illuminations.' },
+      { name: 'Oberhofen Castle, Switzerland', image: encodeURI('/images/Oberhofen Castle , Switzerland.jpg'), desc: 'Fairytale 13th-century lakeside fortress on Lake Thun surrounded by majestic Swiss Alpine peaks and gardens.' },
+      { name: 'Colosseum in Rome, Italy', image: encodeURI('/images/Colosseum in Rome , Italy.jpg'), desc: 'Magnificent ancient Roman amphitheater in Rome, an iconic wonder of architectural engineering and history.' },
+      { name: 'Mykonos, Greece', image: encodeURI('/images/Mykonos , Greece.jpg'), desc: 'Iconic whitewashed Cycladic seaside haven with crystal clear turquoise Aegean waters and vibrant waterfronts.' },
+      { name: 'Séville, Spain', image: encodeURI('/images/Séville , Spain.jpg'), desc: 'Breathtaking Andalusian jewel featuring monumental Gothic architecture, royal palaces, and rich Spanish culture.' },
+      { name: 'Brandenburg Gate in Berlin, Germany', image: encodeURI('/images/Brandenburg Gate , Berlin , Germany.jpg'), desc: 'Historic 18th-century neoclassical monument and triumphal arch symbolizing European unity and German heritage.' }
     ]
   },
   'sri-lanka': {
     id: 'sri-lanka',
     name: 'Sri Lanka',
     category: 'International',
-    heroImage: 'https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=1200&q=80',
-    tagline: 'Ancient Rock Fortresses, Nine Arch Bridges & Wildlife Safaris',
-    description: 'Experience lush tea plantations, ancient Buddhist heritage sites, leopards in Yala, and coastal colonial forts.',
+    heroImage: encodeURI('/images/Sigiriya Rock Fortress , Sri Lanka.jpg'),
+    tagline: 'Sigiriya Rock, Ella Nine Arch Bridge, Galle Fort & Mirissa Beach',
+    description: 'Experience ancient rock palaces, UNESCO cave temples, colonial ocean forts, and palm-fringed tropical beaches.',
     spots: [
-      { name: 'Sigiriya Rock Fortress', image: 'https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=600&q=80', desc: 'Ancient 200m high palace fortress with Mirror Wall and Lion Gate stairs.' },
-      { name: 'Ella Nine Arch Bridge', image: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=600&q=80', desc: 'Colonial stone bridge surrounded by dense tea hills and scenic train rides.' },
-      { name: 'Yala National Park Safari', image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=600&q=80', desc: 'Highest leopard density in the world along with wild elephants and sloth bears.' },
-      { name: 'Galle Fort', image: 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?auto=format&fit=crop&w=600&q=80', desc: 'Portuguese & Dutch colonial fortified city on Sri Lanka’s southern coast.' },
-      { name: 'Kandy Temple of the Tooth', image: 'https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=600&q=80', desc: 'Sacred Buddhist temple complex housing the relic of the tooth of Buddha.' },
-      { name: 'Nuwara Eliya Tea Plantations', image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80', desc: 'Little England hill country with Ceylon tea factories and misty waterfalls.' }
+      { name: 'Mirissa Beach', image: encodeURI('/images/Mirissa Beach , Sri Lanka.jpg'), desc: 'Tropical crescent bay featuring iconic Coconut Tree Hill, turquoise surf waters, and golden palm-lined beaches.' },
+      { name: 'Dambulla Cave Temple', image: encodeURI('/images/Dambulla Cave Temple , Sri Lanka.jpg'), desc: 'UNESCO World Heritage sacred cave monastery complex with magnificent rock-cut murals and Buddha statues.' },
+      { name: 'Polonnaruwa Ancient City', image: encodeURI('/images/Polonnaruwa Ancient City , Sri Lanka.jpg'), desc: 'Ancient medieval royal capital showcasing circular Vatadage stone relic houses and monumental sculptures.' },
+      { name: 'Sigiriya Rock Fortress', image: encodeURI('/images/Sigiriya Rock Fortress , Sri Lanka.jpg'), desc: 'Iconic 200m ancient monolithic palace fortress rising over emerald jungle canopy with lion paw gate.' },
+      { name: 'Ella & Nine Arch Bridge', image: encodeURI('/images/Ella & Nine Arch Bridge , Sri Lanka.jpg'), desc: 'Colonial viaduct stone railway bridge nestled amidst lush green tea plantation hills in scenic Ella.' },
+      { name: 'Galle Fort', image: encodeURI('/images/Galle Fort , Sri Lanka.jpg'), desc: 'UNESCO World Heritage 16th-century coastal stone fortress overlooking the Indian Ocean with iconic clock tower.' }
     ]
   },
   'philippines': {
     id: 'philippines',
     name: 'Philippines',
     category: 'International',
-    heroImage: 'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1200&q=80',
-    tagline: 'El Nido Lagoons, Chocolate Hills & Boracay White Beaches',
-    description: 'Explore 7,000+ island wonders from crystal clear karst lagoons to world-famous surf spots and rice terraces.',
+    heroImage: encodeURI('/images/Coron, Philippines.jpg.jpeg'),
+    tagline: 'Coron Lagoons, Chocolate Hills & Underground River',
+    description: 'Explore 7,000+ tropical islands featuring turquoise karst lakes, subterranean rivers, chocolate-colored hills, and historic Spanish citadels.',
     spots: [
-      { name: 'Palawan / El Nido Lagoons', image: 'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=600&q=80', desc: 'Secret Big & Small Lagoons with emerald waters framed by towering limestone.' },
-      { name: 'Boracay White Beach', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80', desc: '4km powder-soft white sand beach with turquoise water and sunset sailing.' },
-      { name: 'Chocolate Hills, Bohol', image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80', desc: 'Geological formation of over 1,200 grass-covered symmetrical conical hills.' },
-      { name: 'Banaue Rice Terraces', image: 'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=600&q=80', desc: '2,000-year-old mountain terraces carved into the Ifugao mountains.' },
-      { name: 'Manila Intramuros', image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80', desc: 'Historic 16th-century walled Spanish colonial city center in Manila.' },
-      { name: 'Siargao Cloud 9 Surf Point', image: 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=600&q=80', desc: 'Surfing capital of the Philippines famous for wooden boardwalks and barreling waves.' }
+      { name: 'Coron Island, Palawan', image: encodeURI('/images/Coron, Philippines.jpg.jpeg'), desc: 'Pristine crystal-clear turquoise lakes, towering limestone karst cliffs, and world-renowned sunken shipwreck diving.' },
+      { name: 'Chocolate Hills, Bohol', image: encodeURI('/images/Chocolate Hills , Bohol, Philippines.jpg.jpeg'), desc: 'Fascinating natural geological monument of over 1,200 symmetrical conical hills turning chocolate brown in the dry season.' },
+      { name: 'Puerto Princesa Underground River', image: encodeURI('/images 2/Puerto Princesa Subterranean River National Park philippines.jpg.jpeg'), desc: 'New 7 Wonders of Nature navigable subterranean river cave featuring colossal stalactite chambers and crystal emerald waters.' },
+      { name: 'Cebu Taoist Temple', image: encodeURI('/images/Cebu Taoist Temple , Philippines.webp'), desc: 'Colorful multi-tiered pagoda temple perched 300 meters above sea level overlooking Cebu City and Mactan island.' },
+      { name: 'Fort Santiago, Intramuros', image: encodeURI('/images/Fort Santiago Philippines.avif'), desc: 'Historic 16th-century Spanish stone citadel and defense fortress in the heart of Intramuros walled city.' },
+      { name: 'Central Visayas Island Coast', image: encodeURI('/images/Central Visayas, Philippines.jpg.jpeg'), desc: 'Tropical island paradise in Central Visayas famous for turquoise sandbar beaches, coral marine sanctuaries, and whale sharks.' }
     ]
   },
   'georgia': {
     id: 'georgia',
     name: 'Georgia',
     category: 'International',
-    heroImage: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1200&q=80',
-    tagline: 'Caucasus Mountains, Trinity Church & Wine Valleys',
-    description: 'Immerse in ancient Orthodox churches overlooking snow-capped Caucasus peaks and 8,000-year-old wine traditions.',
+    heroImage: encodeURI('/images 2/Holy Trinity Cathedral , georgia.jpg.jpeg'),
+    heroObjectPosition: 'center top',
+    tagline: 'Caucasus Mountains, Trinity Church & Ancient Heritage',
+    description: 'Immerse in ancient Orthodox cathedrals overlooking snow-capped Caucasus peaks, emerald river canyons, and romantic Black Sea boulevards.',
     spots: [
-      { name: 'Tbilisi Old Town', image: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=600&q=80', desc: 'Sulfur bath districts, Narikala Fortress cable car, and carved wooden balconies.' },
-      { name: 'Kazbegi & Gergeti Trinity Church', image: 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?auto=format&fit=crop&w=600&q=80', desc: '14th-century church situated under Mount Kazbek 2,170m above sea level.' },
-      { name: 'Batumi Boulevard', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80', desc: 'Black Sea coastal promenade with modern towers and Ali & Nino moving statue.' },
-      { name: 'Uplistsikhe Cave City', image: 'https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=600&q=80', desc: 'Ancient rock-hewn town dating back to the early Iron Age carved into sandstone.' },
-      { name: 'Svaneti Mountains', image: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=600&q=80', desc: 'High mountain medieval region with ancient stone defensive Svan towers.' },
-      { name: 'Kakheti Wine Region', image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80', desc: 'Fertile valley home to traditional clay qvevri wine cellars and Sighnaghi town.' }
+      { name: 'Holy Trinity Cathedral', image: encodeURI('/images 2/Holy Trinity Cathedral , georgia.jpg.jpeg'), desc: 'Majestic Sameba Cathedral rising over Elia Hill in Tbilisi, one of the largest Orthodox church complexes in the world with gleaming golden domes.', objectPosition: 'center top' },
+      { name: 'Narikala Fortress', image: encodeURI('/images/Narikala Fortress , Georgia.webp'), desc: 'Ancient 4th-century hilltop fortress overlooking Tbilisi Old Town, the Mtkvari River, and the Mother of Georgia statue.' },
+      { name: 'Chronicle of Georgia', image: encodeURI('/images/Chronicles of Georgia.webp'), desc: 'Towering 30-meter stone monument on Mount Keeni overlooking the Tbilisi Sea, depicting biblical scenes and royal Georgian history.' },
+      { name: 'Gudauri', image: encodeURI('/images/Gudauri , Georgia.jpg.jpeg'), desc: 'Breathtaking Greater Caucasus alpine mountain resort famous for year-round snow peaks, the Russia-Georgia Friendship Monument, and paragliding.' },
+      { name: 'Martvili Canyon', image: encodeURI('/images/Martvili Canyon , Georgia.webp'), desc: 'Enchanting natural emerald canyon with turquoise waters, cascading waterfalls, mossy limestone gorges, and boat excursions.' },
+      { name: 'Ali & Nino Statue', image: encodeURI('/images/Ali & Nino Statue , Georgia.jpg.jpeg'), desc: 'Iconic 8-meter kinetic metal love sculpture in Batumi Boulevard portraying the tragic romance of a Muslim boy and Christian Georgian princess.' }
     ]
   },
   'kazakhstan': {
     id: 'kazakhstan',
-    name: 'Kazakhstan (Almaty)',
+    name: 'Kazakhstan',
     category: 'International',
-    heroImage: 'https://images.unsplash.com/photo-1558588942-930faae5a389?auto=format&fit=crop&w=1200&q=80',
-    tagline: 'Charyn Canyons, Big Almaty Lake & Shymbulak Skiing',
-    description: 'Discover Central Asia’s gem featuring dramatic red canyons, turquoise mountain lakes, and high-altitude ski slopes.',
+    heroImage: encodeURI('/images/Charyn Canyon , Kazakhstan.jpg.jpeg'),
+    tagline: 'Charyn Canyons, Kolsai Lakes & Futuristic Architecture',
+    description: 'Discover Central Asia’s gem featuring dramatic red canyon valleys, turquoise mountain lakes, and futuristic capitals.',
     spots: [
-      { name: 'Kok-Tobe Hill', image: 'https://images.unsplash.com/photo-1558588942-930faae5a389?auto=format&fit=crop&w=600&q=80', desc: 'Panoramic hill view over Almaty city reached by cable car with Beatles monument.' },
-      { name: 'Charyn Canyon', image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80', desc: 'Grand Canyon of Kazakhstan featuring 90-meter deep Valley of Castles rock pillars.' },
-      { name: 'Big Almaty Lake', image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80', desc: 'Alpine turquoise lake 2,511m high in the Trans-Ili Alatau mountains.' },
-      { name: 'Shymbulak Ski Resort', image: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=600&q=80', desc: 'Modern winter resort with gondolas ascending to Talgar Pass peaks.' },
-      { name: 'Medeu Ice Rink', image: 'https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&w=600&q=80', desc: 'World’s highest outdoor ice skating rink surrounded by pine-covered slopes.' },
-      { name: 'Zenkov Cathedral', image: 'https://images.unsplash.com/photo-1548625361-185d2ebc17e6?auto=format&fit=crop&w=600&q=80', desc: 'Brightly painted wooden Russian Orthodox cathedral built without nails.' }
+      { name: 'Charyn Canyon', image: encodeURI('/images/Charyn Canyon , Kazakhstan.jpg.jpeg'), desc: 'Dramatic 90-meter-deep red sandstone gorge known as the Valley of Castles, carved by the Charyn River over millions of years.' },
+      { name: 'Kolsai Lakes', image: encodeURI('/images/Kolsai Lakes , Kazakhstan.jpg.jpeg'), desc: 'A cascade of pristine turquoise alpine lakes nestled in the northern Tien Shan mountain ranges surrounded by pine forests.' },
+      { name: 'Ascension Cathedral', image: encodeURI('/images/Ascension Cathedral , Almaty , kazakhstan.webp'), desc: 'Iconic brightly painted wooden Russian Orthodox cathedral in Panfilov Park, Almaty, constructed entirely without nails.' },
+      { name: 'Khan Shatyr', image: encodeURI('/images/Khan Shatyr in Astana , kazakhstan.jpg.jpeg'), desc: 'Futuristic 150-meter transparent tent structure in Astana featuring an indoor shopping oasis, entertainment center, and tropical beach resort.' },
+      { name: 'Ak Orda Presidential Palace', image: encodeURI('/images/Ak Orda Presidential Palace , kazakhstan.jpg.jpeg'), desc: 'Grand official presidential residence in Astana crowned with a majestic blue and gold dome topped with a golden spire.' },
+      { name: 'Palace of Peace and Reconciliation', image: encodeURI('/images 2/Palace of Peace and Reconciliation , kazakhastan.jpg.jpeg'), desc: 'Striking 62-meter pyramid designed by Norman Foster in Astana as a global center for religious understanding and cultural unity.', objectPosition: 'center 5%' }
     ]
   },
   'maldives': {
     id: 'maldives',
     name: 'Maldives',
     category: 'International',
-    heroImage: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1200&q=80',
-    tagline: 'Overwater Bungalows, Bioluminescent Beaches & Dolphin Cruises',
-    description: 'Unwind in pure luxury on private coral atolls surrounded by crystal turquoise lagoons and vibrant marine reefs.',
+    heroImage: encodeURI('/images/Luxury Overwater Villas & Sunset , Maldives.jpg'),
+    tagline: 'Luxury Overwater Villas, Coral Reefs & Romantic Candlelight Dinners',
+    description: 'Unwind in pure luxury on private coral atolls surrounded by crystal turquoise lagoons, clear kayaking, and vibrant marine reefs.',
     spots: [
-      { name: 'Overwater Villas', image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=600&q=80', desc: 'Luxury glass-floor villas with private pools and direct lagoon ocean access.' },
-      { name: 'Snorkeling & Scuba Coral Reefs', image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80', desc: 'Swim alongside manta rays, sea turtles, and reef sharks in crystal lagoons.' },
-      { name: 'Bioluminescent Beach, Vaadhoo', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80', desc: 'Glowing Sea of Stars effect created by glowing blue plankton along night shorelines.' },
-      { name: 'Sandbank Picnic Islands', image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80', desc: 'Private dining experiences on tiny uninhabited white sandbanks in the ocean.' },
-      { name: 'Male City Fish Market', image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80', desc: 'Vibrant local capital market showcasing fresh yellowfin tuna catches.' },
-      { name: 'Sunset Dolphin Cruise', image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80', desc: 'Golden hour speedboat excursion tracking wild spinner dolphin pods.' }
+      { name: 'Romantic Beachfront Candlelight Dinner', image: encodeURI('/images/Maldives Candle light dinner.jpg.jpeg?v=6'), desc: 'Intimate private dinner setup within a heart of warm lanterns on white coral sand under vibrant sunset skies.', objectPosition: '65% 92%' },
+      { name: 'Scuba Diving & Coral Reefs', image: encodeURI('/images/Scuba Diving & Coral Reefs , Maldives.jpg'), desc: 'World-class scuba diving through deep blue waters and thriving coral pinnacles filled with schools of tropical fish.' },
+      { name: 'Crystal Clear Kayaking & Lagoons', image: encodeURI('/images/Crystal Clear Kayaking & Lagoons , Maldives.jpg'), desc: 'Glide over shallow transparent lagoons and vibrant coral gardens in a see-through glass kayak.' },
+      { name: 'Luxury Overwater Villas & Sunset', image: encodeURI('/images/Luxury Overwater Villas & Sunset , Maldives.jpg'), desc: 'Iconic thatched-roof overwater bungalows perched on stilts over calm turquoise waters catching golden hour rays.' },
+      { name: 'Private Yacht & Speedboat Cruise', image: encodeURI('/images/Private Yacht & Speedboat Cruise , Maldives.jpg'), desc: 'Exclusive speedboat and yacht charters sailing across sparkling azure atolls and private sandbanks.' },
+      { name: 'Sandbank Islands & Water Sports', image: encodeURI('/images 2/Sandbank Islands & Water Sports - maldives.jpg.jpeg'), desc: 'Secluded white sandbar atolls surrounded by electric turquoise waters offering exhilarating speedboat watersports and private picnics.' }
     ]
   },
-  'saudi-arabia': {
-    id: 'saudi-arabia',
-    name: 'Saudi Arabia',
+  'azerbaijan': {
+    id: 'azerbaijan',
+    name: 'Azerbaijan (Baku)',
     category: 'International',
-    heroImage: 'https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?auto=format&fit=crop&w=1200&q=80',
-    tagline: 'AlUla Hegra Rock Tombs, Edge of the World & Holy Shrines',
-    description: 'Explore ancient Nabataean rock-cut tombs in AlUla, modern mega-developments, and sacred pilgrimage heritage.',
+    heroImage: encodeURI('/images/Flame Towers , azerbaijan.jpg.jpeg'),
+    tagline: 'Flame Towers, Caspian Sea Boulevards & Medieval Old Towns',
+    description: 'Immerse in the Land of Fire, where futuristic curved architecture meets medieval stone palaces along the breezy Caspian Sea.',
     spots: [
-      { name: 'AlUla / Hegra Rock Tombs', image: 'https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?auto=format&fit=crop&w=600&q=80', desc: 'UNESCO site of 110 carved Nabataean monumental tombs in desert rocks.' },
-      { name: 'Masjid al-Haram, Mecca (Umrah)', image: 'https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=600&q=80', desc: 'Holy sanctuary housing the sacred Kaaba, destination for Umrah & Hajj.' },
-      { name: 'Red Sea Coast', image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80', desc: 'Pristine coral reefs and luxury sustainable island eco-resorts.' },
-      { name: 'Riyadh Edge of the World', image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80', desc: '300-meter high dramatic cliff precipice overlooking ancient ocean bed valley.' },
-      { name: 'Diriyah Historic District', image: 'https://images.unsplash.com/photo-1548625361-185d2ebc17e6?auto=format&fit=crop&w=600&q=80', desc: 'Birthplace of the Saudi state built with mud-brick At-Turaif architecture.' },
-      { name: 'NEOM & Modern Developments', image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80', desc: 'Futuristic mega-projects including Sindalah Island and The Line.' }
+      { name: 'Flame Towers', image: encodeURI('/images/Flame Towers , azerbaijan.jpg.jpeg'), desc: 'Trio of iconic flame-shaped skyscrapers dominating the Baku skyline with spectacular LED illumination reflecting the land of fire.' },
+      { name: 'Heydar Aliyev Center', image: encodeURI('/images/Heydar Aliyev Center , azerbaijan.jpg.jpeg'), desc: "Zaha Hadid's fluid architectural masterpiece celebrated worldwide for its flowing curved lines and modern cultural exhibition halls." },
+      { name: 'Baku Boulevard', image: encodeURI('/images/Baku Boulevard , azerbaijan.jpg.jpeg'), desc: 'Sprawling scenic promenade along the Caspian Sea waterfront featuring palm-lined pathways, Little Venice canals, and sunset breezes.' },
+      { name: 'Palace of the Shirvanshahs', image: encodeURI('/images 2/Palace of Shirvanshahs azerbaijan.JPG.jpeg'), desc: '15th-century royal palace complex in the heart of Icherisheher (Old City), a UNESCO World Heritage gem of medieval Islamic architecture.' },
+      { name: 'Teze Pir Mosque', image: encodeURI('/images/Teze Pir Mosque , azerbaijan.jpg.jpeg'), desc: 'Magnificent early 20th-century mosque in Baku adorned with twin golden minarets, marble calligraphy, and ornate prayer halls.' },
+      { name: 'Baku Eye', image: encodeURI('/images/Baku Eye , azerbaijan.jpg.jpeg'), desc: 'Giant 60-meter seaside Ferris wheel offering 360-degree panoramic views across Baku Bay and the Caspian Sea horizon.', objectPosition: 'center 75%' }
     ]
   },
   'turkey': {
     id: 'turkey',
     name: 'Turkey',
     category: 'International',
-    heroImage: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=1200&q=80',
-    tagline: 'Cappadocia Balloons, Hagia Sophia & Pamukkale Cotton Castles',
-    description: 'Marvel at hundreds of hot air balloons over fairy chimneys, Ottoman mosques, and white thermal travertines.',
+    heroImage: encodeURI('/images/Cappadocia Hot Air Balloons , Turkey.jpg'),
+    tagline: 'Cappadocia Balloons, Ephesus Ruins, Hagia Sophia & Pamukkale Pools',
+    description: 'Discover ancient Greco-Roman wonders, Turkish Riviera coastal castles, Byzantine monuments, and sunrise hot air balloon flights over Cappadocia.',
     spots: [
-      { name: 'Cappadocia Hot Air Balloons', image: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=600&q=80', desc: 'Sunrise balloon flights over volcanic fairy chimney cave valleys.' },
-      { name: 'Hagia Sophia, Istanbul', image: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=600&q=80', desc: 'Architectural masterpiece spanning Byzantine & Ottoman empire history.' },
-      { name: 'Pamukkale Cotton Castle', image: 'https://images.unsplash.com/photo-1527838832700-548952f14cdb?auto=format&fit=crop&w=600&q=80', desc: 'Natural white travertine terraces filled with warm mineral spring waters.' },
-      { name: 'Blue Mosque', image: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=600&q=80', desc: 'Sultanahmet Mosque decorated with 20,000 hand-painted Iznik blue ceramic tiles.' },
-      { name: 'Bosphorus Cruise', image: 'https://images.unsplash.com/photo-1527838832700-548952f14cdb?auto=format&fit=crop&w=600&q=80', desc: 'Boat journey separating European and Asian continents in Istanbul.' },
-      { name: 'Ephesus Ancient Ruins', image: 'https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=600&q=80', desc: 'Ancient Greco-Roman city featuring the Library of Celsus and Great Theatre.' }
+      { name: 'Cappadocia Hot Air Balloons', image: encodeURI('/images/Cappadocia Hot Air Balloons , Turkey.jpg'), desc: 'Magical sunrise hot air balloon flights soaring above Cappadocia’s volcanic fairy chimneys and cave valleys.' },
+      { name: 'Ephesus Ancient City', image: encodeURI('/images/Ephesus Ancient City , Turkey.jpg'), desc: 'Ancient Greco-Roman metropolis featuring the grand Library of Celsus, Temple of Artemis, and marble streets.' },
+      { name: 'Antalya (Kaleiçi Old Town & Coast)', image: encodeURI('/images/Antalya , Turkey.jpg'), desc: 'Turkish Riviera jewel with historic Old Town Kaleiçi, Red Tower castle, and turquoise Mediterranean beaches.' },
+      { name: 'Hagia Sophia, Istanbul', image: encodeURI('/images/Hagia Sophia , Istanbul , Turkey.jpg'), desc: 'World-famous architectural wonder in Istanbul bridging Byzantine and Ottoman heritage with colossal domes and minarets.' },
+      { name: 'Pamukkale Thermal Pools', image: encodeURI('/images/Pamukkale Thermal Pools , Turkey.jpg'), desc: 'Surreal natural wonder of gleaming white travertine terraces and cascading mineral-rich turquoise thermal pools.' },
+      { name: 'Blue Mosque (Sultanahmet)', image: encodeURI('/images/Blue Mosque , Turkey.jpg'), desc: 'The Sultanahmet Mosque in Istanbul famed for six soaring minarets, grand cascading domes, and blue Iznik tilework.' }
     ]
   },
-  'russia': {
-    id: 'russia',
-    name: 'Russia',
+  'seychelles': {
+    id: 'seychelles',
+    name: 'Seychelles',
     category: 'International',
-    heroImage: 'https://images.unsplash.com/photo-1513326718677-b964603b136b?auto=format&fit=crop&w=1200&q=80',
-    tagline: 'Red Square Domes, Kremlin Palaces & Hermitage Museum',
-    description: 'Experience imperial Russian palaces, colorful onion-domed cathedrals, winter wonderland parks, and ballet heritage.',
+    heroImage: encodeURI('/images/La Digue, Seychelles.jpg.jpeg'),
+    tagline: 'Anse Source d’Argent, Granite Boulders & Turquoise Atolls',
+    description: 'Escape to an idyllic Indian Ocean archipelago renowned for powder-soft white sand beaches, iconic giant granite boulders, lush rainforests, and coral sanctuaries.',
     spots: [
-      { name: "Red Square & St. Basil's Cathedral", image: 'https://images.unsplash.com/photo-1513326718677-b964603b136b?auto=format&fit=crop&w=600&q=80', desc: 'Moscow’s iconic square with colorful flame-shaped onion cathedral domes.' },
-      { name: 'Hermitage Museum, St. Petersburg', image: 'https://images.unsplash.com/photo-1558431382-27e303142255?auto=format&fit=crop&w=600&q=80', desc: 'Winter Palace housing 3 million works of art in Saint Petersburg.' },
-      { name: 'The Kremlin', image: 'https://images.unsplash.com/photo-1513326718677-b964603b136b?auto=format&fit=crop&w=600&q=80', desc: 'Fortified central complex overlooking the Moskva river with grand cathedrals.' },
-      { name: 'Peterhof Palace Fountains', image: 'https://images.unsplash.com/photo-1548625361-185d2ebc17e6?auto=format&fit=crop&w=600&q=80', desc: 'Russian Versailles featuring Grand Cascade golden fountains leading to the sea.' },
-      { name: 'Trans-Siberian Railway', image: 'https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=600&q=80', desc: 'Legendary train journey linking Moscow to Vladivostok across Siberia.' },
-      { name: 'Golden Ring Towns', image: 'https://images.unsplash.com/photo-1513326718677-b964603b136b?auto=format&fit=crop&w=600&q=80', desc: 'Ring of ancient cities northeast of Moscow preserved with traditional kremlins.' }
+      { name: 'Anse Source d’Argent (La Digue)', image: encodeURI('/images/La Digue, Seychelles.jpg.jpeg'), desc: 'World’s most photographed tropical beach featuring iconic sculpted pink granite boulders, shallow calm lagoons, and coconut palms.' },
+      { name: 'Beau Vallon Beach', image: encodeURI('/images/Beau Vallon, Seychelles.jpg.jpeg'), desc: 'Lively sweeping white-sand bay in northwest Mahé famous for crystal-clear waters, watersports, and stunning sunset views.' },
+      { name: 'Anse Royale Beach', image: encodeURI('/images/Anse Royale Beach , Seychelles.webp'), desc: 'Enchanting bay with calm turquoise waters, sheltered coral reef snorkeling, and dramatic coastal granite rock formations.' },
+      { name: 'Praslin National Park & Vallée de Mai', image: encodeURI('/images 2/Praslin  National Park.webp'), desc: 'UNESCO World Heritage prehistoric palm forest and national park on Praslin home to the legendary Coco de Mer palm and rare Seychelles black parrots.' },
+      { name: 'Moyenne Island', image: encodeURI('/images/Ile Moyenne , Seychelles.jpg.jpeg'), desc: 'Protected flora and fauna sanctuary in Sainte Anne Marine National Park with giant Aldabra tortoises roaming freely and pristine nature trails.' },
+      { name: 'Mahé Island Viewpoint & Coast', image: encodeURI('/images/Mahe . seychelles.jpg.jpeg'), desc: 'Panoramic granite mountain lookout over lush tropical rainforests, hidden coves, and the sparkling turquoise Indian Ocean.' }
     ]
   },
   'south-korea': {
     id: 'south-korea',
     name: 'South Korea',
     category: 'International',
-    heroImage: 'https://images.unsplash.com/photo-1538485399081-7191377e8241?auto=format&fit=crop&w=1200&q=80',
-    tagline: 'Seoul Palaces, N Tower Views & Jeju Island Beaches',
-    description: 'Immerse in K-pop culture, Hanok traditional villages, futuristic tech, and volcanic island scenery.',
+    heroImage: encodeURI('/images/N Seoul Tower , South Korea.jpg'),
+    tagline: 'N Seoul Tower, Joseon Palaces, Hanok Villages & Jeju Island',
+    description: 'Immerse in K-pop culture, Hanok traditional villages, futuristic Starfield libraries, and volcanic island scenery.',
     spots: [
-      { name: 'Gyeongbokgung Palace, Seoul', image: 'https://images.unsplash.com/photo-1538485399081-7191377e8241?auto=format&fit=crop&w=600&q=80', desc: 'Main Joseon dynasty royal palace with royal guard changing ceremonies.' },
-      { name: 'N Seoul Tower', image: 'https://images.unsplash.com/photo-1538485399081-7191377e8241?auto=format&fit=crop&w=600&q=80', desc: 'Namsan mountain tower offering 360-degree night view over Seoul skyline.' },
-      { name: 'Jeju Island', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80', desc: 'Volcanic island with Seongsan Sunrise Peak, waterfalls, and lava tubes.' },
-      { name: 'Nami Island', image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80', desc: 'Half-moon shaped island famous for Metasequoia tree-lined walking paths.' },
-      { name: 'Busan Haeundae Beach', image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80', desc: 'South Korea’s premier coastal beach city with seafood markets and sky capsules.' },
-      { name: 'Bukchon Hanok Village', image: 'https://images.unsplash.com/photo-1538485399081-7191377e8241?auto=format&fit=crop&w=600&q=80', desc: 'Traditional neighborhood of hundreds of preserved Hanok houses in Seoul.' }
+      { name: 'N Seoul Tower', image: encodeURI('/images/N Seoul Tower , South Korea.jpg'), desc: 'Iconic Namsan mountain communication tower surrounded by vibrant seasonal foliage with 360-degree views over Seoul.' },
+      { name: 'Jeju Island', image: encodeURI('/images/Jeju Island , South Korea.jpg'), desc: 'World Natural Heritage volcanic paradise featuring dramatic black basalt shorelines, emerald coastal trails, and sunrise peaks.' },
+      { name: 'Gyeongbokgung Palace, Seoul', image: encodeURI('/images/Gyeongbokgung Palace , Seoul , South Korea.jpg'), desc: 'Grand Joseon Dynasty royal palace featuring the magnificent Geunjeongjeon throne hall, stone courtyards, and guard ceremonies.' },
+      { name: 'Bukchon Hanok Village, Seoul', image: encodeURI('/images/Bukchon Hanok Village , Seoul , South Korea.jpg'), desc: 'Picturesque historic Seoul neighborhood preserving hundreds of traditional tiled-roof Hanok residences and artisan alleys.' },
+      { name: 'Starfield Library (COEX Mall)', image: encodeURI('/images/Starfield Library (COEX Mall) , Seoul , South Korea.jpg'), desc: 'Spectacular futuristic multi-level public library in Gangnam with soaring 13-meter book towers and art installations.' },
+      { name: 'Busan Harbor & Gwangan Bridge', image: encodeURI('/images/Busan Harbor & Gwangan Bridge , South Korea.jpg'), desc: 'Vibrant coastal metropolis illuminated at dusk featuring the iconic suspension bridge over the East Sea.' }
     ]
   },
   'kenya': {
     id: 'kenya',
     name: 'Kenya',
     category: 'International',
-    heroImage: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=80',
+    heroImage: encodeURI('/images/Maasai Mara National Reserve , Kenya.jpg.jpeg'),
     tagline: 'Maasai Mara Migration, Kilimanjaro Views & Pink Flamingos',
     description: 'Experience Africa’s ultimate wildlife safari adventure during the Great Migration of wildebeest and Big 5 game.',
     spots: [
-      { name: 'Maasai Mara Safari (Great Migration)', image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=600&q=80', desc: 'World-famous game reserve witnessing millions of wildebeest crossing Mara river.' },
-      { name: 'Amboseli National Park (Mt. Kilimanjaro views)', image: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=600&q=80', desc: 'Herds of free-ranging elephants against the backdrop of snow-capped Mt. Kilimanjaro.' },
-      { name: 'Lake Nakuru Flamingos', image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=600&q=80', desc: 'Rift Valley soda lake covered in thousands of pink lesser flamingos and rhinos.' },
-      { name: 'Diani Beach', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80', desc: 'White sand Indian Ocean beach with coral reefs and dhow boat cruises.' },
-      { name: 'Nairobi National Park', image: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=600&q=80', desc: 'Unique wildlife reserve located right outside Kenya’s capital city skyline.' },
-      { name: "Hell's Gate National Park", image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80', desc: 'Dramatic red rock gorges, geothermal towers, and cycling among wildlife.' }
+      { name: 'Maasai Mara National Reserve', image: encodeURI('/images/Maasai Mara National Reserve , Kenya.jpg.jpeg'), desc: 'World-famous game reserve witnessing the Great Migration of millions of wildebeest, zebras, and Big Five safari predators across golden savannahs.' },
+      { name: 'Mount Kilimanjaro View', image: encodeURI('/images/Mount Kilimanjaro , Kenya.jpg.jpeg'), desc: 'Awe-inspiring views of free-ranging elephant herds roaming the plains against the majestic backdrop of snow-capped Mount Kilimanjaro.' },
+      { name: 'Lake Nakuru', image: encodeURI('/images/Lake Nakuru , kenya.webp'), desc: 'Famous Great Rift Valley alkaline lake lined with thousands of vibrant pink flamingos, white rhinos, and endangered Rothschild giraffes.' },
+      { name: 'Mombasa Beach', image: encodeURI('/images/Mombasa beach , Kenya.jpg.jpeg'), desc: 'Tropical Indian Ocean coastline featuring powdery white sand beaches, swaying coconut palms, coral reefs, and traditional dhow boat cruises.' },
+      { name: 'Nairobi National Park', image: encodeURI('/images/Nairobi National Park , Kenya.jpg.jpeg'), desc: 'Unique wilderness wildlife sanctuary where lions, black rhinos, and leopards roam freely right against the backdrop of the modern city skyline.' },
+      { name: "Hell's Gate National Park", image: encodeURI('/images/Hells Gate National Park , kenya.webp'), desc: 'Dramatic volcanic scenery featuring towering red rock gorges, geothermal steam pillars, rock climbing towers, and cycling amongst wildlife.' }
     ]
   },
   'egypt': {
     id: 'egypt',
     name: 'Egypt',
     category: 'International',
-    heroImage: 'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=1200&q=80',
-    tagline: 'Pyramids of Giza, Nile River Cruises & Luxor Temples',
-    description: 'Journey back to antiquity admiring the Great Pyramids, Sphinx, Valley of Kings tombs, and Red Sea coral reefs.',
+    heroImage: encodeURI('/images/Pyramids of Giza , Egypt.jpg'),
+    tagline: 'Pyramids of Giza, Citadel Mosque & Nile River Temples',
+    description: 'Journey back to antiquity admiring the Great Pyramids, historic Cairo mosques, Valley of the Kings, and timeless Nile river temples.',
     spots: [
-      { name: 'Pyramids of Giza & Sphinx', image: 'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=600&q=80', desc: 'Ancient Wonders of the World guarded by the limestone Great Sphinx.' },
-      { name: 'Nile River Cruise', image: 'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=600&q=80', desc: 'Sailing between Luxor and Aswan past riverbanks lined with ancient temples.' },
-      { name: 'Valley of the Kings, Luxor', image: 'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=600&q=80', desc: 'Royal rock-cut tombs of pharaohs including Tutankhamun.' },
-      { name: 'Abu Simbel Temples', image: 'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=600&q=80', desc: 'Colossal rock-cut temples of Ramesses II relocated above Lake Nasser.' },
-      { name: 'Red Sea Diving, Hurghada', image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80', desc: 'World-renowned diving and snorkeling along vibrant Egyptian reef walls.' },
-      { name: 'Egyptian Museum, Cairo', image: 'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=600&q=80', desc: 'Extensive collection of pharaonic antiquities and golden burial treasures.' }
+      { name: 'Pyramids of Giza', image: encodeURI('/images/Pyramids of Giza , Egypt.jpg'), desc: 'Ancient Wonder of the World rising above desert sands with monumental stone pyramids and royal pharaoh history.' },
+      { name: 'Mosque of Muhammad Ali (Cairo Citadel)', image: encodeURI('/images/Mosque of Muhammad Ali , Egypt.jpg'), desc: 'The Alabaster Mosque situated on the summit of Cairo Citadel with striking Ottoman domes and soaring minarets.' },
+      { name: 'Valley of the Kings, Luxor', image: encodeURI('/images/Valley of the Kings , Egypt.jpg'), desc: 'Legendary mortuary temples and royal pharaonic rock-cut tombs carved into the towering limestone cliffs of Luxor.' },
+      { name: 'Abu Simbel Temples', image: encodeURI('/images/Abu Simbel Temples , Egypt.jpg'), desc: 'Monumental rock-cut temples of Pharaoh Ramesses II and Queen Nefertari carved into the sandstone mountains of Nubia.' },
+      { name: 'Philae Temple on the Nile River', image: encodeURI('/images/Philae Temple on the Nile River , Egypt.jpg'), desc: 'Sacred island temple sanctuary dedicated to Goddess Isis rising gracefully from the blue waters of the Nile.' },
+      { name: 'Great Sphinx of Giza', image: encodeURI('/images 2/Great Sphinx of Giza - egypt.jpg.jpeg'), desc: 'Monumental ancient limestone statue with the body of a lion and head of a pharaoh standing guard on the Giza plateau.' }
     ]
   },
   'mauritius': {
     id: 'mauritius',
     name: 'Mauritius',
     category: 'International',
-    heroImage: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80',
-    tagline: 'Seven Coloured Earths, Le Morne Beaches & Underwater Walks',
-    description: 'Escape to an Indian Ocean island paradise featuring multi-colored sands, coral reefs, and volcanic peaks.',
+    heroImage: encodeURI('/images/Caudan Waterfront , Port Louis , Mauritius.jpg'),
+    tagline: 'Caudan Waterfront, Seven Coloured Earths & Tropical Lagoons',
+    description: 'Escape to an Indian Ocean island paradise featuring multi-colored volcanic sands, pristine turquoise lagoons, and botanical wonders.',
     spots: [
-      { name: 'Le Morne Brabant Beach', image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80', desc: 'UNESCO basaltic mountain peninsula flanked by turquoise lagoons.' },
-      { name: 'Chamarel Seven Coloured Earths', image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80', desc: 'Geological dunes comprising sand of seven distinct colors (red, brown, violet).' },
-      { name: 'Black River Gorges', image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80', desc: 'National park protecting native rainforests, waterfalls, and giant tortoises.' },
-      { name: 'Ile aux Cerfs Island', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80', desc: 'Private island sandbar offering parasailing, glass-bottom boats, and golf.' },
-      { name: 'Grand Baie', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80', desc: 'Lively resort village with shopping, seafood dining, and catamaran departures.' },
-      { name: 'Underwater Sea Walk', image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80', desc: 'Unique helmet walking tour on the ocean bed among tropical fish.' }
+      { name: 'Caudan Waterfront (Port Louis)', image: encodeURI('/images/Caudan Waterfront , Port Louis , Mauritius.jpg'), desc: 'Vibrant commercial and cultural waterfront hub in Port Louis featuring umbrella streets, duty-free shopping, and harbor views.' },
+      { name: 'Tamarin Falls', image: encodeURI('/images/Tamarin Falls , Mauritius.jpg'), desc: 'Spectacular series of cascading waterfalls tumbling down lush volcanic canyons into deep natural pools.' },
+      { name: 'Pamplemousses Botanical Garden', image: encodeURI('/images/Pamplemousses Botanical Garden , Mauritius.jpg'), desc: 'World-renowned historic garden famous for giant Victoria amazonica water lilies and exotic tropical spice trees.' },
+      { name: 'Seven Coloured Earths (Chamarel)', image: encodeURI('/images/Mauritius Seven coloured earths , Chamarel.jpg'), desc: 'Mesmerizing geological formation of undulating sand dunes in seven distinct vibrant rainbow hues.' },
+      { name: 'Île aux Cerfs Island', image: encodeURI('/images/Île aux Cerfs Island , Mauritius.jpg'), desc: 'Breathtaking offshore island with powder-white sandbars, shallow turquoise channels, and parasailing.' },
+      { name: 'Le Morne Brabant', image: encodeURI('/images/Le Morne Brabant , Mauritius.jpg'), desc: 'Majestic UNESCO World Heritage basalt mountain rising over crystal lagoons and underwater waterfall illusions.' }
     ]
   },
   'nepal': {
     id: 'nepal',
     name: 'Nepal',
     category: 'International',
-    heroImage: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80',
-    tagline: 'Everest Treks, Pokhara Lakes & Pashupatinath Temples',
-    description: 'Stand in awe of the highest peaks on Earth, ancient stupas, lakeside mountain reflections, and jungle safaris.',
+    heroImage: encodeURI('/images/Mount Everest , nepal.jpg.jpeg'),
+    tagline: 'Everest Treks, Pokhara Lakes & Ancient Stupas',
+    description: 'Stand in awe of the highest peaks on Earth, tranquil mountain lakes, sacred stupas, and ancient Newari durbar squares.',
     spots: [
-      { name: 'Pashupatinath Temple', image: 'https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=600&q=80', desc: 'Sacred Hindu temple complex on the Bagmati River in Kathmandu.' },
-      { name: 'Pokhara & Phewa Lake', image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80', desc: 'Serene lake reflecting the Annapurna range with boating to Tal Barahi temple.' },
-      { name: 'Everest Base Camp Trek', image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80', desc: 'Bucket-list Himalayan trekking path through Sherpa villages to 5,364m.' },
-      { name: 'Chitwan National Park Safari', image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=600&q=80', desc: 'Jungle safaris tracking one-horned rhinoceros, Bengal tigers, and crocodiles.' },
-      { name: 'Boudhanath Stupa', image: 'https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=600&q=80', desc: 'Massive spherical Buddhist stupa with painted eyes of Buddha watching over Kathmandu.' },
-      { name: 'Kathmandu Durbar Square', image: 'https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=600&q=80', desc: 'Ancient royal palace plaza showcasing Newari wooden carving craftsmanship.' }
+      { name: 'Mount Everest', image: encodeURI('/images/Mount Everest , nepal.jpg.jpeg'), desc: "World's highest peak soaring 8,848 meters into the sky, offering legendary mountain flight tours and Himalayan trekking vistas." },
+      { name: 'Phewa Lake', image: encodeURI('/images/Phewa Lake ,nepal.jpg.jpeg'), desc: 'Tranquil freshwater lake in Pokhara reflecting the snow-capped Annapurna range, famous for colorful wooden rowboats and Tal Barahi temple.' },
+      { name: 'Swayambhunath Stupa', image: encodeURI('/images/Swayambhunath Stupa  , nepal.jpg.jpeg'), desc: 'Ancient hilltop Buddhist complex in the Kathmandu Valley crowned with a golden spire, painted eyes of Buddha, and fluttering prayer flags.' },
+      { name: 'Patan Durbar Square', image: encodeURI('/images/Patan Durbar Square, Nepal.jpg.jpeg'), desc: 'UNESCO World Heritage plaza in Lalitpur showcasing marvels of Newar architecture, royal courtyards, and stone carving temples.' },
+      { name: 'Muktinath Temple', image: encodeURI('/images/Muktinath Temple , nepal.webp'), desc: 'Sacred high-altitude pilgrimage sanctuary at 3,710 meters at the foot of the Thorong La mountain pass, revered by Hindus and Buddhists.' },
+      { name: 'Pashupatinath Temple', image: encodeURI('/images 2/Pashupatinath temple , nepal.jpg.jpeg'), desc: 'Sacred UNESCO World Heritage Hindu temple complex dedicated to Lord Shiva, located on the banks of the Bagmati River in Kathmandu.' }
     ]
   },
   'bhutan': {
     id: 'bhutan',
     name: 'Bhutan',
     category: 'International',
-    heroImage: 'https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=1200&q=80',
+    heroImage: encodeURI('/images 2/Paro Taktsang , bhutan (2).jpg.jpeg'),
     tagline: "Tiger's Nest Monastery, Punakha Dzongs & Dochula Passes",
     description: 'Journey to the Last Shangri-La, famed for Gross National Happiness, cliffside monasteries, and Himalayan valleys.',
     spots: [
-      { name: "Tiger's Nest Monastery (Paro Taktsang)", image: 'https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=600&q=80', desc: 'Sacred Buddhist cliffside monastery clinging to a 900m granite cliff above Paro.' },
-      { name: 'Punakha Dzong', image: 'https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=600&q=80', desc: 'Majestic fortress at the confluence of Pho Chhu and Mo Chhu rivers.' },
-      { name: 'Thimphu Buddha Dordenma', image: 'https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=600&q=80', desc: 'Gigantic 51.5m bronze statue of Buddha seated atop a hill overlooking Thimphu.' },
-      { name: 'Dochula Pass', image: 'https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=600&q=80', desc: 'Mountain pass with 108 memorial chortens and panoramic Himalayan snow views.' },
-      { name: 'Phobjikha Valley', image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80', desc: 'Glacial valley home to endangered black-necked cranes and Gangtey Monastery.' },
-      { name: 'Chele La Pass', image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80', desc: 'Highest motorable pass in Bhutan at 3,988m offering views of Mt. Jhomolhari.' }
+      { name: "Paro Taktsang (Tiger's Nest)", image: encodeURI('/images 2/Paro Taktsang , bhutan (2).jpg.jpeg'), desc: 'Sacred Buddhist cliffside monastery perched dramatically on a sheer 900-meter granite cliff above the Paro Valley.' },
+      { name: 'Punakha Dzong', image: encodeURI('/images/Punakha Dzong , Bhutann.webp'), desc: 'Majestic 17th-century palace and fortress at the confluence of the sacred Pho Chhu and Mo Chhu rivers.' },
+      { name: 'Buddha Dordenma', image: encodeURI('/images/Buddha Dordenma , Bhutan.webp'), desc: 'Colossal 51.5-meter gilded bronze statue of Shakyamuni Buddha seated atop a hill overlooking the capital of Thimphu.' },
+      { name: 'Dochula Pass', image: encodeURI('/images/Dochula Pass , Bhutan.jpg.jpeg'), desc: 'Panoramic 3,100-meter mountain pass crowned with 108 Druk Wangyal Chortens and spectacular views of the snow-capped Himalayas.' },
+      { name: 'Punakha Valley', image: encodeURI('/images/Punakha valley in Bhutan.jpg.jpeg'), desc: 'Lush subtropical river valley filled with golden terraced rice paddies, suspension bridges, and traditional Bhutanese farmhouses.' },
+      { name: 'Gangtey Monastery', image: encodeURI('/images/Gangtey Monastery , Bhutan.webp'), desc: 'Prominent 17th-century Nyingma Buddhist monastery overlooking the wide glacial Phobjikha Valley.' }
+    ]
+  },
+  'hong-kong': {
+    id: 'hong-kong',
+    name: 'Hong Kong',
+    category: 'International',
+    heroImage: encodeURI('/images 2/Victoria Harbour Skyline & Red Junk Boat - Hong kong.jpg.jpeg'),
+    tagline: 'Victoria Harbour Skyline, Disneyland & Tian Tan Big Buddha',
+    description: 'Experience the electric fusion of modern skyscrapers, traditional red-sail junk boats, magical Disneyland adventures, and sacred hillside temples.',
+    spots: [
+      { name: 'Victoria Harbour Skyline & Red Junk Boat', image: encodeURI('/images 2/Victoria Harbour Skyline & Red Junk Boat - Hong kong.jpg.jpeg'), desc: 'Iconic Victoria Harbour skyline framed by traditional red-sail Chinese junk boats sailing past illuminated skyscrapers.' },
+      { name: 'Hong Kong Disneyland', image: encodeURI('/images/Hong Kong Disneyland.jpg.jpeg'), desc: 'Magical theme park kingdom on Lantau Island featuring Castle of Magical Dreams, World of Frozen, and Disney attractions.' },
+      { name: 'Tian Tan Big Buddha', image: encodeURI('/images/Tian Tan Buddha , Hong Kong.jpg.jpeg'), desc: 'Monumental 34-meter bronze Buddha statue seated atop Mount Muk Yue beside Po Lin Monastery on Lantau Island.' },
+      { name: 'Nan Lian Garden & Chi Lin Nunnery', image: encodeURI('/images/Nan Lian Garden Hongkong.jpg.jpeg'), desc: 'Serene Tang Dynasty-style classical Chinese botanical garden featuring the golden Pavilion of Absolute Perfection and lotus ponds.' },
+      { name: 'Wong Tai Sin Temple', image: encodeURI('/images/Wong Tai Sin Temple in Hong Kong.jpg.jpeg'), desc: 'Famous Taoist, Buddhist, and Confucian temple known for claiming to make every wish come true through Kau Chim fortune telling.' },
+      { name: 'Hong Kong Space Museum & Museum of Art', image: encodeURI('/images/Hong Kong Space Museum dome and Hong Kong Museum of Art.jpg.jpeg'), desc: 'Prominent Tsim Sha Tsui waterfront cultural landmarks featuring the iconic egg-shaped planetarium dome and art exhibitions.' }
+    ]
+  },
+  'china': {
+    id: 'china',
+    name: 'China',
+    category: 'International',
+    heroImage: encodeURI('/images/Great Wall of China.jpg.jpeg'),
+    tagline: 'Great Wall, Forbidden City & Giant Panda Reserves',
+    description: 'Traverse thousands of years of imperial history, ancient wonder fortifications, terracotta armies, giant panda sanctuaries, and magical Disney parks.',
+    spots: [
+      { name: 'Great Wall of China', image: encodeURI('/images/Great Wall of China.jpg.jpeg'), desc: 'Legendary ancient stone wonder winding across dramatic green mountain ridges and watchtowers.' },
+      { name: 'Forbidden City, Beijing', image: encodeURI('/images/Forbidden City in Beijing , China.jpg.jpeg'), desc: 'Colossal imperial palace complex of the Ming and Qing dynasties featuring golden-roofed halls and grand courtyards.' },
+      { name: 'Temple of Heaven, Beijing', image: encodeURI('/images/China , Temple of Heaven.jpg.jpeg'), desc: 'Magnificent circular wooden temple complex where imperial emperors performed solemn prayer rituals for harvest.' },
+      { name: 'Terracotta Army, Xi’an', image: encodeURI('/images/Terracotta Army China.jpg.jpeg'), desc: 'Incredible archaeological discovery of thousands of life-sized terracotta soldiers, chariots, and horses guarding Emperor Qin Shi Huang’s tomb.' },
+      { name: 'Chengdu Giant Panda Breeding Research Base', image: encodeURI('/images/China , Chengdu Research Base of Giant Panda Breeding.jpg.jpeg'), desc: 'World-renowned conservation sanctuary where visitors observe playful giant pandas and red pandas in lush bamboo forests.' },
+      { name: 'Shanghai Disneyland Park', image: encodeURI('/images/China , Shanghai Disneyland Park.webp'), desc: 'Spectacular Disney theme park featuring the Enchanted Storybook Castle, TRON Lightcycle Power Run, and themed lands.' }
     ]
   },
 
@@ -359,128 +394,128 @@ export const destinationsData = {
     id: 'kashmir',
     name: 'Kashmir',
     category: 'Domestic',
-    heroImage: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80',
+    heroImage: encodeURI('/images/Kashmir.jpg.jpeg'),
     tagline: 'Paradise on Earth with Dal Lake Houseboats & Gulmarg Gondolas',
     description: 'Experience pristine snow valleys, traditional houseboats, pine forests, and flower gardens in Paradise on Earth.',
     spots: [
-      { name: 'Dal Lake Shikara Ride', image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=600&q=80', desc: 'Tranquil wooden Shikara boat cruises past floating vegetable markets and houseboats.' },
-      { name: 'Gulmarg Gondola & Skiing', image: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=600&q=80', desc: 'Asia’s highest cable car taking passengers to Apharwat Peak at 13,780 feet for skiing.' },
-      { name: 'Pahalgam / Betaab Valley', image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=600&q=80', desc: 'Picturesque valley with Lidder river streams, pine forests, and pony rides.' },
-      { name: 'Sonmarg', image: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=600&q=80', desc: 'Meadow of Gold featuring Thajiwas Glacier treks and alpine streams.' },
-      { name: 'Mughal Gardens (Shalimar Bagh)', image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=600&q=80', desc: 'Royal terraced gardens built by Emperor Jahangir with fountains & chinar trees.' },
-      { name: 'Doodhpathri', image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=600&q=80', desc: 'Valley of Milk featuring lush rolling meadows and gushing mountain rivers.' }
+      { name: 'Kashmir', image: encodeURI('/images/Kashmir.jpg.jpeg'), desc: 'Experience pristine snow valleys, traditional houseboats, pine forests, and flower gardens in Paradise on Earth.' },
+      { name: 'Kashmir', image: encodeURI('/images/Kashmir (2).jpg.jpeg'), desc: 'Experience pristine snow valleys, traditional houseboats, pine forests, and flower gardens in Paradise on Earth.' },
+      { name: 'Kashmir', image: encodeURI('/images/kashmir 3.jpg.jpeg'), desc: 'Experience pristine snow valleys, traditional houseboats, pine forests, and flower gardens in Paradise on Earth.' },
+      { name: 'Kashmir', image: encodeURI('/images/Kashmir 4.jpg.jpeg'), desc: 'Experience pristine snow valleys, traditional houseboats, pine forests, and flower gardens in Paradise on Earth.' },
+      { name: 'Kashmir', image: encodeURI('/images/Kashmir 5.jpg.jpeg'), desc: 'Experience pristine snow valleys, traditional houseboats, pine forests, and flower gardens in Paradise on Earth.' },
+      { name: 'Kashmir', image: encodeURI('/images/Kashmir 6.jpg.jpeg'), desc: 'Experience pristine snow valleys, traditional houseboats, pine forests, and flower gardens in Paradise on Earth.' }
     ]
   },
   'andaman': {
     id: 'andaman',
     name: 'Andaman & Nicobar',
     category: 'Domestic',
-    heroImage: 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?auto=format&fit=crop&w=1200&q=80',
+    heroImage: encodeURI('/images/Andaman.jpg.jpeg'),
     tagline: 'Radhanagar Beaches, Cellular Jail History & Scuba Coral Reefs',
     description: 'Discover crystal clear turquoise waters, white sand beaches, coral reefs, and historic freedom struggle heritage.',
     spots: [
-      { name: 'Radhanagar Beach, Havelock', image: 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?auto=format&fit=crop&w=600&q=80', desc: 'Asia’s best beach featuring powdery white sand and turquoise gentle waves.' },
-      { name: 'Cellular Jail Light Show', image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80', desc: 'Historic colonial prison in Port Blair hosting moving Sound & Light shows.' },
-      { name: 'Scuba Diving, Neil Island', image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80', desc: 'Vibrant marine life, sea turtles, and intact coral reefs at Bharatpur beach.' },
-      { name: 'Ross Island', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80', desc: 'Ruins of British administrative headquarters reclaimed by banyan trees and deer.' },
-      { name: 'Baratang Limestone Caves', image: 'https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=600&q=80', desc: 'Mangrove boat safari leading to fascinating natural stalactite cave formations.' },
-      { name: 'Jolly Buoy Island', image: 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?auto=format&fit=crop&w=600&q=80', desc: 'Uninhabited glass-bottom boat island sanctuary showcasing underwater corals.' }
+      { name: 'Andaman & Nicobar', image: encodeURI('/images/Andaman.jpg.jpeg'), desc: 'Discover crystal clear turquoise waters, white sand beaches, coral reefs, and historic freedom struggle heritage.' },
+      { name: 'Andaman & Nicobar', image: encodeURI('/images/Andaman 2.jpg.jpeg'), desc: 'Discover crystal clear turquoise waters, white sand beaches, coral reefs, and historic freedom struggle heritage.' },
+      { name: 'Andaman & Nicobar', image: encodeURI('/images/Andaman 3.avif'), desc: 'Discover crystal clear turquoise waters, white sand beaches, coral reefs, and historic freedom struggle heritage.' },
+      { name: 'Andaman & Nicobar', image: encodeURI('/images/Andaman 4.JPG.jpeg'), desc: 'Discover crystal clear turquoise waters, white sand beaches, coral reefs, and historic freedom struggle heritage.' },
+      { name: 'Andaman & Nicobar', image: encodeURI('/images/Andaman 5.jpg.jpeg'), desc: 'Discover crystal clear turquoise waters, white sand beaches, coral reefs, and historic freedom struggle heritage.' },
+      { name: 'Andaman & Nicobar', image: encodeURI('/images/Andaman 6.webp'), desc: 'Discover crystal clear turquoise waters, white sand beaches, coral reefs, and historic freedom struggle heritage.' }
     ]
   },
   'leh-ladakh': {
     id: 'leh-ladakh',
     name: 'Leh Ladakh',
     category: 'Domestic',
-    heroImage: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=1200&q=80',
+    heroImage: encodeURI('/images/leh ladakh.jpg.jpeg'),
     tagline: 'Pangong Lake, Nubra Sand Dunes & Magnetic Hill',
     description: 'Conquer high mountain passes, changing color lakes, double-humped camel dunes, and ancient cliff monasteries.',
     spots: [
-      { name: 'Pangong Lake', image: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=600&q=80', desc: 'High altitude lake at 14,270 ft famous for changing colors from blue to green.' },
-      { name: 'Nubra Valley Sand Dunes', image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80', desc: 'High altitude desert dunes in Hunder featuring double-humped Bactrian camels.' },
-      { name: 'Khardung La Pass', image: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=600&q=80', desc: 'One of the world’s highest motorable mountain passes at 17,582 feet.' },
-      { name: 'Magnetic Hill', image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80', desc: 'Gravity-defying road where vehicles appear to roll uphill against gravity.' },
-      { name: 'Thiksey Monastery', image: 'https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=600&q=80', desc: '12-story Tibetan monastery resembling Potala Palace with 49ft Maitreya Buddha.' },
-      { name: 'Zanskar Valley / Chadar Trek', image: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=600&q=80', desc: 'Frozen river trek across the Zanskar river gorge in peak winter.' }
+      { name: 'Leh Ladakh', image: encodeURI('/images/leh ladakh.jpg.jpeg'), desc: 'Conquer high mountain passes, changing color lakes, double-humped camel dunes, and ancient cliff monasteries.' },
+      { name: 'Leh Ladakh', image: encodeURI('/images/leh ladakh 2.jpg.jpeg'), desc: 'Conquer high mountain passes, changing color lakes, double-humped camel dunes, and ancient cliff monasteries.' },
+      { name: 'Leh Ladakh', image: encodeURI('/images/leh ladakh 3.jpg.jpeg'), desc: 'Conquer high mountain passes, changing color lakes, double-humped camel dunes, and ancient cliff monasteries.' },
+      { name: 'Leh Ladakh', image: encodeURI('/images/leh ladakh 4.jpg.jpeg'), desc: 'Conquer high mountain passes, changing color lakes, double-humped camel dunes, and ancient cliff monasteries.' },
+      { name: 'Leh Ladakh', image: encodeURI('/images/leh ladakh 5.jpg.jpeg'), desc: 'Conquer high mountain passes, changing color lakes, double-humped camel dunes, and ancient cliff monasteries.' },
+      { name: 'Leh Ladakh', image: encodeURI('/images/leh ladakh 6.jpg.jpeg'), desc: 'Conquer high mountain passes, changing color lakes, double-humped camel dunes, and ancient cliff monasteries.' }
     ]
   },
   'rajasthan': {
     id: 'rajasthan',
     name: 'Rajasthan',
     category: 'Domestic',
-    heroImage: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1200&q=80',
+    heroImage: encodeURI('/images/Rajasthan.jpg.jpeg'),
     tagline: 'Amber Fort, Lake Pichola & Jaisalmer Desert Safaris',
     description: 'Step into royal heritage featuring grand golden forts, lake palaces, camel desert safaris, and vibrant folk music.',
     spots: [
-      { name: 'Amber Fort, Jaipur', image: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=600&q=80', desc: 'Majestic hilltop palace featuring Sheesh Mahal mirror hall and elephant ramparts.' },
-      { name: 'Udaipur City Palace & Lake Pichola', image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=600&q=80', desc: 'Romantic lake floating palaces and grand marble royal courtyards.' },
-      { name: 'Jaisalmer Desert Safari', image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80', desc: 'Sam Sand Dunes camel rides, cultural Kalbeliya dance, and desert camping.' },
-      { name: 'Mehrangarh Fort, Jodhpur', image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=600&q=80', desc: 'Imposing cliffside fortress towering 410 feet over the Blue City of Jodhpur.' },
-      { name: 'Hawa Mahal', image: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=600&q=80', desc: 'Palace of Winds in Jaipur featuring 953 intricate honeycomb lattice windows.' },
-      { name: 'Pushkar Camel Fair', image: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=600&q=80', desc: 'Holy lake town hosting annual livestock fair and rare Lord Brahma Temple.' }
+      { name: 'Rajasthan', image: encodeURI('/images/Rajasthan.jpg.jpeg'), desc: 'Step into royal heritage featuring grand golden forts, lake palaces, camel desert safaris, and vibrant folk music.' },
+      { name: 'Rajasthan', image: encodeURI('/images/Rajasthan (2).jpg.jpeg'), desc: 'Step into royal heritage featuring grand golden forts, lake palaces, camel desert safaris, and vibrant folk music.' },
+      { name: 'Rajasthan', image: encodeURI('/images/Rajasthan (3).jpg.jpeg'), desc: 'Step into royal heritage featuring grand golden forts, lake palaces, camel desert safaris, and vibrant folk music.' },
+      { name: 'Rajasthan', image: encodeURI('/images/Rajasthan (4).jpg.jpeg'), desc: 'Step into royal heritage featuring grand golden forts, lake palaces, camel desert safaris, and vibrant folk music.' },
+      { name: 'Rajasthan', image: encodeURI('/images/Rajasthan 5.jpg.jpeg'), desc: 'Step into royal heritage featuring grand golden forts, lake palaces, camel desert safaris, and vibrant folk music.' },
+      { name: 'Rajasthan', image: encodeURI('/images/Rajasthan 6.jpg.jpeg'), desc: 'Step into royal heritage featuring grand golden forts, lake palaces, camel desert safaris, and vibrant folk music.' }
     ]
   },
   'goa': {
     id: 'goa',
     name: 'Goa',
     category: 'Domestic',
-    heroImage: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1200&q=80',
+    heroImage: encodeURI('/images/goaa.avif'),
     tagline: 'Baga Beaches, Dudhsagar Waterfalls & Portuguese Forts',
     description: 'Relax on golden beaches, explore Portuguese UNESCO cathedrals, experience watersports, and watch sunset cruises.',
     spots: [
-      { name: 'Baga / Calangute Beach', image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=600&q=80', desc: 'Vibrant beach stretch offering parasailing, banana rides, and Tito’s lane nightlife.' },
-      { name: 'Basilica of Bom Jesus', image: 'https://images.unsplash.com/photo-1548625361-185d2ebc17e6?auto=format&fit=crop&w=600&q=80', desc: 'UNESCO World Heritage church in Old Goa holding mortal remains of St. Francis Xavier.' },
-      { name: 'Dudhsagar Waterfalls', image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80', desc: 'Four-tiered 310m high sea of milk waterfall inside Bhagwan Mahavir Sanctuary.' },
-      { name: 'Fort Aguada', image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=600&q=80', desc: '17th-century Portuguese fortress and lighthouse facing Sinquerim beach.' },
-      { name: 'Anjuna Flea Market & Nightlife', image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80', desc: 'Famous Wednesday beach flea market and Curlies / Shiva Valley sunset shacks.' },
-      { name: 'Palolem Beach', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80', desc: 'Scenic crescent-shaped beach in South Goa known for calm waters and silent discos.' }
+      { name: 'Goa', image: encodeURI('/images/goaa.avif'), desc: 'Relax on golden beaches, explore Portuguese UNESCO cathedrals, experience watersports, and watch sunset cruises.' },
+      { name: 'Goa', image: encodeURI('/images/Goa (2).avif'), desc: 'Relax on golden beaches, explore Portuguese UNESCO cathedrals, experience watersports, and watch sunset cruises.' },
+      { name: 'Goa', image: encodeURI('/images/goa 3.webp'), desc: 'Relax on golden beaches, explore Portuguese UNESCO cathedrals, experience watersports, and watch sunset cruises.' },
+      { name: 'Goa', image: encodeURI('/images/goaaa.webp'), desc: 'Relax on golden beaches, explore Portuguese UNESCO cathedrals, experience watersports, and watch sunset cruises.' },
+      { name: 'Goa', image: encodeURI('/images/goa 5.avif'), desc: 'Relax on golden beaches, explore Portuguese UNESCO cathedrals, experience watersports, and watch sunset cruises.' },
+      { name: 'Goa', image: encodeURI('/images/goa 1.avif'), desc: 'Relax on golden beaches, explore Portuguese UNESCO cathedrals, experience watersports, and watch sunset cruises.' }
     ]
   },
   'meghalaya': {
     id: 'meghalaya',
     name: 'Meghalaya',
     category: 'Domestic',
-    heroImage: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80',
+    heroImage: encodeURI('/images/meghalaya.jpg.jpeg'),
     tagline: 'Living Root Bridges, Dawki Crystal River & Nohkalikai Falls',
     description: 'Discover the Abode of Clouds featuring double-decker living root bridges, crystal clear rivers, and deep limestone caves.',
     spots: [
-      { name: 'Living Root Bridges, Cherrapunji', image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80', desc: 'Bio-engineered double-decker bridges grown from living rubber fig tree roots.' },
-      { name: 'Dawki Crystal Clear River', image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80', desc: 'Umngot River near Indo-Bangladesh border so clear boats appear floating in mid-air.' },
-      { name: 'Mawlynnong (Cleanest Village)', image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80', desc: 'Asia’s cleanest village showcasing bamboo dustbins and treehouse skywalks.' },
-      { name: 'Nohkalikai Falls', image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80', desc: 'India’s tallest 1,115 ft plunge waterfall descending into a turquoise plunge pool.' },
-      { name: 'Shillong Peak', image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80', desc: 'Highest viewpoint in Shillong offering 360-degree views over Scotland of the East.' },
-      { name: 'Mawsmai Caves', image: 'https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=600&q=80', desc: 'Natural illuminated limestone cave system with fascinating stalactites in Cherrapunji.' }
+      { name: 'Meghalaya', image: encodeURI('/images/meghalaya.jpg.jpeg'), desc: 'Discover the Abode of Clouds featuring double-decker living root bridges, crystal clear rivers, and deep limestone caves.' },
+      { name: 'Meghalaya', image: encodeURI('/images/meghalaya 2.jpg.jpeg'), desc: 'Discover the Abode of Clouds featuring double-decker living root bridges, crystal clear rivers, and deep limestone caves.' },
+      { name: 'Meghalaya', image: encodeURI('/images/Meghalaya 3.jpg.jpeg'), desc: 'Discover the Abode of Clouds featuring double-decker living root bridges, crystal clear rivers, and deep limestone caves.' },
+      { name: 'Meghalaya', image: encodeURI('/images/Meghalaya 4.jpg.jpeg'), desc: 'Discover the Abode of Clouds featuring double-decker living root bridges, crystal clear rivers, and deep limestone caves.' },
+      { name: 'Meghalaya', image: encodeURI('/images/Meghalaya 5.jpg.jpeg'), desc: 'Discover the Abode of Clouds featuring double-decker living root bridges, crystal clear rivers, and deep limestone caves.' },
+      { name: 'Meghalaya', image: encodeURI('/images/Medhalaya 6.jpg.jpeg'), desc: 'Discover the Abode of Clouds featuring double-decker living root bridges, crystal clear rivers, and deep limestone caves.' }
     ]
   },
   'sikkim': {
     id: 'sikkim',
     name: 'Sikkim',
     category: 'Domestic',
-    heroImage: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=80',
+    heroImage: encodeURI('/images/sikkim.jpg.jpeg'),
     tagline: 'Tsomgo Lake, Nathula Pass & Kanchenjunga Views',
     description: 'Immerse in Himalayan tranquility, sacred high-altitude lakes, ancient Buddhist monasteries, and rhododendron valleys.',
     spots: [
-      { name: 'Tsomgo Lake', image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=600&q=80', desc: 'Glacial lake at 12,310 ft surrounded by snow mountains and decorated yaks.' },
-      { name: 'Nathula Pass', image: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=600&q=80', desc: 'Historic Silk Route pass on Indo-China border at 14,140 feet altitude.' },
-      { name: 'Gangtok MG Marg', image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=600&q=80', desc: 'Pedestrian boulevard in Gangtok with cafes, shopping, and mountain views.' },
-      { name: 'Yumthang Valley (Flower Valley)', image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80', desc: 'Valley of Flowers in North Sikkim surrounded by hot springs and snow peaks.' },
-      { name: 'Rumtek Monastery', image: 'https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=600&q=80', desc: 'Seat of the Black Hat order of Tibetan Buddhism near Gangtok.' },
-      { name: 'Pelling Kanchenjunga Viewpoint', image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=600&q=80', desc: 'Unobstructed closest views of Mount Kanchenjunga and Glass Skywalk.' }
+      { name: 'Sikkim', image: encodeURI('/images/sikkim.jpg.jpeg'), desc: 'Immerse in Himalayan tranquility, sacred high-altitude lakes, ancient Buddhist monasteries, and rhododendron valleys.' },
+      { name: 'Sikkim', image: encodeURI('/images/sikkim 2.jpg.jpeg'), desc: 'Immerse in Himalayan tranquility, sacred high-altitude lakes, ancient Buddhist monasteries, and rhododendron valleys.' },
+      { name: 'Sikkim', image: encodeURI('/images/sikkim 3.jpg.jpeg'), desc: 'Immerse in Himalayan tranquility, sacred high-altitude lakes, ancient Buddhist monasteries, and rhododendron valleys.' },
+      { name: 'Sikkim', image: encodeURI('/images/sikkim 4.jpg.jpeg'), desc: 'Immerse in Himalayan tranquility, sacred high-altitude lakes, ancient Buddhist monasteries, and rhododendron valleys.' },
+      { name: 'Sikkim', image: encodeURI('/images/sikkim 5.jpg.jpeg'), desc: 'Immerse in Himalayan tranquility, sacred high-altitude lakes, ancient Buddhist monasteries, and rhododendron valleys.' },
+      { name: 'Sikkim', image: encodeURI('/images/sikkim 6.jpg.jpeg'), desc: 'Immerse in Himalayan tranquility, sacred high-altitude lakes, ancient Buddhist monasteries, and rhododendron valleys.' }
     ]
   },
   'kerala': {
     id: 'kerala',
     name: 'Kerala',
     category: 'Domestic',
-    heroImage: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80',
+    heroImage: encodeURI('/images/kerala.jpg.jpeg'),
     tagline: 'Alleppey Houseboats, Munnar Tea Gardens & Kovalam Beaches',
     description: 'Relax in God’s Own Country featuring palm-fringed backwater cruises, mist-covered tea gardens, and Kathakali art.',
     spots: [
-      { name: 'Alleppey Backwater Houseboats', image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=600&q=80', desc: 'Traditional Kettuvallam houseboat cruise along palm-fringed lagoon canals.' },
-      { name: 'Munnar Tea Gardens', image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80', desc: 'Rolling tea estate hills, Eravikulam National Park, and Nilgiri Tahr sightings.' },
-      { name: 'Wayanad Wildlife & Waterfalls', image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80', desc: 'Edakkal prehistoric caves, Chembra peak heart lake, and spice plantations.' },
-      { name: 'Kovalam Beach', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80', desc: 'Famous red-and-white lighthouse beach with ayurvedic massage centers.' },
-      { name: 'Periyar Wildlife Sanctuary', image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=600&q=80', desc: 'Boat safari across Periyar lake tracking wild elephants and tigers in Thekkady.' },
-      { name: 'Kathakali Show, Fort Kochi', image: 'https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=600&q=80', desc: 'Classical Kathakali dance performance and Chinese fishing nets at Fort Kochi.' }
+      { name: 'Kerala', image: encodeURI('/images/kerala.jpg.jpeg'), desc: 'Relax in God’s Own Country featuring palm-fringed backwater cruises, mist-covered tea gardens, and Kathakali art.' },
+      { name: 'Kerala', image: encodeURI('/images/kerala 2.jpg.jpeg'), desc: 'Relax in God’s Own Country featuring palm-fringed backwater cruises, mist-covered tea gardens, and Kathakali art.' },
+      { name: 'Kerala', image: encodeURI('/images/kerala 3.jpg.jpeg'), desc: 'Relax in God’s Own Country featuring palm-fringed backwater cruises, mist-covered tea gardens, and Kathakali art.' },
+      { name: 'Kerala', image: encodeURI('/images/kerala 4.jpg.jpeg'), desc: 'Relax in God’s Own Country featuring palm-fringed backwater cruises, mist-covered tea gardens, and Kathakali art.' },
+      { name: 'Kerala', image: encodeURI('/images/kerala 5.jpg.jpeg'), desc: 'Relax in God’s Own Country featuring palm-fringed backwater cruises, mist-covered tea gardens, and Kathakali art.' },
+      { name: 'Kerala', image: encodeURI('/images/kerala 6.jpg.jpeg'), desc: 'Relax in God’s Own Country featuring palm-fringed backwater cruises, mist-covered tea gardens, and Kathakali art.' }
     ]
   }
 };

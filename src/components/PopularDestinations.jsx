@@ -119,7 +119,13 @@ export default function PopularDestinations({ onSelectDestination }) {
             >
               {/* Card Image Wrapper */}
               <div className="dest-image-wrap">
-                <img src={item.image} alt={item.title} className="dest-img" />
+                <img 
+                  src={item.image} 
+                  alt={item.title} 
+                  className="dest-img" 
+                  loading="lazy" 
+                  decoding="async" 
+                />
                 
                 {/* Top Badge */}
                 <span className={`dest-badge ${item.badgeClass}`}>
