@@ -23,6 +23,7 @@ export const destinationsData = {
     name: 'UAE (Dubai & Abu Dhabi)',
     category: 'International',
     heroImage: '/images/intl/uae.jpg',
+    heroObjectPosition: 'center top',
     tagline: 'Futuristic Skyscrapers, Luxury Desert Safaris & Grand Mosques',
     description: 'Experience record-breaking architectural marvels, golden sand dunes, luxury shopping, and family theme parks.',
     spots: [

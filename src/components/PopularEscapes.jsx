@@ -6,7 +6,7 @@ import './PopularEscapes.css';
 export default function PopularEscapes({ onSelectDestination, limit, showExploreMore = true }) {
   const escapes = [
     { slug: 'bali', title: 'Indonesia (Bali)', image: '/images/intl/bali.jpg', tag: 'Tanah Lot & Ubud', objectPosition: 'center center' },
-    { slug: 'uae', title: 'UAE (Dubai)', image: '/images/intl/uae.jpg', tag: 'Burj Khalifa & Safari' },
+    { slug: 'uae', title: 'UAE (Dubai)', image: '/images/intl/uae.jpg', tag: 'Burj Khalifa & Safari', objectPosition: 'center top' },
     { slug: 'vietnam', title: 'Vietnam', image: '/images/intl/vietnam.jpg', tag: 'Ba Na Hills & Golden Bridge' },
     { slug: 'thailand', title: 'Thailand', image: '/images/intl/thailand.jpg', tag: 'Phi Phi Islands' },
     { slug: 'singapore', title: 'Singapore', image: '/images/intl/singapore.jpg', tag: 'Gardens by the Bay' },

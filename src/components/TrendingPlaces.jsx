@@ -26,7 +26,8 @@ const TRENDING_PLACES = [
     name: 'Dubai, UAE',
     category: 'International',
     image: '/images/intl/uae.jpg',
-    tagline: 'Burj Khalifa & Futuristic Skyline'
+    tagline: 'Burj Khalifa & Futuristic Skyline',
+    objectPosition: 'center top'
   },
   {
     id: 'goa',

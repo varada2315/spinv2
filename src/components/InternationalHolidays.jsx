@@ -4,7 +4,7 @@ import './InternationalHolidays.css';
 export default function InternationalHolidays({ onSelectDestination }) {
   const holidays = [
     { slug: 'bali', title: 'Indonesia (Bali)', image: '/images/intl/bali.jpg', webp: '/images/intl/bali.webp', tag: 'Tanah Lot & Ubud Terraces' },
-    { slug: 'uae', title: 'UAE (Dubai)', image: '/images/intl/uae.jpg', webp: '/images/intl/uae.webp', tag: 'Burj Khalifa & Desert Safari' },
+    { slug: 'uae', title: 'UAE (Dubai)', image: '/images/intl/uae.jpg', webp: '/images/intl/uae.webp', tag: 'Burj Khalifa & Desert Safari', objectPosition: 'center top' },
     { slug: 'vietnam', title: 'Vietnam', image: '/images/intl/vietnam.jpg', webp: '/images/intl/vietnam.webp', tag: 'Ba Na Hills & Golden Bridge' },
     { slug: 'thailand', title: 'Thailand', image: '/images/intl/thailand.jpg', webp: '/images/intl/thailand.webp', tag: 'Phi Phi Islands & Temples' },
     { slug: 'singapore', title: 'Singapore', image: '/images/intl/singapore.jpg', webp: '/images/intl/singapore.webp', tag: 'Gardens by the Bay & Sentosa', objectPosition: 'center center' },
