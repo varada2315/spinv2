@@ -8,7 +8,7 @@ const TRENDING_PLACES = [
     slug: 'bali',
     name: 'Bali, Indonesia',
     category: 'International',
-    image: encodeURI('/images/Bali Ulun Danu Temple.jpg?v=5'),
+    image: '/images/intl/bali.jpg',
     objectPosition: 'center center',
     tagline: 'Ulun Danu Temple & Ubud Terraces'
   },
@@ -17,7 +17,7 @@ const TRENDING_PLACES = [
     slug: 'kashmir',
     name: 'Kashmir Valley',
     category: 'Domestic',
-    image: encodeURI('/images/Kashmir.jpg.jpeg'),
+    image: '/images/dom/kashmir.jpg',
     tagline: 'Dal Lake Shikaras & Snowy Peaks'
   },
   {
@@ -25,7 +25,7 @@ const TRENDING_PLACES = [
     slug: 'uae',
     name: 'Dubai, UAE',
     category: 'International',
-    image: encodeURI('/images/Dubai Skyline Burj Khalifa.jpg'),
+    image: '/images/intl/uae.jpg',
     tagline: 'Burj Khalifa & Futuristic Skyline'
   },
   {
@@ -33,7 +33,7 @@ const TRENDING_PLACES = [
     slug: 'goa',
     name: 'Goa Beaches',
     category: 'Domestic',
-    image: encodeURI('/images/Goa (2).avif'),
+    image: '/images/dom/goa.jpg',
     tagline: 'Golden Sands & Sunset Coastline'
   },
   {
@@ -41,7 +41,7 @@ const TRENDING_PLACES = [
     slug: 'thailand',
     name: 'Phi Phi Islands, Thailand',
     category: 'International',
-    image: encodeURI('/images/Thailand Phi Phi Islands.jpg'),
+    image: '/images/intl/thailand.jpg',
     tagline: 'Turquoise Lagoons & Longtail Boats'
   },
   {
@@ -49,7 +49,7 @@ const TRENDING_PLACES = [
     slug: 'kerala',
     name: 'Kerala Backwaters',
     category: 'Domestic',
-    image: encodeURI('/images/kerala 2.jpg.jpeg'),
+    image: '/images/dom/kerala.jpg',
     tagline: 'Alleppey Houseboats & Lotus Lagoons'
   },
   {
@@ -57,7 +57,7 @@ const TRENDING_PLACES = [
     slug: 'singapore',
     name: 'Singapore City',
     category: 'International',
-    image: encodeURI('/images/Singapore Marina Bay Sands.jpg'),
+    image: '/images/intl/singapore.jpg',
     objectPosition: 'center center',
     tagline: 'Marina Bay Sands & SkyPark'
   },
@@ -66,7 +66,7 @@ const TRENDING_PLACES = [
     slug: 'leh-ladakh',
     name: 'Leh Ladakh',
     category: 'Domestic',
-    image: encodeURI('/images/leh ladakh.jpg.jpeg'),
+    image: '/images/dom/leh-ladakh.jpg',
     tagline: 'Thiksey Monastery & Ancient Stupas'
   },
   {
@@ -74,7 +74,7 @@ const TRENDING_PLACES = [
     slug: 'japan',
     name: 'Kyoto, Japan',
     category: 'International',
-    image: encodeURI('/images/Fushimi Inari Shrine , Kyoto , Japan.jpg'),
+    image: '/images/intl/japan.jpg',
     tagline: 'Fushimi Inari & Red Torii Gates'
   },
   {
@@ -82,7 +82,7 @@ const TRENDING_PLACES = [
     slug: 'rajasthan',
     name: 'Jaipur, Rajasthan',
     category: 'Domestic',
-    image: encodeURI('/images/Rajasthan.jpg.jpeg'),
+    image: '/images/dom/rajasthan.jpg',
     tagline: 'Hawa Mahal & Pink City Heritage'
   },
   {
@@ -90,7 +90,7 @@ const TRENDING_PLACES = [
     slug: 'vietnam',
     name: 'Ba Na Hills, Vietnam',
     category: 'International',
-    image: encodeURI('/images/Ba Na Hills Golden Bridge , Vietnam.jpg'),
+    image: '/images/intl/vietnam.jpg',
     tagline: 'Golden Bridge & Giant Stone Hands'
   },
   {
@@ -98,7 +98,7 @@ const TRENDING_PLACES = [
     slug: 'andaman',
     name: 'Andaman Islands',
     category: 'Domestic',
-    image: encodeURI('/images/Andaman.jpg.jpeg'),
+    image: '/images/dom/andaman.jpg',
     tagline: 'Pristine Lagoons & Coral Reefs'
   },
   {
@@ -106,7 +106,7 @@ const TRENDING_PLACES = [
     slug: 'schengen',
     name: 'Paris, France',
     category: 'International',
-    image: encodeURI('/images 2/Eiffel Tower , paris , france.jpg.jpeg'),
+    image: '/images/intl/schengen.jpg',
     tagline: 'Eiffel Tower & Seine River Cruises'
   },
   {
@@ -114,7 +114,7 @@ const TRENDING_PLACES = [
     slug: 'meghalaya',
     name: 'Meghalaya',
     category: 'Domestic',
-    image: encodeURI('/images/meghalaya.jpg.jpeg'),
+    image: '/images/dom/meghalaya.jpg',
     tagline: 'Nohkalikai Falls & Cloud Canyons'
   },
   {
@@ -122,7 +122,7 @@ const TRENDING_PLACES = [
     slug: 'sikkim',
     name: 'Sikkim',
     category: 'Domestic',
-    image: encodeURI('/images/sikkim.jpg.jpeg'),
+    image: '/images/dom/sikkim.jpg',
     tagline: 'Rumtek Monastery & Himalayan Valleys'
   },
   {
@@ -130,7 +130,7 @@ const TRENDING_PLACES = [
     slug: 'maldives',
     name: 'Maldives',
     category: 'International',
-    image: encodeURI('/images/Luxury Overwater Villas & Sunset , Maldives.jpg'),
+    image: '/images/intl/maldives.jpg',
     tagline: 'Luxury Overwater Villas & Lagoons'
   },
   {
@@ -138,7 +138,7 @@ const TRENDING_PLACES = [
     slug: 'malaysia',
     name: 'Kuala Lumpur, Malaysia',
     category: 'International',
-    image: encodeURI('/images/Petronas Twin Towers , Kuala Lumpur , Malaysia.jpg'),
+    image: '/images/intl/malaysia.jpg',
     tagline: 'Petronas Twin Towers & Skyline'
   },
   {
@@ -146,7 +146,7 @@ const TRENDING_PLACES = [
     slug: 'egypt',
     name: 'Giza, Egypt',
     category: 'International',
-    image: encodeURI('/images/Pyramids of Giza , Egypt.jpg'),
+    image: '/images/intl/egypt.jpg',
     tagline: 'Great Pyramids of Giza & Desert'
   },
   {
@@ -154,7 +154,7 @@ const TRENDING_PLACES = [
     slug: 'georgia',
     name: 'Tbilisi, Georgia',
     category: 'International',
-    image: encodeURI('/images 2/Holy Trinity Cathedral , georgia.jpg.jpeg'),
+    image: '/images/intl/georgia.jpg',
     objectPosition: 'center top',
     tagline: 'Holy Trinity Cathedral & Old Town'
   },
@@ -163,7 +163,7 @@ const TRENDING_PLACES = [
     slug: 'turkey',
     name: 'Istanbul, Turkey',
     category: 'International',
-    image: encodeURI('/images/Hagia Sophia , Istanbul , Turkey.jpg'),
+    image: '/images/intl/turkey.jpg',
     tagline: 'Hagia Sophia & Grand Bazaars'
   }
 ];
@@ -209,7 +209,7 @@ export default function TrendingPlaces({ onSelectDestination }) {
                 alt={item.name} 
                 className="trending-card-img" 
                 style={item.objectPosition ? { objectPosition: item.objectPosition } : undefined}
-                loading="lazy"
+                loading="eager"
                 decoding="async"
               />
               <div className="trending-card-overlay" />

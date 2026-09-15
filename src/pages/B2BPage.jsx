@@ -1,6 +1,7 @@
 import React from 'react';
 import B2BPartnerSection from '../components/B2BPartnerSection';
 import FaqSection, { B2B_SPIN_FAQS } from '../components/FaqSection';
+import HeroBackgroundVideo from '../components/HeroBackgroundVideo';
 import { ArrowRight, Briefcase } from 'lucide-react';
 import '../components/HeroSection.css';
 
@@ -11,18 +12,11 @@ export default function B2BPage({ onOpenInquiry }) {
       <section className="hero-section b2b-hero-section">
         {/* Background Video Layer */}
         <div className="hero-video-container">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            webkit-playsinline="true"
-            poster="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80"
+          <HeroBackgroundVideo
+            src="/videos/b2b-hero.mp4"
+            fallbackSrc={encodeURI("/images/B2B page video.mp4")}
             className="hero-video-bg"
-          >
-            <source src="/videos/b2b-hero.mp4" type="video/mp4" />
-            <source src={encodeURI("/images/B2B page video.mp4")} type="video/mp4" />
-          </video>
+          />
           <div className="hero-video-overlay" />
         </div>
 

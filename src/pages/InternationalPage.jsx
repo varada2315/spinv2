@@ -1,5 +1,6 @@
 import React from 'react';
 import InternationalHolidays from '../components/InternationalHolidays';
+import HeroBackgroundVideo from '../components/HeroBackgroundVideo';
 import { ArrowRight, Globe } from 'lucide-react';
 import '../components/HeroSection.css';
 
@@ -10,17 +11,11 @@ export default function InternationalPage({ onOpenDestination, onOpenInquiry }) 
       <section className="hero-section international-hero-section">
         {/* Background Video Layer */}
         <div className="hero-video-container">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            webkit-playsinline="true"
-            poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80"
+          <HeroBackgroundVideo
+            src="/videos/spin-vid.mp4"
+            playbackRate={1.35}
             className="hero-video-bg"
-          >
-            <source src="/videos/international-hero.mp4" type="video/mp4" />
-          </video>
+          />
           <div className="hero-video-overlay" />
         </div>
 

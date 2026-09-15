@@ -1,5 +1,6 @@
 import React from 'react';
 import AboutSection from '../components/AboutSection';
+import HeroBackgroundVideo from '../components/HeroBackgroundVideo';
 import { Heart, Award, Users, Info, ArrowRight } from 'lucide-react';
 import '../components/HeroSection.css';
 import './Pages.css';
@@ -19,18 +20,11 @@ export default function AboutPage({ onOpenInquiry, onOpenLeadCapture }) {
       <section className="hero-section about-hero-section">
         {/* Background Video Layer */}
         <div className="hero-video-container">
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
-            webkit-playsinline="true"
-            poster="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80"
+          <HeroBackgroundVideo
+            src="/videos/about-hero.mp4"
+            fallbackSrc={encodeURI("/images/about us page video.mp4")}
             className="hero-video-bg"
-          >
-            <source src="/videos/about-hero.mp4" type="video/mp4" />
-            <source src={encodeURI("/images/about us page video.mp4")} type="video/mp4" />
-          </video>
+          />
           <div className="hero-video-overlay" />
         </div>
 

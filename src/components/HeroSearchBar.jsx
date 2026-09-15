@@ -105,7 +105,8 @@ function buildSearchIndex() {
 
   // 2. Visa Assistance Services (Matches Visa requirements)
   const visaEntries = [
-    { country: 'Schengen Europe', title: 'Schengen 29 European Nations Visa', type: 'Tourist / Business / Visitor', tags: ['schengen visa', 'europe visa', 'france visa', 'switzerland visa', 'italy visa', 'germany visa', 'spain visa', 'greece visa'] },
+    { country: 'Schengen (Europe)', title: 'Schengen 29 European Nations Visa', type: 'Tourist / Business / Visitor', tags: ['schengen visa', 'europe visa', 'france visa', 'switzerland visa', 'italy visa', 'germany visa', 'spain visa', 'greece visa'] },
+    { country: 'Dubai (UAE)', title: 'UAE / Dubai Tourist E-Visa', type: 'Tourist Visa (30/60 Days)', tags: ['dubai visa', 'uae visa', 'sharjah visa', 'abu dhabi visa', 'emirates visa'] },
     { country: 'USA', title: 'USA B1/B2 Tourist & Business Visa', type: 'B1/B2 Tourist & Business', tags: ['usa visa', 'us visa', 'america visa', 'united states visa', 'b1 b2'] },
     { country: 'Canada', title: 'Canada Tourist & Visitor Visa', type: 'Tourist & Visitor Visa', tags: ['canada visa', 'canadian visa', 'visitor visa', 'tourist visa', 'canada visitor'] },
     { country: 'UK', title: 'UK Standard Visitor Visa (London)', type: 'Standard Visitor Visa', tags: ['uk visa', 'london visa', 'england visa', 'britain visa', 'united kingdom visa'] },
@@ -130,14 +131,15 @@ function buildSearchIndex() {
     { country: 'Sri Lanka', title: 'Sri Lanka ETA Tourist Visa', type: 'ETA Tourist Visa', tags: ['sri lanka visa', 'colombo visa', 'sri lankan visa', 'eta visa'] },
     { country: 'Malaysia', title: 'Malaysia Tourist E-Visa & MDAC', type: 'eNTRI / Tourist E-Visa', tags: ['malaysia visa', 'kuala lumpur visa', 'malaysian visa', 'entri'] },
     { country: 'Kenya', title: 'Kenya eTA Tourist Permit Assistance', type: 'eTA Tourist Permit', tags: ['kenya visa', 'nairobi visa', 'kenya eta'] },
-    { country: 'General Visas', title: 'Tourist, Visitor & Business Visas Worldwide', link: '/visas', type: 'Global Visa Assistance', tags: ['visa assistance', 'all visas', 'visa requirements', 'passport assistance'] }
+    { country: 'All Visas', title: 'Tourist, Visitor & Business Visas Worldwide', link: '/visas', type: 'Global Visa Assistance', tags: ['visa assistance', 'all visas', 'visa requirements', 'passport assistance'] }
   ];
 
   visaEntries.forEach((v, idx) => {
     index.push({
       id: `visa-${idx}`,
       type: 'visa',
-      title: v.title,
+      title: v.country,
+      fullTitle: v.title,
       category: 'Visa Service',
       country: v.country,
       visaType: v.type,
@@ -368,7 +370,7 @@ export default function HeroSearchBar({ onOpenInquiry, onOpenDestination }) {
           category: 'visa',
           country: targetItem.country,
           type: targetItem.visaType || 'Tourist / Business Visa',
-          title: targetItem.title
+          title: targetItem.country ? `${targetItem.country} Visa Assistance` : targetItem.title
         });
       } else {
         navigate(targetItem.link || '/visas');

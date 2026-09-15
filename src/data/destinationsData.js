@@ -5,7 +5,7 @@ export const destinationsData = {
     id: 'bali',
     name: 'Indonesia (Bali)',
     category: 'International',
-    heroImage: encodeURI('/images/Bali Ulun Danu Temple.jpg?v=5'),
+    heroImage: '/images/intl/bali.jpg',
     heroObjectPosition: 'center center',
     tagline: 'Island of Gods with Sacred Temples, Terraces & Beach Clubs',
     description: 'Explore Bali’s iconic sea temples, lush green rice terraces, active volcanic treks, and world-famous beach clubs.',
@@ -22,7 +22,7 @@ export const destinationsData = {
     id: 'uae',
     name: 'UAE (Dubai & Abu Dhabi)',
     category: 'International',
-    heroImage: encodeURI('/images/Dubai Skyline Burj Khalifa.jpg'),
+    heroImage: '/images/intl/uae.jpg',
     tagline: 'Futuristic Skyscrapers, Luxury Desert Safaris & Grand Mosques',
     description: 'Experience record-breaking architectural marvels, golden sand dunes, luxury shopping, and family theme parks.',
     spots: [
@@ -38,7 +38,7 @@ export const destinationsData = {
     id: 'vietnam',
     name: 'Vietnam',
     category: 'International',
-    heroImage: encodeURI('/images/Ba Na Hills Golden Bridge , Vietnam.jpg'),
+    heroImage: '/images/intl/vietnam.jpg',
     tagline: 'Ba Na Hills Golden Bridge, Ha Long Bay & Lantern Towns',
     description: 'Immerse in dramatic karst bay cruises, giant mountain bridge hands, French colonial architecture, ancient heritage towns, and mountain rice terraces.',
     spots: [
@@ -54,7 +54,7 @@ export const destinationsData = {
     id: 'thailand',
     name: 'Thailand',
     category: 'International',
-    heroImage: encodeURI('/images/Thailand Phi Phi Islands.jpg'),
+    heroImage: '/images/intl/thailand.jpg',
     tagline: 'Land of Smiles with Turquoise Islands, Temples & Elephant Sanctuaries',
     description: 'Discover crystal clear island lagoons, ornate royal temples, vibrant night markets, and ethical elephant sanctuaries.',
     spots: [
@@ -70,7 +70,7 @@ export const destinationsData = {
     id: 'singapore',
     name: 'Singapore',
     category: 'International',
-    heroImage: encodeURI('/images/Singapore Marina Bay Sands.jpg'),
+    heroImage: '/images/intl/singapore.jpg',
     heroObjectPosition: 'center center',
     tagline: 'Garden City of the Future with Supertrees & SkyParks',
     description: 'Experience futuristic urban nature, world-class theme parks, rooftop infinity pools, and diverse culinary night markets.',
@@ -87,7 +87,7 @@ export const destinationsData = {
     id: 'malaysia',
     name: 'Malaysia',
     category: 'International',
-    heroImage: encodeURI('/images/Petronas Twin Towers , Kuala Lumpur , Malaysia.jpg'),
+    heroImage: '/images/intl/malaysia.jpg',
     tagline: 'Petronas Twin Towers, Batu Caves, Langkawi & Genting Highlands',
     description: 'Explore futuristic twin towers, sacred rainbow cave temples, thrilling theme parks, and spectacular rainforest sky bridges.',
     spots: [
@@ -103,7 +103,7 @@ export const destinationsData = {
     id: 'japan',
     name: 'Japan',
     category: 'International',
-    heroImage: encodeURI('/images/Fushimi Inari Shrine , Kyoto , Japan.jpg'),
+    heroImage: '/images/intl/japan.jpg',
     tagline: 'Mount Fuji, Fushimi Inari Torii Gates & Arashiyama Bamboo',
     description: 'Step into a land where iconic snow-capped Mount Fuji meets vermilion shrine gates, serene bamboo groves, samurai castles, and Disneyland magic.',
     spots: [
@@ -119,7 +119,7 @@ export const destinationsData = {
     id: 'schengen',
     name: 'Schengen (Europe)',
     category: 'International',
-    heroImage: encodeURI('/images 2/Eiffel Tower , paris , france.jpg.jpeg'),
+    heroImage: '/images/intl/schengen.jpg',
     tagline: 'Eiffel Tower, Swiss Castles, Rome & European Wonders',
     description: 'Traverse 29 European countries seamlessly from romantic Paris landmarks to Alpine lakes, Roman wonders, and Mediterranean coasts.',
     spots: [
@@ -135,7 +135,7 @@ export const destinationsData = {
     id: 'sri-lanka',
     name: 'Sri Lanka',
     category: 'International',
-    heroImage: encodeURI('/images/Sigiriya Rock Fortress , Sri Lanka.jpg'),
+    heroImage: '/images/intl/sri-lanka.jpg',
     tagline: 'Sigiriya Rock, Ella Nine Arch Bridge, Galle Fort & Mirissa Beach',
     description: 'Experience ancient rock palaces, UNESCO cave temples, colonial ocean forts, and palm-fringed tropical beaches.',
     spots: [
@@ -151,7 +151,7 @@ export const destinationsData = {
     id: 'philippines',
     name: 'Philippines',
     category: 'International',
-    heroImage: encodeURI('/images/Coron, Philippines.jpg.jpeg'),
+    heroImage: '/images/intl/philippines.jpg',
     tagline: 'Coron Lagoons, Chocolate Hills & Underground River',
     description: 'Explore 7,000+ tropical islands featuring turquoise karst lakes, subterranean rivers, chocolate-colored hills, and historic Spanish citadels.',
     spots: [
@@ -167,7 +167,7 @@ export const destinationsData = {
     id: 'georgia',
     name: 'Georgia',
     category: 'International',
-    heroImage: encodeURI('/images 2/Holy Trinity Cathedral , georgia.jpg.jpeg'),
+    heroImage: '/images/intl/georgia.jpg',
     heroObjectPosition: 'center top',
     tagline: 'Caucasus Mountains, Trinity Church & Ancient Heritage',
     description: 'Immerse in ancient Orthodox cathedrals overlooking snow-capped Caucasus peaks, emerald river canyons, and romantic Black Sea boulevards.',
@@ -184,7 +184,7 @@ export const destinationsData = {
     id: 'kazakhstan',
     name: 'Kazakhstan',
     category: 'International',
-    heroImage: encodeURI('/images/Charyn Canyon , Kazakhstan.jpg.jpeg'),
+    heroImage: '/images/intl/kazakhstan.jpg',
     tagline: 'Charyn Canyons, Kolsai Lakes & Futuristic Architecture',
     description: 'Discover Central Asia’s gem featuring dramatic red canyon valleys, turquoise mountain lakes, and futuristic capitals.',
     spots: [
@@ -200,7 +200,7 @@ export const destinationsData = {
     id: 'maldives',
     name: 'Maldives',
     category: 'International',
-    heroImage: encodeURI('/images/Luxury Overwater Villas & Sunset , Maldives.jpg'),
+    heroImage: '/images/intl/maldives.jpg',
     tagline: 'Luxury Overwater Villas, Coral Reefs & Romantic Candlelight Dinners',
     description: 'Unwind in pure luxury on private coral atolls surrounded by crystal turquoise lagoons, clear kayaking, and vibrant marine reefs.',
     spots: [
@@ -216,7 +216,7 @@ export const destinationsData = {
     id: 'azerbaijan',
     name: 'Azerbaijan (Baku)',
     category: 'International',
-    heroImage: encodeURI('/images/Flame Towers , azerbaijan.jpg.jpeg'),
+    heroImage: '/images/intl/azerbaijan.jpg',
     tagline: 'Flame Towers, Caspian Sea Boulevards & Medieval Old Towns',
     description: 'Immerse in the Land of Fire, where futuristic curved architecture meets medieval stone palaces along the breezy Caspian Sea.',
     spots: [
@@ -232,7 +232,7 @@ export const destinationsData = {
     id: 'turkey',
     name: 'Turkey',
     category: 'International',
-    heroImage: encodeURI('/images/Cappadocia Hot Air Balloons , Turkey.jpg'),
+    heroImage: '/images/intl/turkey.jpg',
     tagline: 'Cappadocia Balloons, Ephesus Ruins, Hagia Sophia & Pamukkale Pools',
     description: 'Discover ancient Greco-Roman wonders, Turkish Riviera coastal castles, Byzantine monuments, and sunrise hot air balloon flights over Cappadocia.',
     spots: [
@@ -248,7 +248,7 @@ export const destinationsData = {
     id: 'seychelles',
     name: 'Seychelles',
     category: 'International',
-    heroImage: encodeURI('/images/La Digue, Seychelles.jpg.jpeg'),
+    heroImage: '/images/intl/seychelles.jpg',
     tagline: 'Anse Source d’Argent, Granite Boulders & Turquoise Atolls',
     description: 'Escape to an idyllic Indian Ocean archipelago renowned for powder-soft white sand beaches, iconic giant granite boulders, lush rainforests, and coral sanctuaries.',
     spots: [
@@ -264,7 +264,7 @@ export const destinationsData = {
     id: 'south-korea',
     name: 'South Korea',
     category: 'International',
-    heroImage: encodeURI('/images/N Seoul Tower , South Korea.jpg'),
+    heroImage: '/images/intl/south-korea.jpg',
     tagline: 'N Seoul Tower, Joseon Palaces, Hanok Villages & Jeju Island',
     description: 'Immerse in K-pop culture, Hanok traditional villages, futuristic Starfield libraries, and volcanic island scenery.',
     spots: [
@@ -280,7 +280,7 @@ export const destinationsData = {
     id: 'kenya',
     name: 'Kenya',
     category: 'International',
-    heroImage: encodeURI('/images/Maasai Mara National Reserve , Kenya.jpg.jpeg'),
+    heroImage: '/images/intl/kenya.jpg',
     tagline: 'Maasai Mara Migration, Kilimanjaro Views & Pink Flamingos',
     description: 'Experience Africa’s ultimate wildlife safari adventure during the Great Migration of wildebeest and Big 5 game.',
     spots: [
@@ -296,7 +296,7 @@ export const destinationsData = {
     id: 'egypt',
     name: 'Egypt',
     category: 'International',
-    heroImage: encodeURI('/images/Pyramids of Giza , Egypt.jpg'),
+    heroImage: '/images/intl/egypt.jpg',
     tagline: 'Pyramids of Giza, Citadel Mosque & Nile River Temples',
     description: 'Journey back to antiquity admiring the Great Pyramids, historic Cairo mosques, Valley of the Kings, and timeless Nile river temples.',
     spots: [
@@ -312,7 +312,7 @@ export const destinationsData = {
     id: 'mauritius',
     name: 'Mauritius',
     category: 'International',
-    heroImage: encodeURI('/images/Caudan Waterfront , Port Louis , Mauritius.jpg'),
+    heroImage: '/images/intl/mauritius.jpg',
     tagline: 'Caudan Waterfront, Seven Coloured Earths & Tropical Lagoons',
     description: 'Escape to an Indian Ocean island paradise featuring multi-colored volcanic sands, pristine turquoise lagoons, and botanical wonders.',
     spots: [
@@ -328,7 +328,7 @@ export const destinationsData = {
     id: 'nepal',
     name: 'Nepal',
     category: 'International',
-    heroImage: encodeURI('/images/Mount Everest , nepal.jpg.jpeg'),
+    heroImage: '/images/intl/nepal.jpg',
     tagline: 'Everest Treks, Pokhara Lakes & Ancient Stupas',
     description: 'Stand in awe of the highest peaks on Earth, tranquil mountain lakes, sacred stupas, and ancient Newari durbar squares.',
     spots: [
@@ -344,7 +344,7 @@ export const destinationsData = {
     id: 'bhutan',
     name: 'Bhutan',
     category: 'International',
-    heroImage: encodeURI('/images 2/Paro Taktsang , bhutan (2).jpg.jpeg'),
+    heroImage: '/images/intl/bhutan.jpg',
     tagline: "Tiger's Nest Monastery, Punakha Dzongs & Dochula Passes",
     description: 'Journey to the Last Shangri-La, famed for Gross National Happiness, cliffside monasteries, and Himalayan valleys.',
     spots: [
@@ -360,7 +360,7 @@ export const destinationsData = {
     id: 'hong-kong',
     name: 'Hong Kong',
     category: 'International',
-    heroImage: encodeURI('/images 2/Victoria Harbour Skyline & Red Junk Boat - Hong kong.jpg.jpeg'),
+    heroImage: '/images/intl/hong-kong.jpg',
     tagline: 'Victoria Harbour Skyline, Disneyland & Tian Tan Big Buddha',
     description: 'Experience the electric fusion of modern skyscrapers, traditional red-sail junk boats, magical Disneyland adventures, and sacred hillside temples.',
     spots: [
@@ -376,7 +376,7 @@ export const destinationsData = {
     id: 'china',
     name: 'China',
     category: 'International',
-    heroImage: encodeURI('/images/Great Wall of China.jpg.jpeg'),
+    heroImage: '/images/intl/china.jpg',
     tagline: 'Great Wall, Forbidden City & Giant Panda Reserves',
     description: 'Traverse thousands of years of imperial history, ancient wonder fortifications, terracotta armies, giant panda sanctuaries, and magical Disney parks.',
     spots: [
@@ -394,7 +394,7 @@ export const destinationsData = {
     id: 'kashmir',
     name: 'Kashmir',
     category: 'Domestic',
-    heroImage: encodeURI('/images/Kashmir.jpg.jpeg'),
+    heroImage: '/images/dom/kashmir.jpg',
     tagline: 'Paradise on Earth with Dal Lake Houseboats & Gulmarg Gondolas',
     description: 'Experience pristine snow valleys, traditional houseboats, pine forests, and flower gardens in Paradise on Earth.',
     spots: [
@@ -410,7 +410,7 @@ export const destinationsData = {
     id: 'andaman',
     name: 'Andaman & Nicobar',
     category: 'Domestic',
-    heroImage: encodeURI('/images/Andaman.jpg.jpeg'),
+    heroImage: '/images/dom/andaman.jpg',
     tagline: 'Radhanagar Beaches, Cellular Jail History & Scuba Coral Reefs',
     description: 'Discover crystal clear turquoise waters, white sand beaches, coral reefs, and historic freedom struggle heritage.',
     spots: [
@@ -426,7 +426,7 @@ export const destinationsData = {
     id: 'leh-ladakh',
     name: 'Leh Ladakh',
     category: 'Domestic',
-    heroImage: encodeURI('/images/leh ladakh.jpg.jpeg'),
+    heroImage: '/images/dom/leh-ladakh.jpg',
     tagline: 'Pangong Lake, Nubra Sand Dunes & Magnetic Hill',
     description: 'Conquer high mountain passes, changing color lakes, double-humped camel dunes, and ancient cliff monasteries.',
     spots: [
@@ -442,7 +442,7 @@ export const destinationsData = {
     id: 'rajasthan',
     name: 'Rajasthan',
     category: 'Domestic',
-    heroImage: encodeURI('/images/Rajasthan.jpg.jpeg'),
+    heroImage: '/images/dom/rajasthan.jpg',
     tagline: 'Amber Fort, Lake Pichola & Jaisalmer Desert Safaris',
     description: 'Step into royal heritage featuring grand golden forts, lake palaces, camel desert safaris, and vibrant folk music.',
     spots: [
@@ -458,7 +458,7 @@ export const destinationsData = {
     id: 'goa',
     name: 'Goa',
     category: 'Domestic',
-    heroImage: encodeURI('/images/goaa.avif'),
+    heroImage: '/images/dom/goa.jpg',
     tagline: 'Baga Beaches, Dudhsagar Waterfalls & Portuguese Forts',
     description: 'Relax on golden beaches, explore Portuguese UNESCO cathedrals, experience watersports, and watch sunset cruises.',
     spots: [
@@ -474,7 +474,7 @@ export const destinationsData = {
     id: 'meghalaya',
     name: 'Meghalaya',
     category: 'Domestic',
-    heroImage: encodeURI('/images/meghalaya.jpg.jpeg'),
+    heroImage: '/images/dom/meghalaya.jpg',
     tagline: 'Living Root Bridges, Dawki Crystal River & Nohkalikai Falls',
     description: 'Discover the Abode of Clouds featuring double-decker living root bridges, crystal clear rivers, and deep limestone caves.',
     spots: [
@@ -490,7 +490,7 @@ export const destinationsData = {
     id: 'sikkim',
     name: 'Sikkim',
     category: 'Domestic',
-    heroImage: encodeURI('/images/sikkim.jpg.jpeg'),
+    heroImage: '/images/dom/sikkim.jpg',
     tagline: 'Tsomgo Lake, Nathula Pass & Kanchenjunga Views',
     description: 'Immerse in Himalayan tranquility, sacred high-altitude lakes, ancient Buddhist monasteries, and rhododendron valleys.',
     spots: [
@@ -506,7 +506,7 @@ export const destinationsData = {
     id: 'kerala',
     name: 'Kerala',
     category: 'Domestic',
-    heroImage: encodeURI('/images/kerala.jpg.jpeg'),
+    heroImage: '/images/dom/kerala.jpg',
     tagline: 'Alleppey Houseboats, Munnar Tea Gardens & Kovalam Beaches',
     description: 'Relax in God’s Own Country featuring palm-fringed backwater cruises, mist-covered tea gardens, and Kathakali art.',
     spots: [

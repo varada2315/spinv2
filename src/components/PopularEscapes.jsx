@@ -5,14 +5,14 @@ import './PopularEscapes.css';
 
 export default function PopularEscapes({ onSelectDestination, limit, showExploreMore = true }) {
   const escapes = [
-    { slug: 'bali', title: 'Indonesia (Bali)', image: encodeURI('/images/Bali Ulun Danu Temple.jpg?v=5'), tag: 'Tanah Lot & Ubud', objectPosition: 'center center' },
-    { slug: 'uae', title: 'UAE (Dubai)', image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80', tag: 'Burj Khalifa & Safari' },
-    { slug: 'vietnam', title: 'Vietnam', image: encodeURI('/images/Ba Na Hills Golden Bridge , Vietnam.jpg'), tag: 'Ba Na Hills & Golden Bridge' },
-    { slug: 'thailand', title: 'Thailand', image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=600&q=80', tag: 'Phi Phi Islands' },
-    { slug: 'singapore', title: 'Singapore', image: encodeURI('/images/Singapore Marina Bay Sands.jpg'), tag: 'Gardens by the Bay' },
-    { slug: 'japan', title: 'Japan', image: encodeURI('/images/Fushimi Inari Shrine , Kyoto , Japan.jpg'), tag: 'Torii Gates & Bamboo Grove' },
-    { slug: 'schengen', title: 'Schengen (Europe)', image: encodeURI('/images 2/Eiffel Tower , paris , france.jpg.jpeg'), tag: 'Eiffel Tower & Swiss Alps' },
-    { slug: 'turkey', title: 'Turkey', image: encodeURI('/images/Cappadocia Hot Air Balloons , Turkey.jpg'), tag: 'Cappadocia Hot Air Balloons' }
+    { slug: 'bali', title: 'Indonesia (Bali)', image: '/images/intl/bali.jpg', tag: 'Tanah Lot & Ubud', objectPosition: 'center center' },
+    { slug: 'uae', title: 'UAE (Dubai)', image: '/images/intl/uae.jpg', tag: 'Burj Khalifa & Safari' },
+    { slug: 'vietnam', title: 'Vietnam', image: '/images/intl/vietnam.jpg', tag: 'Ba Na Hills & Golden Bridge' },
+    { slug: 'thailand', title: 'Thailand', image: '/images/intl/thailand.jpg', tag: 'Phi Phi Islands' },
+    { slug: 'singapore', title: 'Singapore', image: '/images/intl/singapore.jpg', tag: 'Gardens by the Bay' },
+    { slug: 'japan', title: 'Japan', image: '/images/intl/japan.jpg', tag: 'Torii Gates & Bamboo Grove' },
+    { slug: 'schengen', title: 'Schengen (Europe)', image: '/images/intl/schengen.jpg', tag: 'Eiffel Tower & Swiss Alps' },
+    { slug: 'turkey', title: 'Turkey', image: '/images/intl/turkey.jpg', tag: 'Cappadocia Hot Air Balloons' }
   ];
 
   const displayedEscapes = limit ? escapes.slice(0, limit) : escapes;
@@ -40,7 +40,7 @@ export default function PopularEscapes({ onSelectDestination, limit, showExplore
                 alt={item.title} 
                 className="escape-img" 
                 style={item.objectPosition ? { objectPosition: item.objectPosition } : undefined}
-                loading="lazy" 
+                loading="eager" 
                 decoding="async" 
               />
               

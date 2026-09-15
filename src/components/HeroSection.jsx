@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { ArrowRight, Plane, Globe, Shield } from 'lucide-react';
 import HeroSearchBar from './HeroSearchBar';
+import HeroBackgroundVideo from './HeroBackgroundVideo';
 import './HeroSection.css';
 
 export default function HeroSection({ onOpenInquiry, onOpenDestination }) {
@@ -10,17 +11,10 @@ export default function HeroSection({ onOpenInquiry, onOpenDestination }) {
     <section className="hero-section" id="home">
       {/* Local Video Background Layer */}
       <div className="hero-video-container">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          webkit-playsinline="true"
-          poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80"
+        <HeroBackgroundVideo
+          src="/videos/home-hero.mp4"
           className="hero-video-bg"
-        >
-          <source src="/videos/home-hero.mp4" type="video/mp4" />
-        </video>
+        />
         <div className="hero-video-overlay" />
       </div>
 

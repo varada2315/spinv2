@@ -5,14 +5,14 @@ import './IndiaHolidays.css';
 
 export default function IndiaHolidays({ onSelectIndiaRegion, limit, showExploreMore = true }) {
   const indiaRegions = [
-    { slug: 'kashmir', title: 'Kashmir', image: encodeURI('/images/Kashmir.jpg.jpeg'), desc: 'Dal Lake Shikara & Gulmarg Gondola' },
-    { slug: 'leh-ladakh', title: 'Leh Ladakh', image: encodeURI('/images/leh ladakh.jpg.jpeg'), desc: 'Pangong Lake & Nubra Sand Dunes' },
-    { slug: 'rajasthan', title: 'Rajasthan', image: encodeURI('/images/Rajasthan.jpg.jpeg'), desc: 'Amber Fort & Lake Pichola Palaces' },
-    { slug: 'kerala', title: 'Kerala', image: encodeURI('/images/kerala.jpg.jpeg'), desc: 'Alleppey Houseboats & Munnar Tea' },
-    { slug: 'goa', title: 'Goa', image: encodeURI('/images/goaa.avif'), desc: 'Baga Beaches & Dudhsagar Waterfalls' },
-    { slug: 'andaman', title: 'Andaman & Nicobar', image: encodeURI('/images/Andaman.jpg.jpeg'), desc: 'Radhanagar Beach & Cellular Jail' },
-    { slug: 'meghalaya', title: 'Meghalaya', image: encodeURI('/images/meghalaya.jpg.jpeg'), desc: 'Living Root Bridges & Dawki River' },
-    { slug: 'sikkim', title: 'Sikkim', image: encodeURI('/images/sikkim.jpg.jpeg'), desc: 'Tsomgo Lake & Kanchenjunga Views' }
+    { slug: 'kashmir', title: 'Kashmir', image: '/images/dom/kashmir.jpg', desc: 'Dal Lake Shikara & Gulmarg Gondola' },
+    { slug: 'leh-ladakh', title: 'Leh Ladakh', image: '/images/dom/leh-ladakh.jpg', desc: 'Pangong Lake & Nubra Sand Dunes' },
+    { slug: 'rajasthan', title: 'Rajasthan', image: '/images/dom/rajasthan.jpg', desc: 'Amber Fort & Lake Pichola Palaces' },
+    { slug: 'kerala', title: 'Kerala', image: '/images/dom/kerala.jpg', desc: 'Alleppey Houseboats & Munnar Tea' },
+    { slug: 'goa', title: 'Goa', image: '/images/dom/goa.jpg', desc: 'Baga Beaches & Dudhsagar Waterfalls' },
+    { slug: 'andaman', title: 'Andaman & Nicobar', image: '/images/dom/andaman.jpg', desc: 'Radhanagar Beach & Cellular Jail' },
+    { slug: 'meghalaya', title: 'Meghalaya', image: '/images/dom/meghalaya.jpg', desc: 'Living Root Bridges & Dawki River' },
+    { slug: 'sikkim', title: 'Sikkim', image: '/images/dom/sikkim.jpg', desc: 'Tsomgo Lake & Kanchenjunga Views' }
   ];
 
   const displayedRegions = limit ? indiaRegions.slice(0, limit) : indiaRegions;
@@ -41,7 +41,7 @@ export default function IndiaHolidays({ onSelectIndiaRegion, limit, showExploreM
                 src={item.image}
                 alt={item.title}
                 className="india-img"
-                loading="lazy"
+                loading="eager"
                 decoding="async"
               />
               <div className="india-overlay">

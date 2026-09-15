@@ -1,5 +1,6 @@
 import React from 'react';
 import IndiaHolidays from '../components/IndiaHolidays';
+import HeroBackgroundVideo from '../components/HeroBackgroundVideo';
 import { ArrowRight, MapPin, Compass } from 'lucide-react';
 import '../components/HeroSection.css';
 import './Pages.css';
@@ -17,18 +18,11 @@ export default function DomesticPage({ onOpenDestination, onOpenInquiry }) {
       <section className="hero-section domestic-hero-section">
         {/* Background Video Layer */}
         <div className="hero-video-container">
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
-            webkit-playsinline="true"
-            poster={encodeURI('/images/Kashmir.jpg.jpeg')}
+          <HeroBackgroundVideo
+            src="/videos/domestic-hero.mp4"
+            fallbackSrc={encodeURI("/images/domestic page 2 nd video (1).mp4")}
             className="hero-video-bg"
-          >
-            <source src="/videos/domestic-hero.mp4" type="video/mp4" />
-            <source src={encodeURI("/images/domestic page 2 nd video (1).mp4")} type="video/mp4" />
-          </video>
+          />
           <div className="hero-video-overlay" />
         </div>
 
