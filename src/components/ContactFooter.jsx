@@ -100,7 +100,9 @@ export default function ContactFooter({ onToast }) {
         <div className="footer-bottom-bar">
           <span>© {new Date().getFullYear()} <strong>Spin Global</strong>. All Rights Reserved.</span>
           <span className="footer-credits">Image credits: Wikipedia & Pexels</span>
-          <span className="built-with">Built by Growitate</span>
+          <span className="built-with">
+            Built by <a href="https://growitate.com/" target="_blank" rel="noopener noreferrer" className="built-with-link">Growitate</a>
+          </span>
         </div>
       </div>
     </footer>
