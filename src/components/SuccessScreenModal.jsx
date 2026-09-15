@@ -39,7 +39,7 @@ export default function SuccessScreenModal({ onClose }) {
           <h2 className="success-title-large">Thank You!</h2>
           
           <p className="success-main-message">
-            We've received your details. Our team will connect with you shortly.
+            We've received your details; our team will connect with you shortly.
           </p>
 
           <p className="success-subtext">

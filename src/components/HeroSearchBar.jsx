@@ -1,23 +1,27 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {
-  Search,
-  MapPin,
-  Globe,
-  Shield,
-  ArrowRight,
-  Sparkles,
-  Building2,
-  FileText,
-  ChevronRight,
-  MessageCircle,
-  Send,
-  X,
-  Flame,
-  CheckCircle2
+import { 
+  Search, 
+  MapPin, 
+  Globe, 
+  Sparkles, 
+  Plane, 
+  Shield, 
+  Calendar, 
+  ChevronRight, 
+  X, 
+  ArrowUpRight, 
+  Clock, 
+  Flame, 
+  CheckCircle2, 
+  Compass, 
+  Building2, 
+  FileText, 
+  Send, 
+  MessageCircle 
 } from 'lucide-react';
 import { destinationsData } from '../data/destinationsData';
-import CustomPackageModal from './CustomPackageModal';
+import MultiStepPackageForm from './MultiStepPackageForm';
 import './HeroSearchBar.css';
 
 // Normalize helper: lowercase, trim, accent-insensitive
@@ -312,27 +316,14 @@ export default function HeroSearchBar({ onOpenInquiry, onOpenDestination }) {
     setIsOpen(false);
     const targetQuery = typeof customDestText === 'string' && customDestText.trim()
       ? customDestText.trim()
-      : (query.trim() || 'Custom Destination');
-
-    const lower = targetQuery.toLowerCase();
-    const isVisaQuery = lower.includes('visa');
+      : (query.trim() || '');
 
     if (onOpenInquiry) {
-      if (isVisaQuery) {
-        const cleanedCountry = targetQuery.replace(/visa/gi, '').trim() || targetQuery;
-        onOpenInquiry({
-          category: 'visa',
-          country: cleanedCountry,
-          destination: cleanedCountry,
-          title: `${cleanedCountry} Visa Application`
-        });
-      } else {
-        onOpenInquiry({
-          category: 'package',
-          destination: targetQuery,
-          title: `Custom Package to ${targetQuery}`
-        });
-      }
+      onOpenInquiry({
+        category: 'package',
+        destination: targetQuery,
+        title: targetQuery ? `Custom Package to ${targetQuery}` : 'Custom Trip Planning'
+      });
     } else {
       setCustomModalDest(targetQuery);
       setShowCustomModal(true);
@@ -588,7 +579,7 @@ export default function HeroSearchBar({ onOpenInquiry, onOpenDestination }) {
                     onClick={() => handleOpenCustomConnect(query)}
                   >
                     <Send size={15} />
-                    <span>Get Custom Itinerary</span>
+                    <span>Get Custom Quote</span>
                   </button>
 
                   <a
@@ -607,10 +598,10 @@ export default function HeroSearchBar({ onOpenInquiry, onOpenDestination }) {
         </div>
       )}
 
-      {/* Fallback Custom Package Modal if onOpenInquiry is unprovided */}
+      {/* Fallback MultiStepPackageForm Modal if onOpenInquiry is unprovided */}
       {showCustomModal && (
-        <CustomPackageModal
-          destination={customModalDest}
+        <MultiStepPackageForm
+          initialDestination={customModalDest}
           onClose={() => setShowCustomModal(false)}
         />
       )}

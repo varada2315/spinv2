@@ -1,5 +1,24 @@
-import React, { useState } from 'react';
-import { X, Send, ArrowRight, ArrowLeft, Check, Compass, User, Phone, Mail, Calendar, MapPin, Users, DollarSign, Hotel, Sparkles, Globe } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { 
+  X, 
+  Send, 
+  ArrowRight, 
+  ArrowLeft, 
+  Check, 
+  Compass, 
+  User, 
+  Phone, 
+  Mail, 
+  Calendar, 
+  MapPin, 
+  Users, 
+  DollarSign, 
+  Hotel, 
+  Sparkles, 
+  Globe, 
+  HelpCircle, 
+  ChevronDown 
+} from 'lucide-react';
 import { submitLeadToCRM } from '../services/leadService';
 import SuccessScreenModal from './SuccessScreenModal';
 import './MultiStepPackageForm.css';
@@ -14,9 +33,17 @@ export default function MultiStepPackageForm({ initialDestination = '', initialC
     initialCategory === 'domestic' ? 'Domestic Trip' : 'International Trip'
   );
   const [destination, setDestination] = useState(initialDestination || '');
+  const [serviceNeeded, setServiceNeeded] = useState('Complete Trip Planning');
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
+
+  // Sync destination if initialDestination changes
+  useEffect(() => {
+    if (initialDestination) {
+      setDestination(initialDestination);
+    }
+  }, [initialDestination]);
 
   // Step 2 State
   const [travelDates, setTravelDates] = useState('');
@@ -52,8 +79,9 @@ export default function MultiStepPackageForm({ initialDestination = '', initialC
     const finalBudget = budgetType === 'Custom' ? customBudget : budgetType;
 
     const leadData = {
-      tripType,
+      tripType: tripType || 'Custom Trip',
       destination,
+      serviceNeeded,
       name,
       phone,
       email,
@@ -63,20 +91,24 @@ export default function MultiStepPackageForm({ initialDestination = '', initialC
         adults,
         children,
         infants,
-        childrenAges: children > 0 ? childrenAges : 'N/A'
+        childrenAges: parseInt(children) > 0 ? childrenAges : 'N/A'
       },
       budgetRange: finalBudget,
       hotelPreference: hotelPref,
       specialRequirements: specialReq
     };
 
-    await submitLeadToCRM(leadData, 'Multi-Step Package Inquiry');
+    try {
+      await submitLeadToCRM(leadData, 'Multi-Step Package Inquiry');
+    } catch (err) {
+      console.warn('CRM submission fallback:', err);
+    }
 
     setSubmitting(false);
     setShowSuccess(true);
 
     if (onSubmitted) {
-      onSubmitted(`Thank you ${name}! ${tripType} package inquiry for ${destination} received.`);
+      onSubmitted(`Thank you ${name}! Package inquiry for ${destination} received.`);
     }
   };
 
@@ -108,43 +140,16 @@ export default function MultiStepPackageForm({ initialDestination = '', initialC
               </div>
             </div>
 
-            {/* STEP 1: Trip Category, Basic Info & Destination */}
+            {/* STEP 1: Destination, Help Option & Contact Details */}
             {step === 1 && (
               <form onSubmit={handleNextStep} className="multistep-form-body">
                 <div className="multi-field">
-                  <label>1. Select Trip Category *</label>
-                  <div className="trip-type-selector">
-                    <button
-                      type="button"
-                      className={`trip-type-chip ${tripType.includes('International') ? 'selected' : ''}`}
-                      onClick={() => setTripType('International Trip')}
-                    >
-                      <Globe size={16} />
-                      <span>International Trip</span>
-                    </button>
-
-                    <button
-                      type="button"
-                      className={`trip-type-chip ${tripType.includes('Domestic') ? 'selected' : ''}`}
-                      onClick={() => setTripType('Domestic Trip')}
-                    >
-                      <MapPin size={16} />
-                      <span>Domestic Trip</span>
-                    </button>
-                  </div>
-                </div>
-
-                <div className="multi-field">
-                  <label>2. Destination *</label>
+                  <label>Destination Name *</label>
                   <div className="multi-input-wrap">
                     <Compass size={18} className="multi-field-icon" />
                     <input
                       type="text"
-                      placeholder={
-                        tripType.includes('International')
-                          ? 'e.g. Bali, Dubai, Vietnam, Maldives, Europe, Japan'
-                          : 'e.g. Kashmir, Leh Ladakh, Kerala, Goa, Rajasthan'
-                      }
+                      placeholder="e.g. Manali, Bali, Dubai, Kashmir, USA..."
                       value={destination}
                       onChange={(e) => setDestination(e.target.value)}
                       required
@@ -153,7 +158,26 @@ export default function MultiStepPackageForm({ initialDestination = '', initialC
                 </div>
 
                 <div className="multi-field">
-                  <label>3. Full Name *</label>
+                  <label>What do you need help with? *</label>
+                  <div className="multi-input-wrap">
+                    <HelpCircle size={18} className="multi-field-icon" />
+                    <select
+                      value={serviceNeeded}
+                      onChange={(e) => setServiceNeeded(e.target.value)}
+                      required
+                    >
+                      <option value="Visa">Visa</option>
+                      <option value="Flight & Hotel">Flight & Hotel</option>
+                      <option value="Transfers & Sightseeings">Transfers & Sightseeings</option>
+                      <option value="Complete Trip Planning">Complete Trip Planning</option>
+                      <option value="Not sure yet, just exploring">Not sure yet, just exploring</option>
+                    </select>
+                    <ChevronDown size={18} className="multi-field-select-arrow" />
+                  </div>
+                </div>
+
+                <div className="multi-field">
+                  <label>Full Name *</label>
                   <div className="multi-input-wrap">
                     <User size={18} className="multi-field-icon" />
                     <input
@@ -168,7 +192,7 @@ export default function MultiStepPackageForm({ initialDestination = '', initialC
 
                 <div className="form-grid-2">
                   <div className="multi-field">
-                    <label>4. Contact No. / WhatsApp *</label>
+                    <label>Contact / WhatsApp No. *</label>
                     <div className="multi-input-wrap">
                       <Phone size={18} className="multi-field-icon" />
                       <input
@@ -182,7 +206,7 @@ export default function MultiStepPackageForm({ initialDestination = '', initialC
                   </div>
 
                   <div className="multi-field">
-                    <label>5. Email Address *</label>
+                    <label>Email Address *</label>
                     <div className="multi-input-wrap">
                       <Mail size={18} className="multi-field-icon" />
                       <input
@@ -210,7 +234,7 @@ export default function MultiStepPackageForm({ initialDestination = '', initialC
               <form onSubmit={handleNextStep} className="multistep-form-body">
                 <div className="form-grid-2">
                   <div className="multi-field">
-                    <label>6. Tentative Travel Dates *</label>
+                    <label>Travel Dates *</label>
                     <div className="multi-input-wrap">
                       <Calendar size={18} className="multi-field-icon" />
                       <input
@@ -223,7 +247,7 @@ export default function MultiStepPackageForm({ initialDestination = '', initialC
                   </div>
 
                   <div className="multi-field">
-                    <label>7. Departure City *</label>
+                    <label>Departure City *</label>
                     <div className="multi-input-wrap">
                       <MapPin size={18} className="multi-field-icon" />
                       <input
@@ -238,10 +262,10 @@ export default function MultiStepPackageForm({ initialDestination = '', initialC
                 </div>
 
                 <div className="multi-field">
-                  <label>8. Number of Travelers *</label>
+                  <label>Number of Travelers *</label>
                   <div className="travelers-counter-grid">
                     <div className="counter-box">
-                      <span className="counter-label">Adults (12+ yrs)</span>
+                      <span className="counter-label">Adults (12+ Years)</span>
                       <select value={adults} onChange={(e) => setAdults(e.target.value)}>
                         <option value="1">1 Adult</option>
                         <option value="2">2 Adults</option>
@@ -252,7 +276,7 @@ export default function MultiStepPackageForm({ initialDestination = '', initialC
                     </div>
 
                     <div className="counter-box">
-                      <span className="counter-label">Children (below 12)</span>
+                      <span className="counter-label">Children (Below 12 Years)</span>
                       <select value={children} onChange={(e) => setChildren(e.target.value)}>
                         <option value="0">0 Children</option>
                         <option value="1">1 Child</option>
@@ -262,7 +286,7 @@ export default function MultiStepPackageForm({ initialDestination = '', initialC
                     </div>
 
                     <div className="counter-box">
-                      <span className="counter-label">Infants (below 2)</span>
+                      <span className="counter-label">Infants (Below 2 Years)</span>
                       <select value={infants} onChange={(e) => setInfants(e.target.value)}>
                         <option value="0">0 Infants</option>
                         <option value="1">1 Infant</option>
@@ -305,7 +329,7 @@ export default function MultiStepPackageForm({ initialDestination = '', initialC
             {step === 3 && (
               <form onSubmit={handleSubmit} className="multistep-form-body">
                 <div className="multi-field">
-                  <label>9. Budget Range per Person *</label>
+                  <label>Budget Range *</label>
                   <div className="budget-options-list">
                     {['30K–50K per person', '50K–70K per person', '70K+ per person', 'Custom'].map((b) => (
                       <button
@@ -334,7 +358,7 @@ export default function MultiStepPackageForm({ initialDestination = '', initialC
                 </div>
 
                 <div className="multi-field">
-                  <label>10. Hotel Preference *</label>
+                  <label>Hotel Preference *</label>
                   <div className="hotel-pref-row">
                     {['3 Star', '4 Star', '5 Star'].map((h) => (
                       <button
@@ -351,7 +375,7 @@ export default function MultiStepPackageForm({ initialDestination = '', initialC
                 </div>
 
                 <div className="multi-field">
-                  <label>11. Any Special Requirements</label>
+                  <label>Any Special Requirements</label>
                   <div className="multi-input-wrap textarea-wrap">
                     <textarea
                       rows="2"

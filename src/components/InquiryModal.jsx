@@ -15,7 +15,7 @@ export default function InquiryModal({ selectedItem, onClose, onSubmitted }) {
     : (selectedItem.country || selectedItem.title || selectedItem.name || '');
 
   const isB2B = category === 'b2b' || titleString.toLowerCase().includes('b2b') || titleString.toLowerCase().includes('partner');
-  const isVisa = !isB2B && (category === 'visa' || titleString.toLowerCase().includes('visa'));
+  const isVisa = !isB2B && category !== 'package' && category !== 'custom-package' && (category === 'visa' || titleString.toLowerCase().includes('visa'));
 
   if (isB2B) {
     return (
@@ -55,12 +55,23 @@ export default function InquiryModal({ selectedItem, onClose, onSubmitted }) {
 
   // Filter out generic action titles like "Plan My Trip", "International Holiday Package", etc.
   const rawDest = typeof selectedItem === 'object' 
-    ? (selectedItem.destination || '') 
+    ? (selectedItem.destination || selectedItem.name || '') 
     : (typeof selectedItem === 'string' ? selectedItem : '');
 
-  const genericTerms = ['plan my trip', 'international holiday package', 'domestic holiday package', 'package', 'general inquiry', 'custom package', 'get in touch', "let's connect", 'lets connect'];
-  const isGeneric = genericTerms.some(term => rawDest.toLowerCase().includes(term));
-  const destName = isGeneric ? '' : rawDest;
+  const genericExactTerms = [
+    'plan my trip', 
+    'international holiday package', 
+    'domestic holiday package', 
+    'package', 
+    'general inquiry', 
+    'custom package', 
+    'get in touch', 
+    "let's connect", 
+    'lets connect',
+    'custom destination'
+  ];
+  const isExactGeneric = genericExactTerms.includes(rawDest.trim().toLowerCase());
+  const destName = isExactGeneric ? '' : rawDest.trim();
 
   return (
     <MultiStepPackageForm 
