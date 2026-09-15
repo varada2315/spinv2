@@ -154,7 +154,6 @@ function buildSearchIndex() {
     { title: 'International Holidays & Tour Packages', link: '/international', icon: Globe, tags: ['international', 'overseas', 'holidays', 'tours', 'packages', 'vacation', 'abroad'] },
     { title: 'Incredible Bharat - Domestic Tour Packages', link: '/domestic', icon: MapPin, tags: ['domestic', 'india', 'bharat', 'trips', 'indian holidays', 'destinations', 'kashmir', 'ladakh', 'kerala', 'goa'] },
     { title: 'Tourist & Business Visas Assistance', link: '/visas', icon: Shield, tags: ['visa', 'visas', 'passport', 'immigration', 'visitor visa', 'tourist visa', 'business visa'] },
-    { title: 'B2B Services', link: '/b2b', icon: FileText, tags: ['b2b', 'corporate', 'partner', 'agency', 'wholesale', 'travel agent', 'b2b portal', 'b2b services', 'services'] },
     { title: 'About Spin Global (Our Story & Team)', link: '/about', icon: Building2, tags: ['about', 'company', 'story', 'team', 'who we are', 'spin global', 'ludhiana'] },
     { title: 'Contact Us, Office Location & WhatsApp', link: '/contact', icon: MapPin, tags: ['contact', 'office', 'phone', 'whatsapp', 'address', 'ludhiana', 'email', 'support', 'call'] }
   ];
@@ -174,7 +173,6 @@ function buildSearchIndex() {
   // 4. Highlighted Services
   const serviceEntries = [
     { title: 'Customized & Tailor-Made Holiday Packages', link: '/international', icon: Sparkles, tags: ['holiday packages', 'custom tour', 'itinerary', 'tailor made', 'honeymoon package', 'family trip'] },
-    { title: 'Corporate Travel & MICE Management', link: '/b2b', icon: Building2, tags: ['corporate travel', 'b2b', 'mice', 'conferences', 'events', 'business trip'] },
     { title: 'Fast-Track Visa Document Support', link: '/visas', icon: Shield, tags: ['visa support', 'visa documentation', 'schengen visa appointment', 'us visa slot'] }
   ];
 
@@ -197,13 +195,13 @@ function buildSearchIndex() {
 const POPULAR_SEARCH_CHIPS = [
   { label: 'Bali', query: 'Bali' },
   { label: 'Dubai', query: 'Dubai' },
+  { label: 'Thailand', query: 'Thailand' },
   { label: 'Schengen Europe', query: 'Schengen Europe' },
   { label: 'Maldives', query: 'Maldives' },
   { label: 'Japan', query: 'Japan' },
   { label: 'Kashmir', query: 'Kashmir' },
   { label: 'Seychelles', query: 'Seychelles' },
-  { label: 'Visas', query: 'Visa' },
-  { label: 'B2B Services', query: 'B2B Services' }
+  { label: 'Visas', query: 'Visa' }
 ];
 
 export default function HeroSearchBar({ onOpenInquiry, onOpenDestination }) {
