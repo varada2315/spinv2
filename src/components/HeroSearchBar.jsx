@@ -154,7 +154,7 @@ function buildSearchIndex() {
     { title: 'International Holidays & Tour Packages', link: '/international', icon: Globe, tags: ['international', 'overseas', 'holidays', 'tours', 'packages', 'vacation', 'abroad'] },
     { title: 'Incredible Bharat - Domestic Tour Packages', link: '/domestic', icon: MapPin, tags: ['domestic', 'india', 'bharat', 'trips', 'indian holidays', 'destinations', 'kashmir', 'ladakh', 'kerala', 'goa'] },
     { title: 'Tourist & Business Visas Assistance', link: '/visas', icon: Shield, tags: ['visa', 'visas', 'passport', 'immigration', 'visitor visa', 'tourist visa', 'business visa'] },
-    { title: 'B2B Travel Agency Partner Portal', link: '/b2b', icon: FileText, tags: ['b2b', 'corporate', 'partner', 'agency', 'wholesale', 'travel agent', 'b2b portal'] },
+    { title: 'B2B Services', link: '/b2b', icon: FileText, tags: ['b2b', 'corporate', 'partner', 'agency', 'wholesale', 'travel agent', 'b2b portal', 'b2b services', 'services'] },
     { title: 'About Spin Global (Our Story & Team)', link: '/about', icon: Building2, tags: ['about', 'company', 'story', 'team', 'who we are', 'spin global', 'ludhiana'] },
     { title: 'Contact Us, Office Location & WhatsApp', link: '/contact', icon: MapPin, tags: ['contact', 'office', 'phone', 'whatsapp', 'address', 'ludhiana', 'email', 'support', 'call'] }
   ];
@@ -203,7 +203,7 @@ const POPULAR_SEARCH_CHIPS = [
   { label: 'Kashmir', query: 'Kashmir' },
   { label: 'Seychelles', query: 'Seychelles' },
   { label: 'Visas', query: 'Visa' },
-  { label: 'B2B Portal', query: 'B2B' }
+  { label: 'B2B Services', query: 'B2B Services' }
 ];
 
 export default function HeroSearchBar({ onOpenInquiry, onOpenDestination }) {
