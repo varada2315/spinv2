@@ -73,7 +73,7 @@ export default function Footer() {
         {/* Bottom Copyright Bar */}
         <div className="footer-bottom">
           <div className="copyright-text">
-            © {new Date().getFullYear()} <strong>Spin Global Travel</strong>. All rights reserved. Crafted with <Heart size={14} color="#FF2E2E" fill="#FF2E2E" style={{ display: 'inline', margin: '0 2px' }} /> for travelers worldwide.
+            © {new Date().getFullYear()} <strong>Spin Global Travel & Event Company</strong>. All rights reserved. Crafted with <Heart size={14} color="#FF2E2E" fill="#FF2E2E" style={{ display: 'inline', margin: '0 2px' }} /> for travelers worldwide.
           </div>
           <div className="payment-badges">
             <span className="pay-badge">VISA</span>

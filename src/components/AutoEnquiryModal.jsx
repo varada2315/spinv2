@@ -17,43 +17,67 @@ export default function AutoEnquiryModal({ onSubmitted, isOpenControlled = false
   const [message, setMessage] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
-  // Trigger Logic: 35s initial timer / 40% scroll depth + recurring every 10 minutes (600,000ms)
+  // Trigger Logic:
+  // 1. On page load / refresh, everything reboots fresh (no persistent storage block).
+  // 2. Initial trigger appears after 30 seconds OR when user scrolls down (whichever comes first).
+  // 3. From that moment onward, it waits 5 minutes before showing again (recurring 5-minute interval).
   useEffect(() => {
     let initialTimer = null;
-    let intervalTimer = null;
+    let recurringInterval = null;
+    let hasTriggeredInitial = false;
 
-    const triggerModal = () => {
-      setIsOpenInternal(true);
+    const startRecurringTimer = () => {
+      if (recurringInterval) clearInterval(recurringInterval);
+      recurringInterval = setInterval(() => {
+        setIsOpenInternal(true);
+      }, 5 * 60 * 1000); // 5 minutes (300,000 ms)
     };
 
-    // 1. Initial timer: 35 seconds after load
+    const triggerModal = () => {
+      if (hasTriggeredInitial) return;
+      hasTriggeredInitial = true;
+
+      // Cancel 30-second timer if scroll triggered first
+      if (initialTimer) {
+        clearTimeout(initialTimer);
+        initialTimer = null;
+      }
+
+      // Remove scroll listener so normal scrolling doesn't re-trigger
+      window.removeEventListener('scroll', handleScroll);
+
+      // Open the modal
+      setIsOpenInternal(true);
+
+      // Start the 5-minute cooldown / recurring interval from this exact moment
+      startRecurringTimer();
+    };
+
+    // 1. Initial timer: 30 seconds after page load/refresh
     initialTimer = setTimeout(() => {
       triggerModal();
-    }, 35000);
+    }, 30000);
 
-    // 2. Scroll trigger: 40% page scroll depth for initial engagement
-    let hasScrolled = false;
+    // 2. Scroll trigger: when user scrolls down
     const handleScroll = () => {
-      if (hasScrolled) return;
+      if (hasTriggeredInitial) return;
       const scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
       const scrollHeight = (document.documentElement.scrollHeight || document.body.scrollHeight) - window.innerHeight;
       const scrollDepth = scrollHeight > 0 ? scrollTop / scrollHeight : 0;
 
-      if (scrollDepth >= 0.40) {
-        hasScrolled = true;
+      if (scrollTop > 200 || scrollDepth >= 0.25) {
         triggerModal();
-        window.removeEventListener('scroll', handleScroll);
       }
     };
 
-    // 3. Recurring Interval: Reappears every 10 minutes (600,000 ms)
-    intervalTimer = setInterval(() => {
-      triggerModal();
-    }, 10 * 60 * 1000);
-
     // Custom Event Listener (Allows manual trigger for testing or navigation buttons)
     const handleCustomTrigger = () => {
-      setIsOpenInternal(true);
+      if (!hasTriggeredInitial) {
+        triggerModal();
+      } else {
+        setIsOpenInternal(true);
+        startRecurringTimer();
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -61,7 +85,7 @@ export default function AutoEnquiryModal({ onSubmitted, isOpenControlled = false
 
     return () => {
       if (initialTimer) clearTimeout(initialTimer);
-      if (intervalTimer) clearInterval(intervalTimer);
+      if (recurringInterval) clearInterval(recurringInterval);
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('openLeadCapturePopup', handleCustomTrigger);
     };

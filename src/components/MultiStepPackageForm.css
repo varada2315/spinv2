@@ -382,3 +382,28 @@
     flex-direction: column;
   }
 }
+
+@media (max-width: 480px) {
+  .multistep-backdrop {
+    padding: 12px;
+  }
+  .multistep-card {
+    padding: 24px 16px;
+    border-radius: 20px;
+    max-height: 94dvh;
+    max-height: 94vh;
+  }
+  .multistep-title {
+    font-size: 1.35rem;
+  }
+  .step-actions-row {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+  .step-btn-next,
+  .step-btn-submit,
+  .step-btn-back {
+    width: 100%;
+    justify-content: center;
+  }
+}

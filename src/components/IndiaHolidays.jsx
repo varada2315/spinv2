@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, MapPin } from 'lucide-react';
 import './IndiaHolidays.css';
 
 export default function IndiaHolidays({ onSelectIndiaRegion, limit, showExploreMore = true }) {
@@ -34,7 +34,7 @@ export default function IndiaHolidays({ onSelectIndiaRegion, limit, showExploreM
           {displayedRegions.map((item, idx) => (
             <div
               key={idx}
-              className="india-card hover-lift"
+              className="india-card"
               onClick={() => onSelectIndiaRegion && onSelectIndiaRegion(item.slug)}
             >
               <img
@@ -44,9 +44,23 @@ export default function IndiaHolidays({ onSelectIndiaRegion, limit, showExploreM
                 loading="eager"
                 decoding="async"
               />
-              <div className="india-overlay">
-                <h3 className="india-title">{item.title}</h3>
-                <p className="india-desc">{item.desc}</p>
+
+              {/* Subtle top badge on full image */}
+              <div className="india-top-badge">
+                <MapPin size={13} color="#00BF63" />
+                <span>{item.title}</span>
+              </div>
+
+              {/* Full Hover Overlay */}
+              <div className="india-hover-overlay">
+                <div className="india-hover-content">
+                  <span className="india-hover-tag">{item.desc}</span>
+                  <h3 className="india-hover-title">{item.title}</h3>
+                  <div className="india-hover-cta">
+                    <span>View Tourist Spots</span>
+                    <ArrowRight size={16} />
+                  </div>
+                </div>
               </div>
             </div>
           ))}

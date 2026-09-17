@@ -6,6 +6,13 @@ export default defineConfig({
   server: {
     port: 6041,
     host: '0.0.0.0',
-    allowedHosts: ['spinv2.cyberpunk.co.in']
+    allowedHosts: [
+      'spinversion2.cyberpunk.co.in',
+      'spinnewserver.cyberpunk.co.in',
+      'spinv2.cyberpunk.co.in',
+      '.cyberpunk.co.in',
+      'localhost',
+      '127.0.0.1'
+    ]
   }
 })

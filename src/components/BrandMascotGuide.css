@@ -236,15 +236,15 @@
 
 @media (max-width: 576px) {
   .mascot-guide-wrapper {
-    bottom: 16px;
-    left: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    left: calc(14px + env(safe-area-inset-left, 0px));
   }
   .mascot-character-btn {
-    width: 60px;
-    height: 60px;
+    width: 54px;
+    height: 54px;
   }
   .mascot-speech-bubble {
-    width: 200px;
+    width: 190px;
     font-size: 0.78rem;
   }
 }

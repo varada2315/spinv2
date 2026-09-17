@@ -227,3 +227,18 @@
     font-size: 1.5rem;
   }
 }
+
+@media (max-width: 480px) {
+  .b2b-modal-backdrop {
+    padding: 12px;
+  }
+  .b2b-modal-card {
+    padding: 24px 16px;
+    border-radius: 18px;
+    max-height: 94dvh;
+    max-height: 94vh;
+  }
+  .b2b-modal-title {
+    font-size: 1.35rem;
+  }
+}

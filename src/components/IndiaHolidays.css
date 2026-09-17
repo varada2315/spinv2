@@ -1,6 +1,6 @@
 .india-holidays-section {
   padding: 80px 0;
-  background: #FFFFFF;
+  background: var(--color-bg);
 }
 
 .india-grid {
@@ -11,12 +11,20 @@
 
 .india-card {
   position: relative;
+  height: 380px;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  height: 260px;
   cursor: pointer;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--color-border);
   background: #071228;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.india-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border-color: var(--color-primary);
 }
 
 .india-img {
@@ -31,34 +39,96 @@
 }
 
 .india-card:hover .india-img {
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
-.india-overlay {
+/* Subtle top badge on full image */
+.india-top-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(7, 18, 40, 0.85);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 5;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: opacity 0.3s ease;
+}
+
+.india-card:hover .india-top-badge {
+  opacity: 0;
+}
+
+/* Full Hover Overlay - Text only appears when cursor is near / over card */
+.india-hover-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(7, 18, 40, 0.25) 0%, rgba(7, 18, 40, 0.55) 45%, rgba(7, 18, 40, 0.92) 100%);
-  padding: 20px;
+  background: linear-gradient(180deg, rgba(7, 18, 40, 0.3) 0%, rgba(7, 18, 40, 0.92) 100%);
+  padding: 24px;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  color: #FFFFFF;
+  align-items: flex-end;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 10;
 }
 
-.india-title {
-  font-size: 1.35rem;
+.india-card:hover .india-hover-overlay {
+  opacity: 1;
+}
+
+.india-hover-content {
+  transform: translateY(12px);
+  transition: transform 0.35s ease;
+  width: 100%;
+}
+
+.india-card:hover .india-hover-content {
+  transform: translateY(0);
+}
+
+.india-hover-tag {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 8px;
+}
+
+.india-hover-title {
+  font-size: 1.45rem;
   font-weight: 800;
   color: #FFFFFF;
-  margin-bottom: 2px;
+  margin-bottom: 12px;
+  line-height: 1.2;
 }
 
-.india-desc {
-  font-size: 0.78rem;
-  color: #E2E8F0;
-  font-weight: 500;
+.india-hover-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 1024px) {
@@ -67,8 +137,24 @@
   }
 }
 
+@media (max-width: 768px) {
+  .india-top-badge {
+    display: none !important;
+  }
+  .india-hover-overlay {
+    opacity: 1 !important;
+    background: linear-gradient(180deg, rgba(7, 18, 40, 0.15) 0%, rgba(7, 18, 40, 0.88) 100%);
+  }
+  .india-hover-content {
+    transform: translateY(0) !important;
+  }
+}
+
 @media (max-width: 576px) {
   .india-grid {
     grid-template-columns: 1fr;
+  }
+  .india-card {
+    height: 280px;
   }
 }
